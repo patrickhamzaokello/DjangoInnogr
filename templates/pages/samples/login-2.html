@@ -4,21 +4,21 @@
 
 <!-- Mirrored from www.urbanui.com/melody/template/pages/samples/login-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 15 Sep 2018 06:08:53 GMT -->
 <head>
-  <!-- Required meta tags -->
+  <!-- Required meta tags --> {% load static %}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Melody Admin</title>
   <!-- plugins:css -->
-  <link rel="stylesheet" href="../../vendors/iconfonts/font-awesome/css/all.min.css">
-  <link rel="stylesheet" href="../../vendors/css/vendor.bundle.base.css">
-  <link rel="stylesheet" href="../../vendors/css/vendor.bundle.addons.css">
+  <link rel="stylesheet" href="/{% static '/vendors/iconfonts/font-awesome/css/all.min.css' %}">
+  <link rel="stylesheet" href="/{% static '/vendors/css/vendor.bundle.base.css' %}">
+  <link rel="stylesheet" href="/{% static ' /vendors/css/vendor.bundle.addons.css ' %}">
   <!-- endinject -->
   <!-- plugin css for this page -->
   <!-- End plugin css for this page -->
   <!-- inject:css -->
-  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="/{% static '/css/style.css' %}">
   <!-- endinject -->
-  <link rel="shortcut icon" href="../../images/favicon.png" />
+  <link rel="shortcut icon" href="/{% static '/images/favicon.png' %}" />
 </head>
 
 <body>
@@ -29,7 +29,7 @@
           <div class="col-lg-6 d-flex align-items-center justify-content-center">
             <div class="auth-form-transparent text-left p-3">
               <div class="brand-logo">
-                <img src="../../images/logo.svg" alt="logo">
+                <img src="/{% static '/images/logo.svg' %}" alt="logo">
               </div>
               <h4>Welcome back!</h4>
               <h6 class="font-weight-light">Happy to see you again!</h6>
@@ -66,7 +66,7 @@
                   <a href="#" class="auth-link text-black">Forgot password?</a>
                 </div>
                 <div class="my-3">
-                  <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="../..//">LOGIN</a>
+                  <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="//index-2.html">LOGIN</a>
                 </div>
                 <div class="mb-2 d-flex">
                   <button type="button" class="btn btn-facebook auth-form-btn flex-grow mr-1">
@@ -93,15 +93,15 @@
   </div>
   <!-- container-scroller -->
   <!-- plugins:js -->
-  <script src="../../vendors/js/vendor.bundle.base.js"></script>
-  <script src="../../vendors/js/vendor.bundle.addons.js"></script>
+  <script src="/{% static 'vendors/js/vendor.bundle.base.js' %}"></script>
+  <script src="/{% static 'vendors/js/vendor.bundle.addons.js' %}"></script>
   <!-- endinject -->
   <!-- inject:js -->
-  <script src="../../js/off-canvas.js"></script>
-  <script src="../../js/hoverable-collapse.js"></script>
-  <script src="../../js/misc.js"></script>
-  <script src="../../js/settings.js"></script>
-  <script src="../../js/todolist.js"></script>
+  <script src="//js/off-canvas.js"></script>
+  <script src="//js/hoverable-collapse.js"></script>
+  <script src="//js/misc.js"></script>
+  <script src="//js/settings.js"></script>
+  <script src="//js/todolist.js"></script>
   <!-- endinject -->
 </body>
 

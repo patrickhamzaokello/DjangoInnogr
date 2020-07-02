@@ -4,30 +4,30 @@
 
 <!-- Mirrored from www.urbanui.com/melody/template/pages/widgets.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 15 Sep 2018 06:10:41 GMT -->
 <head>
-  <!-- Required meta tags -->
+  <!-- Required meta tags --> {% load static %}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Melody Admin</title>
   <!-- plugins:css -->
-  <link rel="stylesheet" href="../vendors/iconfonts/font-awesome/css/all.min.css">
-  <link rel="stylesheet" href="../vendors/css/vendor.bundle.base.css">
-  <link rel="stylesheet" href="../vendors/css/vendor.bundle.addons.css">
+  <link rel="stylesheet" href="{% static '/vendors/iconfonts/font-awesome/css/all.min.css' %}">
+  <link rel="stylesheet" href="{% static '/vendors/css/vendor.bundle.base.css' %}">
+  <link rel="stylesheet" href="{% static ' /vendors/css/vendor.bundle.addons.css ' %}">
   <!-- endinject -->
   <!-- plugin css for this page -->
   <!-- End plugin css for this page -->
   <!-- inject:css -->
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="{% static '/css/style.css' %}">
   <!-- endinject -->
-  <link rel="shortcut icon" href="../images/favicon.png" />
+  <link rel="shortcut icon" href="{% static '/images/favicon.png' %}" />
 </head>
 
 <body>
   <div class="container-scroller">
-    <!-- partial:../partials/_navbar.html -->
+    <!-- partial:/partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row default-layout-navbar">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo" href="..//"><img src="../images/logo.svg" alt="logo"/></a>
-        <a class="navbar-brand brand-logo-mini" href="..//"><img src="../{% static 'images/logo-mini.svg ' %}" alt="logo"/></a>
+        <a class="navbar-brand brand-logo" href="/index-2.html"><img src="{% static '/images/logo.svg' %}" alt="logo"/></a>
+        <a class="navbar-brand brand-logo-mini" href="/index-2.html"><img src="{% static '/images/logo-mini.svg ' %}" alt="logo"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-stretch">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -144,7 +144,7 @@
               <div class="dropdown-divider"></div>
               <a class="dropdown-item preview-item">
                 <div class="preview-thumbnail">
-                    <img src="../{% static 'images/faces/face4.jpg' %}" alt="image" class="profile-pic">
+                    <img src="{% static 'images/faces/face4.jpg' %}" alt="image" class="profile-pic">
                 </div>
                 <div class="preview-item-content flex-grow">
                   <h6 class="preview-subject ellipsis font-weight-medium">David Grey
@@ -158,7 +158,7 @@
               <div class="dropdown-divider"></div>
               <a class="dropdown-item preview-item">
                 <div class="preview-thumbnail">
-                    <img src="../{% static 'images/faces/face2.jpg' %}" alt="image" class="profile-pic">
+                    <img src="{% static 'images/faces/face2.jpg' %}" alt="image" class="profile-pic">
                 </div>
                 <div class="preview-item-content flex-grow">
                   <h6 class="preview-subject ellipsis font-weight-medium">Tim Cook
@@ -172,7 +172,7 @@
               <div class="dropdown-divider"></div>
               <a class="dropdown-item preview-item">
                 <div class="preview-thumbnail">
-                    <img src="../{% static 'images/faces/face3.jpg' %}" alt="image" class="profile-pic">
+                    <img src="{% static 'images/faces/face3.jpg' %}" alt="image" class="profile-pic">
                 </div>
                 <div class="preview-item-content flex-grow">
                   <h6 class="preview-subject ellipsis font-weight-medium"> Johnson
@@ -187,7 +187,7 @@
           </li>
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-              <img src="../{% static 'images/faces/face5.jpg' %}" alt="profile"/>
+              <img src="{% static 'images/faces/face5.jpg' %}" alt="profile"/>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
               <a class="dropdown-item">
@@ -214,7 +214,7 @@
     </nav>
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
-      <!-- partial:../partials/_settings-panel.html -->
+      <!-- partial:/partials/_settings-panel.html -->
       <div class="theme-setting-wrapper">
         <div id="settings-trigger"><i class="fas fa-fill-drip"></i></div>
         <div id="theme-settings" class="settings-panel">
@@ -328,7 +328,7 @@
             </div>
             <ul class="chat-list">
               <li class="list active">
-                <div class="profile"><img src="../{% static 'images/faces/face1.jpg' %}" alt="image"><span class="online"></span></div>
+                <div class="profile"><img src="{% static 'images/faces/face1.jpg' %}" alt="image"><span class="online"></span></div>
                 <div class="info">
                   <p>Thomas Douglas</p>
                   <p>Available</p>
@@ -336,7 +336,7 @@
                 <small class="text-muted my-auto">19 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="../{% static 'images/faces/face2.jpg' %}" alt="image"><span class="offline"></span></div>
+                <div class="profile"><img src="{% static 'images/faces/face2.jpg' %}" alt="image"><span class="offline"></span></div>
                 <div class="info">
                   <div class="wrapper d-flex">
                     <p>Catherine</p>
@@ -347,7 +347,7 @@
                 <small class="text-muted my-auto">23 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="../{% static 'images/faces/face3.jpg' %}" alt="image"><span class="online"></span></div>
+                <div class="profile"><img src="{% static 'images/faces/face3.jpg' %}" alt="image"><span class="online"></span></div>
                 <div class="info">
                   <p>Daniel Russell</p>
                   <p>Available</p>
@@ -355,7 +355,7 @@
                 <small class="text-muted my-auto">14 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="../{% static 'images/faces/face4.jpg' %}" alt="image"><span class="offline"></span></div>
+                <div class="profile"><img src="{% static 'images/faces/face4.jpg' %}" alt="image"><span class="offline"></span></div>
                 <div class="info">
                   <p>James Richardson</p>
                   <p>Away</p>
@@ -363,7 +363,7 @@
                 <small class="text-muted my-auto">2 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="../{% static 'images/faces/face5.jpg' %}" alt="image"><span class="online"></span></div>
+                <div class="profile"><img src="{% static 'images/faces/face5.jpg' %}" alt="image"><span class="online"></span></div>
                 <div class="info">
                   <p>Madeline Kennedy</p>
                   <p>Available</p>
@@ -371,7 +371,7 @@
                 <small class="text-muted my-auto">5 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="../{% static 'images/faces/face6.jpg' %}" alt="image"><span class="online"></span></div>
+                <div class="profile"><img src="{% static 'images/faces/face6.jpg' %}" alt="image"><span class="online"></span></div>
                 <div class="info">
                   <p>Sarah Graves</p>
                   <p>Available</p>
@@ -384,13 +384,13 @@
         </div>
       </div>
       <!-- partial -->
-      <!-- partial:../partials/_sidebar.html -->
+      <!-- partial:/partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item nav-profile">
             <div class="nav-link">
               <div class="profile-image">
-                <img src="../{% static 'images/faces/face5.jpg' %}" alt="image"/>
+                <img src="{% static 'images/faces/face5.jpg' %}" alt="image"/>
               </div>
               <div class="profile-name">
                 <p class="name">
@@ -403,7 +403,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="..//">
+            <a class="nav-link" href="/index-2.html">
               <i class="fa fa-home menu-icon"></i>
               <span class="menu-title">Dashboard</span>
             </a>
@@ -726,7 +726,7 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex flex-row">
-                                <img src="../images/faces/face11.html" class="img-lg rounded" alt="profile image"/>
+                                <img src="{% static 'images/faces/face11.html' %}" class="img-lg rounded" alt="profile image"/>
                                 <div class="ml-3">
                                     <h6>Maria</h6>
                                     <p class="text-muted">maria@gmail.com</p>
@@ -740,7 +740,7 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex flex-row">
-                                <img src="../images/faces/face9.jpg" class="img-lg rounded" alt="profile image"/>
+                                <img src="{% static '/images/faces/face9.jpg' %}" class="img-lg rounded" alt="profile image"/>
                                 <div class="ml-3">
                                     <h6>Thomas Edison</h6>
                                     <p class="text-muted">thomas@gmail.com</p>
@@ -754,7 +754,7 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex flex-row">
-                                <img src="../images/faces/face12.jpg" class="img-lg rounded" alt="profile image"/>
+                                <img src="{% static '/images/faces/face12.jpg' %}" class="img-lg rounded" alt="profile image"/>
                                 <div class="ml-3">
                                     <h6>Edward</h6>
                                     <p class="text-muted">edward@gmail.com</p>
@@ -838,7 +838,7 @@
                 <div class="col-md-4 grid-margin stretch-card">
                     <div class="card text-center">
                         <div class="card-body">
-                            <img src="../{% static 'images/faces/face5.jpg' %}" class="img-lg rounded-circle mb-2" alt="profile image"/>
+                            <img src="{% static 'images/faces/face5.jpg' %}" class="img-lg rounded-circle mb-2" alt="profile image"/>
                             <h4>Maria Johnson</h4>
                             <p class="text-muted">Developer</p>
                             <p class="mt-4 card-text">
@@ -955,7 +955,7 @@
                             </div>
                             <p class="card-description">What's people doing right now</p>
                             <div class="list d-flex align-items-center border-bottom py-3">
-                                <img class="img-sm rounded-circle" src="../{% static 'images/faces/face4.jpg' %}" alt="">
+                                <img class="img-sm rounded-circle" src="{% static 'images/faces/face4.jpg' %}" alt="">
                                 <div class="wrapper w-100 ml-3">
                                     <p class="mb-0"><b>Dobrick </b>posted in Material</p>
                                     <div class="d-flex justify-content-between align-items-center">
@@ -968,7 +968,7 @@
                                 </div>
                             </div>
                             <div class="list d-flex align-items-center border-bottom py-3">
-                                <img class="img-sm rounded-circle" src="../{% static 'images/faces/face5.jpg' %}" alt="">
+                                <img class="img-sm rounded-circle" src="{% static 'images/faces/face5.jpg' %}" alt="">
                                 <div class="wrapper w-100 ml-3">
                                     <p class="mb-0"><b>Stella </b>posted in Material</p>
                                     <div class="d-flex justify-content-between align-items-center">
@@ -981,7 +981,7 @@
                                 </div>
                             </div>
                             <div class="list d-flex align-items-center border-bottom py-3">
-                                <img class="img-sm rounded-circle" src="../images/faces/face7.jpg" alt="">
+                                <img class="img-sm rounded-circle" src="{% static '/images/faces/face7.jpg' %}" alt="">
                                 <div class="wrapper w-100 ml-3">
                                     <p class="mb-0"><b>Peter </b>posted in Material</p>
                                     <div class="d-flex justify-content-between align-items-center">
@@ -994,7 +994,7 @@
                                 </div>
                             </div>
                             <div class="list d-flex align-items-center pt-3">
-                                <img class="img-sm rounded-circle" src="../{% static 'images/faces/face6.jpg' %}" alt="">
+                                <img class="img-sm rounded-circle" src="{% static 'images/faces/face6.jpg' %}" alt="">
                                 <div class="wrapper w-100 ml-3">
                                     <p class="mb-0"><b>Nateila </b>posted in Material</p>
                                     <div class="d-flex justify-content-between align-items-center">
@@ -1014,7 +1014,7 @@
                         <div class="card-body">
                             <h4 class="card-title">Recomended</h4>
                             <div class="wrapper d-flex align-items-center py-2 border-bottom">
-                                <img class="img-sm rounded-circle" src="../{% static 'images/faces/face5.jpg' %}" alt="profile">
+                                <img class="img-sm rounded-circle" src="{% static 'images/faces/face5.jpg' %}" alt="profile">
                                 <div class="wrapper ml-3">
                                     <h6 class="mb-1">Stella Davidson</h6>
                                     <small class="text-muted mb-0"><i class="fas fa-map-marker-alt mr-1"></i>New York City, USA</small>
@@ -1022,7 +1022,7 @@
                                 <div class="badge badge-pill badge-info ml-auto px-1 py-1"><i class="fas fa-check font-weight-bold"></i></div>
                             </div>
                             <div class="wrapper d-flex align-items-center py-2 border-bottom">
-                                <img class="img-sm rounded-circle" src="../{% static 'images/faces/face6.jpg' %}" alt="profile">
+                                <img class="img-sm rounded-circle" src="{% static 'images/faces/face6.jpg' %}" alt="profile">
                                 <div class="wrapper ml-3">
                                     <h6 class="mb-1">Daniel Russel</h6>
                                     <small class="text-muted mb-0"><i class="fas fa-map-marker-alt mr-1"></i>Florida, USA</small>
@@ -1030,7 +1030,7 @@
                                 <div class="badge badge-pill badge-success ml-auto px-1 py-1"><i class="fas fa-plus font-weight-bold"></i></div>
                             </div>
                             <div class="wrapper d-flex align-items-center py-2 border-bottom">
-                                <img class="img-sm rounded-circle" src="../images/faces/face7.jpg" alt="profile">
+                                <img class="img-sm rounded-circle" src="{% static '/images/faces/face7.jpg' %}" alt="profile">
                                 <div class="wrapper ml-3">
                                     <h6 class="mb-1">Bruno King</h6>
                                     <small class="text-muted mb-0"><i class="fas fa-map-marker-alt mr-1"></i>Arkansas, USA</small>
@@ -1038,7 +1038,7 @@
                                 <div class="badge badge-pill badge-info ml-auto px-1 py-1"><i class="fas fa-check font-weight-bold"></i></div>
                             </div>
                             <div class="wrapper d-flex align-items-center py-2 border-bottom">
-                                <img class="img-sm rounded-circle" src="../images/faces/face8.jpg" alt="profile">
+                                <img class="img-sm rounded-circle" src="{% static '/images/faces/face8.jpg' %}" alt="profile">
                                 <div class="wrapper ml-3">
                                     <h6 class="mb-1">David Moore</h6>
                                     <small class="text-muted mb-0"><i class="fas fa-map-marker-alt mr-1"></i>Arizon, USA</small>
@@ -1046,7 +1046,7 @@
                                 <div class="badge badge-pill badge-success ml-auto px-1 py-1"><i class="fas fa-plus font-weight-bold"></i></div>
                             </div>
                             <div class="wrapper d-flex align-items-center py-2 mb-4">
-                                <img class="img-sm rounded-circle" src="../images/faces/face9.jpg" alt="profile">
+                                <img class="img-sm rounded-circle" src="{% static '/images/faces/face9.jpg' %}" alt="profile">
                                 <div class="wrapper ml-3">
                                     <h6 class="mb-1">Rafell John</h6>
                                     <small class="text-muted mb-0"><i class="fas fa-map-marker-alt mr-1"></i>Alaska, USA</small>
@@ -1063,7 +1063,7 @@
                             <div class="preview-list">
                                 <div class="preview-item border-bottom px-0">
                                     <div class="preview-thumbnail">
-                                        <img src="../{% static 'images/faces/face6.jpg' %}" alt="image" class="rounded-circle"/>
+                                        <img src="{% static 'images/faces/face6.jpg' %}" alt="image" class="rounded-circle"/>
                                     </div>
                                     <div class="preview-item-content d-flex flex-grow">
                                         <div class="flex-grow">
@@ -1078,7 +1078,7 @@
                                 </div>
                                 <div class="preview-item border-bottom px-0">
                                     <div class="preview-thumbnail">
-                                        <img src="../images/faces/face8.jpg" alt="image" class="rounded-circle"/>
+                                        <img src="{% static '/images/faces/face8.jpg' %}" alt="image" class="rounded-circle"/>
                                     </div>
                                     <div class="preview-item-content d-flex flex-grow">
                                         <div class="flex-grow">
@@ -1093,7 +1093,7 @@
                                 </div>
                                 <div class="preview-item border-bottom px-0">
                                     <div class="preview-thumbnail">
-                                        <img src="../images/faces/face9.jpg" alt="image" class="rounded-circle"/>
+                                        <img src="{% static '/images/faces/face9.jpg' %}" alt="image" class="rounded-circle"/>
                                     </div>
                                     <div class="preview-item-content d-flex flex-grow">
                                         <div class="flex-grow">
@@ -1108,7 +1108,7 @@
                                 </div>
                                 <div class="preview-item border-bottom px-0">
                                     <div class="preview-thumbnail">
-                                        <img src="../images/faces/face11.html" alt="image" class="rounded-circle"/>
+                                        <img src="{% static 'images/faces/face11.html' %}" alt="image" class="rounded-circle"/>
                                     </div>
                                     <div class="preview-item-content d-flex flex-grow">
                                         <div class="flex-grow">
@@ -1128,7 +1128,7 @@
             </div>
         </div>
         <!-- content-wrapper ends -->
-        <!-- partial:../partials/_footer.html -->
+        <!-- partial:/partials/_footer.html -->
         <footer class="footer">
           <div class="d-sm-flex justify-content-center justify-content-sm-between">
             <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2018 <a href="https://www.urbanui.com/" target="_blank">Urbanui</a>. All rights reserved.</span>
@@ -1143,17 +1143,17 @@
   </div>
   <!-- container-scroller -->
   <!-- plugins:js -->
-  <script src="../vendors/js/vendor.bundle.base.js"></script>
-  <script src="../vendors/js/vendor.bundle.addons.js"></script>
+  <script src="{% static 'vendors/js/vendor.bundle.base.js' %}"></script>
+  <script src="{% static 'vendors/js/vendor.bundle.addons.js' %}"></script>
   <!-- endinject -->
   <!-- Plugin js for this page-->
   <!-- End plugin js for this page-->
   <!-- inject:js -->
-  <script src="../js/off-canvas.js"></script>
-  <script src="../js/hoverable-collapse.js"></script>
-  <script src="../js/misc.js"></script>
-  <script src="../js/settings.js"></script>
-  <script src="../js/todolist.js"></script>
+  <script src="/js/off-canvas.js"></script>
+  <script src="/js/hoverable-collapse.js"></script>
+  <script src="/js/misc.js"></script>
+  <script src="/js/settings.js"></script>
+  <script src="/js/todolist.js"></script>
   <!-- endinject -->
   <!-- Custom js for this page-->
   <!-- End custom js for this page-->

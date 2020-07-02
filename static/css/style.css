@@ -18400,16 +18400,16 @@ input:focus {
 
 @font-face {
   font-family: 'PTsans';
-  src: url("../fonts/PT_Sans/PTSans-Regular.eot");
-  src: url("../fonts/PT_Sans/PTSans-Regulard41d.eot?#iefix") format("embedded-opentype"), url("../fonts/PT_Sans/PTSans-Regular.woff2") format("woff2"), url("../fonts/PT_Sans/PTSans-Regular.woff") format("woff"), url("../fonts/PT_Sans/PTSans-Regular.ttf") format("truetype");
+  src: url("/fonts/PT_Sans/PTSans-Regular.eot");
+  src: url("/fonts/PT_Sans/PTSans-Regulard41d.eot?#iefix") format("embedded-opentype"), url("/fonts/PT_Sans/PTSans-Regular.woff2") format("woff2"), url("/fonts/PT_Sans/PTSans-Regular.woff") format("woff"), url("/fonts/PT_Sans/PTSans-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'PTsans';
-  src: url("../fonts/PT_Sans/PTSans-Bold.eot");
-  src: url("../fonts/PT_Sans/PTSans-Boldd41d.eot?#iefix") format("embedded-opentype"), url("../fonts/PT_Sans/PTSans-Bold.html") format("woff2"), url("../fonts/PT_Sans/PTSans-Bold.woff") format("woff"), url("../fonts/PT_Sans/PTSans-Bold.ttf") format("truetype");
+  src: url("/fonts/PT_Sans/PTSans-Bold.eot");
+  src: url("/fonts/PT_Sans/PTSans-Boldd41d.eot?#iefix") format("embedded-opentype"), url("/fonts/PT_Sans/PTSans-Bold.html") format("woff2"), url("/fonts/PT_Sans/PTSans-Bold.woff") format("woff"), url("/fonts/PT_Sans/PTSans-Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
 }
@@ -27554,7 +27554,7 @@ body.avgrund-active {
 
 /* Js-grid */
 .jsgrid .jsgrid-button {
-  background-image: url(../images/sprites/jsgrid-icons.png);
+  background-image: url(/images/sprites/jsgrid-icons.png);
 }
 
 .jsgrid .jsgrid-grid-header {
@@ -29041,17 +29041,17 @@ div.tagsinput span.tag a {
 /* === Landing screens === */
 /* Auth */
 .auth .login-half-bg {
-  background: url("../images/auth/login-bg.jpg");
+  background: url("/images/auth/login-bg.jpg");
   background-size: cover;
 }
 
 .auth .register-half-bg {
-  background: url("../images/auth/register-bg.jpg");
+  background: url("/images/auth/register-bg.jpg");
   background-size: cover;
 }
 
 .auth.lock-full-bg {
-  background: url("../images/auth/lockscreen-bg.jpg");
+  background: url("/images/auth/lockscreen-bg.jpg");
   background-size: cover;
 }
 

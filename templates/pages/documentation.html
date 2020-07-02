@@ -4,19 +4,19 @@
 
 <!-- Mirrored from www.urbanui.com/melody/template/pages/documentation.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 15 Sep 2018 06:10:27 GMT -->
 <head>
-  <!-- Required meta tags -->
+  <!-- Required meta tags --> {% load static %}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Melody Admin</title>
   <!-- plugins:css -->
-  <link rel="stylesheet" href="../vendors/iconfonts/font-awesome/css/all.min.css">
-  <link rel="stylesheet" href="../vendors/css/vendor.bundle.base.css">
-  <link rel="stylesheet" href="../vendors/css/vendor.bundle.addons.css">
+  <link rel="stylesheet" href="{% static '/vendors/iconfonts/font-awesome/css/all.min.css' %}">
+  <link rel="stylesheet" href="{% static '/vendors/css/vendor.bundle.base.css' %}">
+  <link rel="stylesheet" href="{% static ' /vendors/css/vendor.bundle.addons.css ' %}">
   <!-- endinject -->
   <!-- plugin css for this page -->
   <!-- End plugin css for this page -->
   <!-- inject:css -->
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="{% static '/css/style.css' %}">
   <!-- endinject -->
   <link rel="shortcut icon" href="http://www.urbanui.com/" />
 </head>
@@ -29,7 +29,7 @@
             <div class="container-fluid">
               <div class="row">
                 <div class="col-12 doc-header">
-                  <a class="btn btn-primary" href="..//"><i class="fas fa-home mr-2"></i>Back to home</a>
+                  <a class="btn btn-primary" href="/index-2.html"><i class="fas fa-home mr-2"></i>Back to home</a>
                 </div>
               </div>
               <div class="row pt-5 mt-5">
@@ -50,7 +50,7 @@
               </div>
             </div>
           </div>
-          <!-- partial:../partials/_footer.html -->
+          <!-- partial:/partials/_footer.html -->
           <footer class="footer">
           <div class="d-sm-flex justify-content-center justify-content-sm-between">
             <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2018 <a href="https://www.urbanui.com/" target="_blank">Urbanui</a>. All rights reserved.</span>
@@ -62,20 +62,20 @@
       </div>    
     </div>
 <!-- plugins:js -->
-<script src="../vendors/js/vendor.bundle.base.js"></script>
-<script src="../vendors/js/vendor.bundle.addons.js"></script>
+<script src="{% static 'vendors/js/vendor.bundle.base.js' %}"></script>
+<script src="{% static 'vendors/js/vendor.bundle.addons.js' %}"></script>
 <!-- endinject -->
 <!-- inject:js -->
-<script src="../js/off-canvas.js"></script>
-<script src="../js/hoverable-collapse.js"></script>
-<script src="../js/misc.js"></script>
-<script src="../js/settings.js"></script>
-<script src="../js/todolist.js"></script>
+<script src="/js/off-canvas.js"></script>
+<script src="/js/hoverable-collapse.js"></script>
+<script src="/js/misc.js"></script>
+<script src="/js/settings.js"></script>
+<script src="/js/todolist.js"></script>
 <!-- endinject -->
 <!-- Custom js for this page-->
-<script src="../js/codeEditor.js"></script>
-<script src="../js/tabs.js"></script>
-<script src="../js/tooltips.js"></script>
+<script src="/js/codeEditor.js"></script>
+<script src="/js/tabs.js"></script>
+<script src="/js/tooltips.js"></script>
 <!-- End custom js for this page-->
 </body>
 

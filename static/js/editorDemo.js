@@ -12,7 +12,7 @@
           ['image', 'code-block']
         ]
       },
-      placeholder: 'Compose an epic...',
+      placeholder: 'Compose an epic.',
       theme: 'snow' // or 'bubble'
     });
   }

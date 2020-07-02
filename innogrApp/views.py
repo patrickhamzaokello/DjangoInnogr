@@ -11,3 +11,6 @@ def basepage(request):
 
 def aboutpage(request):
     return render(request, 'about.html')
+
+def widgets(request):
+    return render(request, 'pages/widgets.html')

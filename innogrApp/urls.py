@@ -8,6 +8,8 @@ urlpatterns = [
     # path('globaldata/', views.globaldata, name='globaldata'),
     # path('cov19Info/', views.wikipage, name='wikipage'),
     path('about/', views.aboutpage, name='aboutpage'),
+    path('pages/widgets.html', views.widgets, name='widgets'),
+
     # path('news/', views.newspage, name='newspage'),
 
 
