@@ -728,7 +728,7 @@
                     <li class="profile-list-item"> <a href="#"> <span class="pro-pic"><img src="//images/faces/face21.jpg" alt=""></span><div class="user"><p class="u-name">Daniel Russell</p><p class="u-designation">Tester</p></div> </a></li>
                     <li class="profile-list-item"> <a href="#"> <span class="pro-pic"><img src="//images/faces/face10.jpg" alt=""></span><div class="user"><p class="u-name">Sarah Graves</p><p class="u-designation">Admin</p></div> </a></li>
                     <li class="profile-list-item"> <a href="#"> <span class="pro-pic"><img src="//images/faces/face23.jpg" alt=""></span><div class="user"><p class="u-name">Sophia Lara</p><p class="u-designation">UI/UX</p></div> </a></li>
-                    <li class="profile-list-item"> <a href="#"> <span class="pro-pic"><img src="/{% static 'images/faces/face11.html' %}" alt=""></span><div class="user"><p class="u-name">Catherine Myers</p><p class="u-designation">Business Analyst</p></div> </a></li>
+                    <li class="profile-list-item"> <a href="#"> <span class="pro-pic"><img src="/{% static '{% static 'images/faces/face11.html' %}' %}" alt=""></span><div class="user"><p class="u-name">Catherine Myers</p><p class="u-designation">Business Analyst</p></div> </a></li>
                     <li class="profile-list-item"> <a href="#"> <span class="pro-pic"><img src="/{% static '/images/faces/face9.jpg' %}" alt=""></span><div class="user"><p class="u-name">Tim</p><p class="u-designation">PHP Developer</p></div> </a></li>
                   </ul>
                 </div>
@@ -898,7 +898,7 @@
                 </div>
                 <div class="message-body">
                   <div class="sender-details">
-                    <img class="img-sm rounded-circle mr-3" src="/{% static 'images/faces/face11.html' %}" alt="">
+                    <img class="img-sm rounded-circle mr-3" src="/{% static '{% static 'images/faces/face11.html' %}' %}" alt="">
                     <div class="details">
                       <p class="msg-subject">
                         Weekly Update - Week 19 (May 8, 2017 - May 14, 2017)
@@ -966,11 +966,11 @@
   <script src="/{% static 'vendors/js/vendor.bundle.addons.js' %}"></script>
   <!-- endinject -->
   <!-- inject:js -->
-  <script src="//js/off-canvas.js"></script>
-  <script src="//js/hoverable-collapse.js"></script>
-  <script src="//js/misc.js"></script>
-  <script src="//js/settings.js"></script>
-  <script src="//js/todolist.js"></script>
+  <script src="/{% static 'js/off-canvas.js '%}"></script>
+  <script src="/{% static 'js/hoverable-collapse.js" '%}></script>
+  <script src="/"{% static 'js/misc.js' %}""></script>
+  <script src="/{% static 'js/settings.js' %}"></script>
+  <script src="/{% static 'js/todolist.js' %}"></script>
   <!-- endinject -->
   <!-- Custom js for this page-->
   <!-- End custom js for this page-->

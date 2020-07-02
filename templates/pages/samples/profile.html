@@ -819,7 +819,7 @@
                       </div>
                       <div class="profile-feed">
                         <div class="d-flex align-items-start profile-feed-item">
-                          <img src="../../images/faces/face13.jpg" alt="profile" class="img-sm rounded-circle"/>
+                          <img src="../../{% static 'images/faces/face13.jpg' %}" alt="profile" class="img-sm rounded-circle"/>
                           <div class="ml-4">
                             <h6>
                               Mason Beck
@@ -915,11 +915,11 @@
   <script src="../..{% static 'vendors/js/vendor.bundle.addons.js' %}"></script>
   <!-- endinject -->
   <!-- inject:js -->
-  <script src="../../js/off-canvas.js"></script>
-  <script src="../../js/hoverable-collapse.js"></script>
-  <script src="../../js/misc.js"></script>
-  <script src="../../js/settings.js"></script>
-  <script src="../../js/todolist.js"></script>
+  <script src="../..{% static 'js/off-canvas.js '%}"></script>
+  <script src="../..{% static 'js/hoverable-collapse.js" '%}></script>
+  <script src="../.."{% static 'js/misc.js' %}""></script>
+  <script src="../..{% static 'js/settings.js' %}"></script>
+  <script src="../..{% static 'js/todolist.js' %}"></script>
   <!-- endinject -->
   <!-- Custom js for this page-->
   <script src="../../js/profile-demo.js"></script>

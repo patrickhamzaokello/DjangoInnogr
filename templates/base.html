@@ -797,7 +797,7 @@
                         <div class="img-sm profile-image-text bg-warning rounded-circle image-layer-item">M</div>
                         <img class="img-sm rounded-circle image-layer-item" src="{% static 'images/faces/face3.jpg' %}" alt="profile"/>
                         <img class="img-sm rounded-circle image-layer-item" src="{% static 'images/faces/face5.jpg' %}" alt="profile"/>
-                        <img class="img-sm rounded-circle image-layer-item" src="images/faces/face8.jpg" alt="profile"/>
+                        <img class="img-sm rounded-circle image-layer-item" src="{% static 'images/faces/face8.jpg' %}" alt="profile"/>
                       </div>
                     </li>
                     <li>
@@ -861,7 +861,7 @@
                             </div>
                           </td>
                           <td class="py-1">
-                            <img src="images/faces/face13.jpg" alt="profile" class="img-sm rounded-circle"/>
+                            <img src="{% static 'images/faces/face13.jpg' %}" alt="profile" class="img-sm rounded-circle"/>
                           </td>
                           <td class="font-weight-bold">
                             Andrew Bowen
@@ -933,7 +933,7 @@
                             </div>
                           </td>
                           <td class="py-1">
-                            <img src="images/faces/face11.html" alt="profile" class="img-sm rounded-circle"/>
+                            <img src="{% static 'images/faces/face11.html' %}" alt="profile" class="img-sm rounded-circle"/>
                           </td>
                           <td class="font-weight-bold">
                             Marguerite Phillips
@@ -1297,20 +1297,20 @@
   <!-- container-scroller -->
 
   <!-- plugins:js -->
-  <script src="vendors/js/vendor.bundle.base.js"></script>
-  <script src="vendors/js/vendor.bundle.addons.js"></script>
+  <script src="{% static 'vendors/js/vendor.bundle.base.js' %}"></script>
+  <script src="{% static 'vendors/js/vendor.bundle.addons.js' %}"></script>
   <!-- endinject -->
   <!-- Plugin js for this page-->
   <!-- End plugin js for this page-->
   <!-- inject:js -->
-  <script src="js/off-canvas.js"></script>
-  <script src="js/hoverable-collapse.js"></script>
-  <script src="js/misc.js"></script>
-  <script src="js/settings.js"></script>
-  <script src="js/todolist.js"></script>
+  <script src="{% static 'js/off-canvas.js' %}"></script>
+  <script src="{% static 'js/hoverable-collapse.js' %}"></script>
+  <script src="{% static 'js/misc.js' %}"></script>
+  <script src="{% static 'js/settings.js' %}"></script>
+  <script src="{% static 'js/todolist.js' %}"></script>
   <!-- endinject -->
   <!-- Custom js for this page-->
-  <script src="js/dashboard.js"></script>
+  <script src="{% static 'js/dashboard.js' %}"></script>
   <!-- End custom js for this page-->
 </body>
 
