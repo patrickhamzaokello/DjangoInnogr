@@ -5,12 +5,10 @@ from . import views
 
 urlpatterns = [
     path('', views.basepage, name='home'),
-    # path('globaldata/', views.globaldata, name='globaldata'),
-    # path('cov19Info/', views.wikipage, name='wikipage'),
-    path('about/', views.aboutpage, name='aboutpage'),
-    path('pages/widgets.html', views.widgets, name='widgets'),
-
-    # path('news/', views.newspage, name='newspage'),
-
+    path('myDevices', views.mydevices, name='My Devices'),
+    path('newsFeed', views.newsFeed, name='My newsFeed'),
+    path('Profile/Overview', views.profilepage, name='profilepage'),
+    path('Profile/Settings', views.Accountsettings, name='Accountsettings'),
+    path('Resources/Support', views.Resources, name='Resources'),
 
 ]

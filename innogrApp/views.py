@@ -7,10 +7,19 @@ import requests
 
 
 def basepage(request):
-    return render(request, 'base.html')
+    return render(request, 'index.html')
 
-def aboutpage(request):
-    return render(request, 'about.html')
+def mydevices(request):
+    return render(request,'pages/mydevices.html')
 
-def widgets(request):
-    return render(request, 'pages/widgets.html')
+def newsFeed(request):
+    return render(request,'pages/newsfeed.html')
+
+def profilepage(request):
+    return render(request, 'pages/profile/overview.html')
+
+def Accountsettings(request):
+    return render(request, 'pages/profile/settings.html')
+
+def Resources(request):
+    return render(request, 'pages/government/supportcenters.html')

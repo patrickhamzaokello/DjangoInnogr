@@ -135,7 +135,7 @@
       }
     },
     color: {
-      pattern: ['#6153F9', '#8E97FC', '#A7B3FD']
+      pattern: ['red', '#009688', '#35b10c']
     },
     padding: {
       top: 0,
@@ -182,7 +182,7 @@
       }
     },
     color: {
-      pattern: ['rgba(88,216,163,1)', 'rgba(4,189,254,0.6)', 'rgba(237,28,36,0.6)']
+      pattern: ['yellow', 'purple', 'red']
     },
     padding: {
       top: 0,

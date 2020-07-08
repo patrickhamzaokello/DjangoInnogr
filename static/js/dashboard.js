@@ -10,7 +10,7 @@
           datasets: [{
               label: 'Delivered',
               data: [260, 380, 230, 400, 780, 530, 340, 200, 400, 650, 780, 500],
-              backgroundColor: '#392c70'
+              backgroundColor: '#09ab0f'
             },
             {
               label: 'Estimated',
@@ -86,7 +86,7 @@
             label: 'Support',
             data: [1500, 7030, 1050, 2300, 3510, 6800, 4500],
             borderColor: [
-              '#392c70'
+              'red'
             ],
             borderWidth: 3,
             fill: false
@@ -95,7 +95,7 @@
             label: 'Product',
             data: [5500, 4080, 3050, 5600, 4510, 5300, 2400],
             borderColor: [
-              '#d1cede'
+              'orange'
             ],
             borderWidth: 3,
             fill: false
@@ -144,16 +144,16 @@
           datasets: [{
             data: [75, 25, 15, 10],
             backgroundColor: [
-              '#392c70',
-              '#04b76b',
-              '#ff5e6d',
-              '#eeeeee'
+              'red',
+              'orange',
+              'lightgreen',
+              'yellow'
             ],
             borderColor: [
-              '#392c70',
-              '#04b76b',
-              '#ff5e6d',
-              '#eeeeee'
+              'red',
+              'orange',
+              'lightgreen',
+              'yellow'
             ],
           }],
       
