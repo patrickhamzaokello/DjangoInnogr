@@ -23,3 +23,9 @@ def Accountsettings(request):
 
 def Resources(request):
     return render(request, 'pages/government/supportcenters.html')
+
+def login(request):
+    return render(request, 'pages/login.html')
+
+def register(request):
+    return render(request, 'pages/register.html')
