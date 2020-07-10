@@ -7,10 +7,18 @@
 {% block accountpage %}
 
 <div class="auth-form-transparent text-left p-3">
+  
+  {% if messages %}
+  {% for message in messages %}
+    <div class="alert alert-{{ message.tags }}">
+      {{ message }}
+    </div>
+    {% endfor %}
+  {% endif %} 
   <div class="brand-logo">
     <img src="{% static 'innogrApp/images/logo.svg' %}" alt="logo">
   </div>
-  <h4>Welcome back!</h4>
+  <h4>Welcome</h4>
   <h6 class="font-weight-light">Happy to see you again!</h6>
   <form class="pt-3" method="POST">
 
