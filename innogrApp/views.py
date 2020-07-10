@@ -22,7 +22,7 @@ def mydevices(request):
 @login_required
 def newsFeed(request):
     context = {
-        'posts': Post.objects.all()
+        'posts': Post.objects.all().order_by('-date_posted')
     }
     return render(request,'innogrApp/pages/newsfeed.html', context)
 
