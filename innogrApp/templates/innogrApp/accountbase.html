@@ -24,18 +24,19 @@
 <body>
   <div class="container-scroller">
     <div class="container-fluid page-body-wrapper full-page-wrapper">
+      {% block logout%}
       <div class="userform-wrapper d-flex align-items-stretch auth auth-img-bg">
         <div class="row flex-grow">
           <div class="col-lg-6 d-flex align-items-center justify-content-center">
-              {% block accountpage %}
-
-
-              {% endblock accountpage %}
+                        
+              {% block accountpage %}    {% endblock accountpage %}
            
           </div>
         </div>
         <!-- content-wrapper ends -->
       </div>
+
+      {% endblock logout %}
       <!-- page-body-wrapper ends -->
     </div>
     <!-- container-scroller -->

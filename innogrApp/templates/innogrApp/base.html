@@ -61,22 +61,20 @@
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
               aria-labelledby="notificationDropdown">
               <a class="dropdown-item">
-                <p class="mb-0 font-weight-normal float-left">You have 16 new notifications
+                <p class="mb-0 font-weight-normal float-left">You have 3 new notifications
                 </p>
                 <span class="badge badge-pill badge-warning float-right">View all</span>
               </a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item preview-item">
-                <div class="preview-thumbnail">
-                  <div class="preview-icon bg-danger">
-                    <i class="fas fa-exclamation-circle mx-0"></i>
-                  </div>
-                </div>
                 <div class="preview-item-content">
-                  <h6 class="preview-subject font-weight-medium">Application Error</h6>
-                  <p class="font-weight-light small-text">
-                    Just now
-                  </p>
+                  {% if messages %}
+                  {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">
+                      {{ message }}
+                    </div>
+                  {% endfor %}
+                {% endif %}
                 </div>
               </a>
               <div class="dropdown-divider"></div>
@@ -453,6 +451,13 @@
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
+          {% if messages %}
+            {% for message in messages %}
+              <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+              </div>
+            {% endfor %}
+          {% endif %}
 
             {% block pagebody %}
 
