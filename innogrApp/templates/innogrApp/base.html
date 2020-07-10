@@ -166,7 +166,7 @@
           </li>
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-              <img src="{% static 'innogrApp/images/faces/face5.jpg' %}" alt="profile" />
+              <img src="{{ user.profile.image.url }}" alt="profile" />
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
               <a href="/Profile/Settings" class="dropdown-item">
@@ -380,14 +380,14 @@
           <li class="nav-item nav-profile">
             <div class="nav-link">
               <div class="profile-image">
-                <img src="{% static 'innogrApp/images/faces/face5.jpg' %}" alt="image" />
+                <img src="{{ user.profile.image.url }}" alt="image" />
               </div>
               <div class="profile-name">
                 <p class="name">
                   Welcome Jane
                 </p>
                 <p class="designation">
-                  Super Admin
+                  {{user.username}}
                 </p>
               </div>
             </div>

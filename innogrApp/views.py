@@ -23,7 +23,10 @@ def newsFeed(request):
 
 @login_required
 def profilepage(request):
-    return render(request, 'innogrApp/pages/profile/overview.html')
+    mypost = {
+        'posts': Post.objects.all()
+    }
+    return render(request, 'innogrApp/pages/profile/overview.html',mypost)
 
 @login_required
 def Accountsettings(request):

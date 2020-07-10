@@ -23,7 +23,7 @@
         <div class="row">
           <div class="col-lg-4">
             <div class="border-bottom text-center pb-4">
-              <img src="{% static 'innogrApp/images/faces/face12.jpg' %}" alt="profile" class="img-lg rounded-circle mb-3" />
+              <img src="{{ user.profile.image.url }}" alt="profile" class="img-lg rounded-circle mb-3" />
               <p>Bureau Oberhaeuser is a design bureau focused on Information- and Interface Design. </p>
 
             </div>
@@ -73,7 +73,7 @@
                   Mail
                 </span>
                 <span class="float-right text-muted">
-                  Jacod@testmail.com
+                  {{user.email}}
                 </span>
               </p>
               <p class="clearfix">
@@ -169,40 +169,23 @@
               <ul class="nav profile-navbar">
                 <li class="nav-item">
                   <a class="nav-link" href="#">
-                    <i class="fa fa-user"></i>
-                    Info
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link active" href="#">
-                    <i class="fas fa-file"></i>
-                    Feed
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">
                     <i class="fa fa-calendar"></i>
-                    Agenda
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">
-                    <i class="far fa-file-word"></i>
-                    Resume
+                    Timeline
                   </a>
                 </li>
               </ul>
             </div>
             <div class="profile-feed">
+              {% for post in posts %}
               <div class="d-flex align-items-start profile-feed-item">
-                <img src="{% static 'innogrApp/images/faces/face13.jpg' %}" alt="profile" class="img-sm rounded-circle" />
+                <img src="{{ post.author.profile.image.url }}" alt="profile" class="img-sm rounded-circle" />
                 <div class="ml-4">
                   <h6>
-                    Mason Beck
-                    <small class="ml-4 text-muted"><i class="far fa-clock mr-1"></i>10 hours</small>
+                    {{post.author}}
+                    <small class="ml-4 text-muted"><i class="far fa-clock mr-1"></i>{{post.date_posted}}</small>
                   </h6>
                   <p>
-                    There is no better advertisement campaign that is low cost and also successful at the same time.
+                    {{post.content}}
                   </p>
                   <p class="small text-muted mt-2 mb-0">
                     <span>
@@ -217,52 +200,7 @@
                   </p>
                 </div>
               </div>
-              <div class="d-flex align-items-start profile-feed-item">
-                <img src="{% static 'innogrApp/images/faces/face16.jpg' %}" alt="profile" class="img-sm rounded-circle" />
-                <div class="ml-4">
-                  <h6>
-                    Willie Stanley
-                    <small class="ml-4 text-muted"><i class="far fa-clock mr-1"></i>10 hours</small>
-                  </h6>
-                  <img src="{% static 'innogrApp/images/samples/1280x768/12.jpg' %}" alt="sample" class="rounded mw-100" />
-                  <p class="small text-muted mt-2 mb-0">
-                    <span>
-                      <i class="fa fa-star mr-1"></i>4
-                    </span>
-                    <span class="ml-2">
-                      <i class="fa fa-comment mr-1"></i>11
-                    </span>
-                    <span class="ml-2">
-                      <i class="fa fa-mail-reply"></i>
-                    </span>
-                  </p>
-                </div>
-              </div>
-              <div class="d-flex align-items-start profile-feed-item">
-                <img src="{% static 'innogrApp/images/faces/face10.jpg' %}" alt="profile" class="img-sm rounded-circle" />
-                <div class="ml-4">
-                  <h6>
-                    Dylan Silva
-                    <small class="ml-4 text-muted"><i class="far fa-clock mr-1"></i>10 hours</small>
-                  </h6>
-                  <p>
-                    When I first got into the online advertising business, I was looking for the magical combination
-                    that would put my website into the top search engine rankings
-                  </p>
-                  <img src="{% static 'innogrApp/images/samples/1280x768/5.jpg' %}" alt="sample" class="rounded mw-100" />
-                  <p class="small text-muted mt-2 mb-0">
-                    <span>
-                      <i class="fa fa-star mr-1"></i>4
-                    </span>
-                    <span class="ml-2">
-                      <i class="fa fa-comment mr-1"></i>11
-                    </span>
-                    <span class="ml-2">
-                      <i class="fa fa-mail-reply"></i>
-                    </span>
-                  </p>
-                </div>
-              </div>
+              {% endfor %}
             </div>
           </div>
         </div>
