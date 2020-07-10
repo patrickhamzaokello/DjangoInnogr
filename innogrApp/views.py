@@ -1,23 +1,10 @@
 from django.shortcuts import render
+from .models import Post
 from urllib.request import urlopen, Request
 from bs4 import BeautifulSoup
 import requests
 
 # Create your views here.
-posts = [
-    {
-        'author': 'Patrick',
-        'title': 'Blog Post 1',
-        'content': 'First post content',
-        'date_posted': 'August 27, 2018'
-    },
-    {
-        'author': 'Ronny',
-        'title': 'Blog Post 2',
-        'content': 'How to post content',
-        'date_posted': 'July 27, 2018'
-    }
-]
 
 def basepage(request):
     return render(request, 'innogrApp/index.html')
@@ -27,7 +14,7 @@ def mydevices(request):
 
 def newsFeed(request):
     context = {
-        'posts': posts
+        'posts': Post.objects.all()
     }
     return render(request,'innogrApp/pages/newsfeed.html', context)
 
