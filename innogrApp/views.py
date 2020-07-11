@@ -1,6 +1,7 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from .models import Post
+from .models import Post, Comment, Preference
+from django.contrib.auth.models import User
 from django.views.generic import (
     ListView, 
     DetailView,
@@ -8,7 +9,8 @@ from django.views.generic import (
     UpdateView,
     DeleteView
 )
-
+import sys
+from django.db.models import Count
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from users.forms import UserRegistrationForm,UserUpdateForm,ProfileUpdateForm
@@ -16,13 +18,45 @@ from users.forms import UserRegistrationForm,UserUpdateForm,ProfileUpdateForm
 
 # Create your views here.
 
-class PostListView(ListView):
+class PostListView(LoginRequiredMixin, ListView):
     model = Post
     template_name = 'innogrApp/index.html' #<app>/<model>_<viewtype>.html
     context_object_name = 'posts'
     ordering = ['-date_posted']
+    paginate_by = 4
 
-class PostDetailView(DetailView):
+class UserPostListView(LoginRequiredMixin, ListView):
+    model = Post
+    template_name = 'innogrApp/user_posts.html' #<app>/<model>_<viewtype>.html
+    context_object_name = 'posts'
+    paginate_by = 4
+
+    def get_context_data(self, **kwargs):
+        data = super().get_context_data(**kwargs)
+
+        all_users = []
+        data_counter = Post.objects.values('author')\
+            .annotate(author_count=Count('author'))\
+            .order_by('-author_count')[:6]
+
+        for aux in data_counter:
+            all_users.append(User.objects.filter(pk=aux['author']).first())
+        # if Preference.objects.get(user = self.request.user):
+        #     data['preference'] = True
+        # else:
+        #     data['preference'] = False
+        data['preference'] = Preference.objects.all()
+        # print(Preference.objects.get(user= self.request.user))
+        data['all_users'] = all_users
+        print(all_users, file=sys.stderr)
+        return data
+
+    def get_queryset(self):
+        user = get_object_or_404(User,username=self.kwargs.get('username'))
+        return Post.objects.filter(author=user).order_by('-date_posted')
+
+
+class PostDetailView(LoginRequiredMixin, DetailView):
     model = Post
 
 
@@ -58,21 +92,21 @@ class PostDeleteView(LoginRequiredMixin,UserPassesTestMixin,DeleteView):
             return True
         return False
 
-
+@login_required
 def mydevices(request):
     return render(request,'innogrApp/pages/mydevices.html')
 
 @login_required
 def newsFeed(request):
     context = {
-        'posts': Post.objects.all().order_by('-date_posted')
+        'posts': Post.objects.all().order_by('-date_posted'),
     }
     return render(request,'innogrApp/pages/newsfeed.html', context)
 
 @login_required
 def profilepage(request):
     mypost = {
-        'posts': Post.objects.all()
+        'posts': Post.objects.all().order_by('-date_posted')
     }
     return render(request, 'innogrApp/pages/profile/overview.html',mypost)
 

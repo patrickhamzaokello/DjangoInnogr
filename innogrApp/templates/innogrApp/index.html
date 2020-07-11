@@ -202,7 +202,7 @@
             <img src="{{ post.author.profile.image.url }}" alt="image"
               class="img-pk mr-3 mb-3 rounded-circle">
             <div class="media-body">
-              <h6 class="mb-1">{{post.author}}</h6>
+              <h6 class="mb-1"><a href="{% url 'user-posts' post.author.username %}">{{post.author}}</a></h6>
               <p>{{post.date_posted|date:"F d, Y"}}</p>
             </div>
           </div>
@@ -219,19 +219,49 @@
               <span class="ml-2">
                 <i class="fa fa-comment mr-1"></i>11
               </span>
+              
               <span class="ml-2">
-                <i class="fa fa-mail-reply"></i>
+                <i class="fa  fa-ellipsis-h mr-1"></i>
               </span>
             </p>
-            <button type="button" class="btn btn-info btn-fw btn-sm">More</button>
+           
           </div>
         </div>
 
       </div>
+     
+      {% endfor %}
+      
+    </div>
 
+    {% if is_paginated %}
+    <nav>
+      <ul class="pagination separated pagination-danger">  
+      {% if page_obj.has_previous %}
+        <li class="page-item"><a class="page-link" href="?page=1">First</a></li>
+        <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
+      {% endif %}
+
+      {% for num in page_obj.paginator.page_range %}
+        {% if page_obj.number == num %}
+        <li class="page-item active"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+
+        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+        <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+        {% endif %}
       {% endfor %}
 
-    </div>
+      {% if page_obj.has_next %}
+ 
+      <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a></li>
+      <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Last</a></li>
+    {% endif %}
+    
+      </ul>
+    </nav>
+    {% endif %}
+
+
 
   </div>
   <div class="col-md-4 h-100">
