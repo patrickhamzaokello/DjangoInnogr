@@ -96,57 +96,25 @@
 
             <div class="py-4">
               <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Recomended Users</h4>
-                  <div class="wrapper d-flex align-items-center py-2 border-bottom">
-                    <img class="img-sm rounded-circle" src="{% static 'innogrApp/images/faces/face5.jpg' %}" alt="profile">
-                    <div class="wrapper ml-3">
-                      <h6 class="mb-1">Stella Davidson</h6>
-                      <small class="text-muted mb-0"><i class="fas fa-map-marker-alt mr-1"></i>New York City,
-                        USA</small>
-                    </div>
-                    <div class="badge badge-pill badge-info ml-auto px-1 py-1"><i
-                        class="fas fa-plus font-weight-bold"></i></div>
+                  <div class="card-body">
+                      <h4 class="card-title">Recomended Users</h4>
+                      {% for user in all_users %}
+                      <div class="wrapper d-flex align-items-center py-2 border-bottom">
+                          <img class="img-sm rounded-circle"
+                              src="{{ user.profile.image.url }}" alt="profile">
+                          <div class="wrapper ml-3">
+                              <h6 class="mb-1"><a href="{% url 'user-posts' user.username %}">{{user.username}}</a></h6>
+                              <small class="text-muted mb-0"><i class="fas fa-map-marker-alt mr-1"></i>
+                                  {{user.email}}</small>
+                          </div>
+                          <div class="badge badge-pill badge-info ml-auto px-1 py-1"><i
+                                  class="fas fa-plus font-weight-bold"></i></div>
+                      </div>
+                     
+                      {% endfor %}
                   </div>
-                  <div class="wrapper d-flex align-items-center py-2 border-bottom">
-                    <img class="img-sm rounded-circle" src="{% static 'innogrApp/images/faces/face6.jpg' %}" alt="profile">
-                    <div class="wrapper ml-3">
-                      <h6 class="mb-1">Daniel Russel</h6>
-                      <small class="text-muted mb-0"><i class="fas fa-map-marker-alt mr-1"></i>Florida, USA</small>
-                    </div>
-                    <div class="badge badge-pill badge-success ml-auto px-1 py-1"><i
-                        class="fas fa-plus font-weight-bold"></i></div>
-                  </div>
-                  <div class="wrapper d-flex align-items-center py-2 border-bottom">
-                    <img class="img-sm rounded-circle" src="{% static 'innogrApp/images/faces/face7.jpg' %}" alt="profile">
-                    <div class="wrapper ml-3">
-                      <h6 class="mb-1">Bruno King</h6>
-                      <small class="text-muted mb-0"><i class="fas fa-map-marker-alt mr-1"></i>Arkansas, USA</small>
-                    </div>
-                    <div class="badge badge-pill badge-info ml-auto px-1 py-1"><i
-                        class="fas fa-plus font-weight-bold"></i></div>
-                  </div>
-                  <div class="wrapper d-flex align-items-center py-2 border-bottom">
-                    <img class="img-sm rounded-circle" src="{% static 'innogrApp/images/faces/face8.jpg' %}" alt="profile">
-                    <div class="wrapper ml-3">
-                      <h6 class="mb-1">David Moore</h6>
-                      <small class="text-muted mb-0"><i class="fas fa-map-marker-alt mr-1"></i>Arizon, USA</small>
-                    </div>
-                    <div class="badge badge-pill badge-success ml-auto px-1 py-1"><i
-                        class="fas fa-plus font-weight-bold"></i></div>
-                  </div>
-                  <div class="wrapper d-flex align-items-center py-2 mb-4">
-                    <img class="img-sm rounded-circle" src="{% static 'innogrApp/images/faces/face9.jpg' %}" alt="profile">
-                    <div class="wrapper ml-3">
-                      <h6 class="mb-1">Rafell John</h6>
-                      <small class="text-muted mb-0"><i class="fas fa-map-marker-alt mr-1"></i>Alaska, USA</small>
-                    </div>
-                    <div class="badge badge-pill badge-success ml-auto px-1 py-1"><i
-                        class="fas fa-plus font-weight-bold"></i></div>
-                  </div>
-                </div>
               </div>
-            </div>
+          </div>
           </div>
           <div class="col-lg-8 pl-lg-5">
             <div class="d-flex justify-content-between">
