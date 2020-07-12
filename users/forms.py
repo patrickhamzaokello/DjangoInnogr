@@ -38,12 +38,16 @@ class ProfileUpdateForm(forms.ModelForm):
     
     class Meta:
         model = Profile
-        fields = ['fullName','description','image']
+        fields = ['fullName','phone','firstSkill','secondSkill','thirdSkill','description','image']
 
     helper = FormHelper()
     helper.form_class = 'form-group'
     helper.layout = Layout(
         Field('fullName'),
+        Field('phone'),
+        Field('firstSkill'),
+        Field('secondSkill'),
+        Field('thirdSkill'),
         Field('description'),
         Field('image'),
         ButtonHolder(

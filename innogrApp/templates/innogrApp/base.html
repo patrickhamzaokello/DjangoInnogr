@@ -377,7 +377,9 @@
 
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
+          {% block activelink %}
           <li class="nav-item nav-profile">
+          {% endblock activelink %}
             <div class="nav-link">
               <div class="profile-image">
                 <a href="{% url 'user-posts' user.username %}">

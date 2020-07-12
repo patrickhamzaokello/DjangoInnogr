@@ -8,6 +8,13 @@ class Profile(models.Model):
     image = models.ImageField(default='default.jpg', upload_to='profile_pics')
     description = models.CharField(max_length=200, default='Add Profile Description')
     fullName = models.CharField(max_length=200, default='')
+    phone = models.CharField(max_length=20, default='Add Phone Number')
+    firstSkill = models.CharField(max_length=200, default='Add First Skill')
+    secondSkill = models.CharField(max_length=200, default='Add Second Skill')
+    thirdSkill = models.CharField(max_length=200, default='Add Third Skill')
+
+
+
 
     def __str__(self):
         return f'{self.user.username} Profile'
