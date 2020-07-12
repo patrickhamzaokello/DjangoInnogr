@@ -55,6 +55,36 @@ class UserPostListView(LoginRequiredMixin, ListView):
         user = get_object_or_404(User,username=self.kwargs.get('username'))
         return Post.objects.filter(author=user).order_by('-date_posted')
 
+class UserProfileListView(LoginRequiredMixin, ListView):
+    model = Post
+    template_name = 'innogrApp/profile_posts.html' #<app>/<model>_<viewtype>.html
+    context_object_name = 'posts'
+    paginate_by = 4
+
+    def get_context_data(self, **kwargs):
+        data = super().get_context_data(**kwargs)
+
+        all_users = []
+        data_counter = Post.objects.values('author')\
+            .annotate(author_count=Count('author'))\
+            .order_by('-author_count')
+
+        for aux in data_counter:
+            all_users.append(User.objects.filter(pk=aux['author']).first())
+        # if Preference.objects.get(user = self.request.user):
+        #     data['preference'] = True
+        # else:
+        #     data['preference'] = False
+        data['preference'] = Preference.objects.all()
+        # print(Preference.objects.get(user= self.request.user))
+        data['all_users'] = all_users
+        print(all_users, file=sys.stderr)
+        return data
+
+    def get_queryset(self):
+        user = get_object_or_404(User,username=self.kwargs.get('user'))
+        return Post.objects.filter(author=user).order_by('-date_posted')
+
 
 class PostDetailView(LoginRequiredMixin, DetailView):
     model = Post
@@ -120,7 +150,7 @@ def Accountsettings(request):
             u_form.save()
             p_form.save()
             messages.success(request, f'Your Account has been updated')
-            return redirect('profilepage')
+            # return redirect('profilepage')
     
     else:
         u_form = UserUpdateForm(instance=request.user)
