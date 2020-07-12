@@ -10,12 +10,12 @@ class UserRegistrationForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ['username', 'email', 'password1','password2']
+        fields = ['username', 'email','first_name','last_name','password1','password2']
 
     # remove help text
     def __init__(self, *args, **kwargs):
         super(UserCreationForm, self).__init__(*args, **kwargs)
-        for fieldname in  ['username','email', 'password1','password2']:
+        for fieldname in  ['username','email','first_name','last_name', 'password1','password2']:
             self.fields[fieldname].help_text = None
        
 
@@ -25,7 +25,7 @@ class UserUpdateForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ['username','email']
+        fields = ['username','email','first_name','last_name']
 
         help_texts = {
             'username':None,
@@ -38,12 +38,11 @@ class ProfileUpdateForm(forms.ModelForm):
     
     class Meta:
         model = Profile
-        fields = ['fullName','phone','firstSkill','secondSkill','thirdSkill','description','image']
+        fields = ['phone','firstSkill','secondSkill','thirdSkill','description','image']
 
     helper = FormHelper()
     helper.form_class = 'form-group'
     helper.layout = Layout(
-        Field('fullName'),
         Field('phone'),
         Field('firstSkill'),
         Field('secondSkill'),

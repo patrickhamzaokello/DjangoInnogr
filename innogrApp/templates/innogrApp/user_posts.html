@@ -93,10 +93,10 @@
                     <div class="col-lg-8 pl-lg-5">
                         <div class="d-flex justify-content-between">
                             <div>
-                                <h3>{{view.kwargs.username}}</h3>
+                                <h3>{{posts.0.author.first_name}} {{posts.0.author.last_name}}</h3>
                                 <div class="d-flex align-items-center">
+                                    <h5 class="mb-0 mr-2 text-muted">@{{posts.0.author.username}}</h5>
                                     <h5 class="mb-0 mr-2 text-muted">Lira,Uganda</h5>
-                                    
                                 </div>
                             </div>
 
@@ -105,7 +105,7 @@
                             <ul class="nav profile-navbar">
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">
-                                        User Timeline, {{ page_obj.paginator.count }} Total Posts,  All Posts by:{{view.kwargs.username}} 
+                                    <span style="font-size: large;">{{ page_obj.paginator.count }}</span> Post(s), All Posts by:{{view.kwargs.username}} 
                                     </a>
                                 </li>
                             </ul>
@@ -125,17 +125,7 @@
                                     <p>
                                         {{post.content}}
                                     </p>
-                                    <p class="small text-muted mt-2 mb-0">
-                                        <span>
-                                            <i class="fa fa-star mr-1"></i>4
-                                        </span>
-                                        <span class="ml-2">
-                                            <i class="fa fa-comment mr-1"></i>11
-                                        </span>
-                                        <span class="ml-2">
-                                            <i class="fa fa-mail-reply"></i>
-                                        </span>
-                                    </p>
+                                    
                                 </div>
                             </div>
                             {% endfor %}
