@@ -121,9 +121,9 @@
                                         <small class="ml-4 text-muted"><i
                                                 class="far fa-clock mr-1"></i>{{post.date_posted}}</small>
                                     </h6>
-                                    <h5 class="mb-2"><a href="{% url 'post-detail' post.id %}">{{post.title}}</a></h5>
+                                <a class="d-block h5 mb-0" href="{% url 'post-detail' post.id %}">{{post.title}}</a>
                                     <p>
-                                        {{post.content}}
+                                        {{post.summary}}
                                     </p>
                                     
                                 </div>

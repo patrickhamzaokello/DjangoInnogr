@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-    {% load static %}
+{% load static %}
+
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -24,26 +25,31 @@
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row default-layout-navbar">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo" href="/"><img src="{% static 'innogrApp/images/logo.svg' %}" alt="logo" /></a>
-        <a class="navbar-brand brand-logo-mini" href="/"><img src="{% static 'innogrApp/images/logo-mini.svg' %}" alt="logo" /></a>
+        <a class="navbar-brand brand-logo" href="/"><img src="{% static 'innogrApp/images/logo.svg' %}"
+            alt="logo" /></a>
+        <a class="navbar-brand brand-logo-mini" href="/"><img src="{% static 'innogrApp/images/logo-mini.svg' %}"
+            alt="logo" /></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-stretch">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
           <span class="fas fa-bars"></span>
         </button>
         <ul class="navbar-nav">
-          <li class="nav-item nav-search d-none d-md-flex">
-            <div class="nav-link">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">
-                    <i class="fas fa-search"></i>
-                  </span>
+          <form action="{% url 'search' %}" method="post">{% csrf_token %}
+            <li class="nav-item nav-search d-none d-md-flex">
+              <div class="nav-link">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <button type="submit" class="input-group-text">
+                      <i class="fas fa-search"></i>
+                    </button>
+                  </div>
+                  <input type="text" class="form-control" placeholder="Search" name="search" aria-label="Search">
                 </div>
-                <input type="text" class="form-control" placeholder="Search" aria-label="Search">
               </div>
-            </div>
-          </li>
+            </li>
+
+          </form>
         </ul>
         <ul class="navbar-nav navbar-nav-right">
           <li class="nav-item d-none d-lg-flex">
@@ -70,11 +76,11 @@
                 <div class="preview-item-content">
                   {% if messages %}
                   {% for message in messages %}
-                    <div class="alert alert-{{ message.tags }}">
-                      {{ message }}
-                    </div>
+                  <div class="alert alert-{{ message.tags }}">
+                    {{ message }}
+                  </div>
                   {% endfor %}
-                {% endif %}
+                  {% endif %}
                 </div>
               </a>
               <div class="dropdown-divider"></div>
@@ -165,7 +171,8 @@
             </div>
           </li>
           <li class="nav-item nav-profile dropdown">
-            <a class="nav-link dropdown-toggle" href="{% url 'user-posts' user.username %}" data-toggle="dropdown" id="profileDropdown">
+            <a class="nav-link dropdown-toggle" href="{% url 'user-posts' user.username %}" data-toggle="dropdown"
+              id="profileDropdown">
               <img src="{{ user.profile.image.url }}" alt="profile" />
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
@@ -231,106 +238,106 @@
           </li>
         </ul>
         <div class="tab-content" id="setting-content">
-          <div class="tab-pane fade scroll-wrapper" id="todo-section" role="tabpanel"
-            aria-labelledby="todo-section">
+          <div class="tab-pane fade scroll-wrapper" id="todo-section" role="tabpanel" aria-labelledby="todo-section">
             <div class="card">
               <div class="card-body">
-                  <h4 class="card-title">Messages</h4>
-                  <div class="preview-list">
-                      <div class="preview-item border-bottom px-0">
-                          <div class="preview-thumbnail">
-                              <img src="{% static 'innogrApp/images/faces/face6.jpg' %}" alt="image" class="rounded-circle">
-                          </div>
-                          <div class="preview-item-content d-flex flex-grow">
-                              <div class="flex-grow">
-                                  <h6 class="preview-subject">Richard Joy
-                                      <span class="float-right small">
-                                          <span class="text-muted pr-3">13.06.2017</span>
-                                      </span>
-                                  </h6>
-                                  <p>Thanks for the support!</p>
-                              </div>
-                          </div>
+                <h4 class="card-title">Messages</h4>
+                <div class="preview-list">
+                  <div class="preview-item border-bottom px-0">
+                    <div class="preview-thumbnail">
+                      <img src="{% static 'innogrApp/images/faces/face6.jpg' %}" alt="image" class="rounded-circle">
+                    </div>
+                    <div class="preview-item-content d-flex flex-grow">
+                      <div class="flex-grow">
+                        <h6 class="preview-subject">Richard Joy
+                          <span class="float-right small">
+                            <span class="text-muted pr-3">13.06.2017</span>
+                          </span>
+                        </h6>
+                        <p>Thanks for the support!</p>
                       </div>
-                      <div class="preview-item border-bottom px-0">
-                          <div class="preview-thumbnail">
-                              <img src="{% static 'innogrApp/images/faces/face8.jpg' %}" alt="image" class="rounded-circle">
-                          </div>
-                          <div class="preview-item-content d-flex flex-grow">
-                              <div class="flex-grow">
-                                  <h6 class="preview-subject">William Alex
-                                      <span class="float-right small">
-                                          <span class="text-muted pr-3">08.07.2017</span>
-                                      </span>
-                                  </h6>
-                                  <p>Meeting is postponed</p>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="preview-item border-bottom px-0">
-                          <div class="preview-thumbnail">
-                              <img src="{% static 'innogrApp/images/faces/face9.jpg' %}" alt="image" class="rounded-circle">
-                          </div>
-                          <div class="preview-item-content d-flex flex-grow">
-                              <div class="flex-grow">
-                                  <h6 class="preview-subject">David Grey
-                                      <span class="float-right small">
-                                          <span class="text-muted pr-3">15.07.2017</span>
-                                      </span>
-                                  </h6>
-                                  <p>Please approve the request</p>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="preview-item border-bottom px-0">
-                          <div class="preview-thumbnail">
-                              <img src="{% static 'innogrApp/images/faces/face10.jpg' %}" alt="image" class="rounded-circle">
-                          </div>
-                          <div class="preview-item-content d-flex flex-grow">
-                              <div class="flex-grow">
-                                  <h6 class="preview-subject">Aleena Abraham
-                                      <span class="float-right small">
-                                          <span class="text-muted pr-3">12.06.2017</span>
-                                      </span>
-                                  </h6>
-                                  <p>Hope to see you tomorrow</p>
-                              </div>
-                          </div>
-                      </div>
+                    </div>
                   </div>
+                  <div class="preview-item border-bottom px-0">
+                    <div class="preview-thumbnail">
+                      <img src="{% static 'innogrApp/images/faces/face8.jpg' %}" alt="image" class="rounded-circle">
+                    </div>
+                    <div class="preview-item-content d-flex flex-grow">
+                      <div class="flex-grow">
+                        <h6 class="preview-subject">William Alex
+                          <span class="float-right small">
+                            <span class="text-muted pr-3">08.07.2017</span>
+                          </span>
+                        </h6>
+                        <p>Meeting is postponed</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="preview-item border-bottom px-0">
+                    <div class="preview-thumbnail">
+                      <img src="{% static 'innogrApp/images/faces/face9.jpg' %}" alt="image" class="rounded-circle">
+                    </div>
+                    <div class="preview-item-content d-flex flex-grow">
+                      <div class="flex-grow">
+                        <h6 class="preview-subject">David Grey
+                          <span class="float-right small">
+                            <span class="text-muted pr-3">15.07.2017</span>
+                          </span>
+                        </h6>
+                        <p>Please approve the request</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="preview-item border-bottom px-0">
+                    <div class="preview-thumbnail">
+                      <img src="{% static 'innogrApp/images/faces/face10.jpg' %}" alt="image" class="rounded-circle">
+                    </div>
+                    <div class="preview-item-content d-flex flex-grow">
+                      <div class="flex-grow">
+                        <h6 class="preview-subject">Aleena Abraham
+                          <span class="float-right small">
+                            <span class="text-muted pr-3">12.06.2017</span>
+                          </span>
+                        </h6>
+                        <p>Hope to see you tomorrow</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-          </div>
+            </div>
 
 
 
-          
+
           </div>
           <!-- To do section tab ends -->
           <div class="tab-pane fade show active" id="chats-section" role="tabpanel" aria-labelledby="chats-section">
             <div class="d-flex align-items-center justify-content-between border-bottom">
               <p class="settings-heading border-top-0 mb-3 pl-3 pt-0 border-bottom-0 pb-0">Updates</p>
-              <small class="settings-heading border-top-0 mb-3 pt-0 border-bottom-0 pb-0 pr-3 font-weight-normal">Date</small>
+              <small
+                class="settings-heading border-top-0 mb-3 pt-0 border-bottom-0 pb-0 pr-3 font-weight-normal">Date</small>
             </div>
 
             <div class="card">
               <div class="card-body">
-                  <h4 class="card-title mb-0">Weather Updates</h4>
-                  <div class="d-flex justify-content-between align-items-center">
-                      <div class="d-inline-block pt-3">
-                          <div class="d-md-flex">
-                              <h2 class="mb-0">32 &#x2103;</h2>
-                              <div class="d-flex align-items-center ml-md-2 mt-2 mt-md-0">
-                                  <i class="far fa-clock text-muted"></i>
-                                  <small class=" ml-1 mb-0">Updated: 9:10am</small>
-                              </div>
-                          </div>
-                          <small class="text-gray">Lira, Uganda</small>
+                <h4 class="card-title mb-0">Weather Updates</h4>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="d-inline-block pt-3">
+                    <div class="d-md-flex">
+                      <h2 class="mb-0">32 &#x2103;</h2>
+                      <div class="d-flex align-items-center ml-md-2 mt-2 mt-md-0">
+                        <i class="far fa-clock text-muted"></i>
+                        <small class=" ml-1 mb-0">Updated: 9:10am</small>
                       </div>
-                 
+                    </div>
+                    <small class="text-gray">Lira, Uganda</small>
                   </div>
+
+                </div>
               </div>
-          </div>
-            
+            </div>
+
             <div class="card">
               <div class="card-body">
                 <h4 class="card-title">
@@ -379,11 +386,11 @@
         <ul class="nav">
           {% block activelink %}
           <li class="nav-item nav-profile">
-          {% endblock activelink %}
+            {% endblock activelink %}
             <div class="nav-link">
               <div class="profile-image">
                 <a href="{% url 'user-posts' user.username %}">
-                <img src="{{ user.profile.image.url }}" alt="image" />
+                  <img src="{{ user.profile.image.url }}" alt="image" />
                 </a>
               </div>
               <div class="profile-name">
@@ -426,7 +433,8 @@
             </a>
             <div class="collapse" id="profile">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{% url 'profile-posts' user.username %}">Overview</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'profile-posts' user.username %}">Overview</a>
+                </li>
                 <li class="nav-item"> <a class="nav-link" href="{% url 'Accountsettings' %}">Settings</a></li>
 
               </ul>
@@ -456,18 +464,18 @@
       <div class="main-panel">
         <div class="content-wrapper">
           {% if messages %}
-            {% for message in messages %}
-              <div class="alert alert-{{ message.tags }}">
-                {{ message }}
-              </div>
-            {% endfor %}
+          {% for message in messages %}
+          <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+          </div>
+          {% endfor %}
           {% endif %}
 
-            {% block pagebody %}
+          {% block pagebody %}
 
 
-            {% endblock pagebody %}
-    
+          {% endblock pagebody %}
+
 
         </div>
         <!-- content-wrapper ends -->
@@ -476,7 +484,8 @@
           <div class="d-sm-flex justify-content-center justify-content-sm-between">
             <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2020 . All rights
               reserved.</span>
-            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">INNOGR - Innovations For Agriculture</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">INNOGR - Innovations For
+              Agriculture</span>
           </div>
         </footer>
         <!-- partial -->
@@ -506,11 +515,11 @@
 
   <!-- End custom js for this page-->
   <script src="{% static 'innogrApp/js/c3.js' %}"></script>
-  
-{% block pagejs %}
+
+  {% block pagejs %}
 
 
-{% endblock pagejs %}
+  {% endblock pagejs %}
 
 </body>
 

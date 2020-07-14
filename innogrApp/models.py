@@ -7,9 +7,13 @@ from django.urls import reverse
 
 class Post(models.Model):
     title = models.CharField(max_length=100)
+    summary = models.TextField(default = "Add Post Summary")
     content = models.TextField()
     date_posted = models.DateTimeField(default=timezone.now)
+    last_edited= models.DateTimeField(auto_now= True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
+    likes= models.IntegerField(default=0)
+    dislikes= models.IntegerField(default=0)
     
 
     def __str__(self):

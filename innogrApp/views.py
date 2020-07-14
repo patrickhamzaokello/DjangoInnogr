@@ -115,7 +115,7 @@ class PostDetailView(LoginRequiredMixin, DetailView):
 
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
-    fields = ['title', 'content']
+    fields = ['title','summary', 'content']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -123,7 +123,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 
 class PostUpdateView(LoginRequiredMixin,UserPassesTestMixin, UpdateView):
     model = Post
-    fields = ['title', 'content']
+    fields = ['title','summary', 'content']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -173,7 +173,7 @@ def Accountsettings(request):
             u_form.save()
             p_form.save()
             messages.success(request, f'Your Account has been updated')
-            return redirect('profilepage')
+            return redirect('profile-posts',kwargs={'user':user.username})
     
     else:
         u_form = UserUpdateForm(instance=request.user)

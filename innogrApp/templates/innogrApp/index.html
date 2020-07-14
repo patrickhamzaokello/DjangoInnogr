@@ -217,10 +217,10 @@
               <p>{{post.date_posted|date:"F d, Y"}}</p>
             </div>
           </div>
-          <h6 class="mb-2"><a href="{% url 'post-detail' post.id %}">{{post.title}}</a></h6>
+          <a class="d-block h5 mb-1" href="{% url 'post-detail' post.id %}">{{post.title}}</a>
 
           <p class="mb-0 text-muted">
-            {{post.content}}
+            {{post.summary}}
           </p>
           <div class="post-button">
             <p class="small text-muted mt-2 mb-0">
