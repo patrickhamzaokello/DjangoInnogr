@@ -171,7 +171,7 @@
             </div>
           </li>
           <li class="nav-item nav-profile dropdown">
-            <a class="nav-link dropdown-toggle" href="{% url 'user-posts' user.username %}" data-toggle="dropdown"
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
               id="profileDropdown">
               <img src="{{ user.profile.image.url }}" alt="profile" />
             </a>
@@ -389,7 +389,7 @@
             {% endblock activelink %}
             <div class="nav-link">
               <div class="profile-image">
-                <a href="{% url 'user-posts' user.username %}">
+                <a href="{% url  'profile-posts' user.username  %}">
                   <img src="{{ user.profile.image.url }}" alt="image" />
                 </a>
               </div>

@@ -74,11 +74,11 @@
                                             src="{{ user.profile.image.url }}" alt="profile">
                                         <div class="wrapper ml-3">
                                             <h6 class="mb-1"><a href="{% url 'user-posts' user.username %}">{{user.username}}</a></h6>
-                                            <small class="text-muted mb-0"><i class="fas fa-map-marker-alt mr-1"></i>
+                                            <small class="text-muted mb-0"><i class="fas far fa-envelope-open mr-1"></i>
                                                 {{user.email}}</small>
                                         </div>
                                         <div class="badge badge-pill badge-info ml-auto px-1 py-1"><i
-                                                class="fas fa-plus font-weight-bold"></i></div>
+                                                class="fas far fa-user-circle font-weight-bold"></i></div>
                                     </div>
                                    
                                     {% endfor %}

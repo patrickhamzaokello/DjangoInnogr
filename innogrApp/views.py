@@ -144,6 +144,111 @@ class PostDeleteView(LoginRequiredMixin,UserPassesTestMixin,DeleteView):
         if self.request.user == post.author:
             return True
         return False
+    
+@login_required
+def postpreference(request, postid, userpreference):
+        
+        if request.method == "POST":
+                eachpost= get_object_or_404(Post, id=postid)
+
+                obj=''
+
+                valueobj=''
+
+                try:
+                        obj= Preference.objects.get(user= request.user, post= eachpost)
+
+                        valueobj= obj.value #value of userpreference
+
+
+                        valueobj= int(valueobj)
+
+                        userpreference= int(userpreference)
+                
+                        if valueobj != userpreference:
+                                obj.delete()
+
+
+                                upref= Preference()
+                                upref.user= request.user
+
+                                upref.post= eachpost
+
+                                upref.value= userpreference
+
+
+                                if userpreference == 1 and valueobj != 1:
+                                        eachpost.likes += 1
+                                        eachpost.dislikes -=1
+                                elif userpreference == 2 and valueobj != 2:
+                                        eachpost.dislikes += 1
+                                        eachpost.likes -= 1
+                                
+
+                                upref.save()
+
+                                eachpost.save()
+                        
+                        
+                                context= {'eachpost': eachpost,
+                                  'postid': postid}
+
+                                return render (request, 'innogrApp/post_detail.html', context)
+
+                        elif valueobj == userpreference:
+                                obj.delete()
+                        
+                                if userpreference == 1:
+                                        eachpost.likes -= 1
+                                elif userpreference == 2:
+                                        eachpost.dislikes -= 1
+
+                                eachpost.save()
+
+                                context= {'eachpost': eachpost,
+                                  'postid': postid}
+
+                                return render (request, 'innogrApp/post_detail.html', context)
+                                
+                        
+        
+                
+                except Preference.DoesNotExist:
+                        upref= Preference()
+
+                        upref.user= request.user
+
+                        upref.post= eachpost
+
+                        upref.value= userpreference
+
+                        userpreference= int(userpreference)
+
+                        if userpreference == 1:
+                                eachpost.likes += 1
+                        elif userpreference == 2:
+                                eachpost.dislikes +=1
+
+                        upref.save()
+
+                        eachpost.save()                            
+
+
+                        context= {'eachpost': eachpost,
+                          'postid': postid}
+
+                        return render (request, 'innogrApp/post_detail.html', context)
+
+
+        else:
+                eachpost= get_object_or_404(Post, id=postid)
+                context= {'eachpost': eachpost,
+                          'postid': postid}
+
+                return render (request, 'innogrApp/post_detail.html', context)
+            
+            
+            
 
 @login_required
 def mydevices(request):
@@ -156,12 +261,12 @@ def newsFeed(request):
     }
     return render(request,'innogrApp/pages/newsfeed.html', context)
 
-@login_required
-def profilepage(request):
-    mypost = {
-        'posts': Post.objects.all().order_by('-date_posted')
-    }
-    return render(request, 'innogrApp/pages/profile/overview.html',mypost)
+# @login_required
+# def profilepage(request):
+#     mypost = {
+#         'posts': Post.objects.all().order_by('-date_posted')
+#     }
+#     return render(request, 'innogrApp/pages/profile/overview.html',mypost)
 
 @login_required
 def Accountsettings(request):
@@ -173,7 +278,7 @@ def Accountsettings(request):
             u_form.save()
             p_form.save()
             messages.success(request, f'Your Account has been updated')
-            return redirect('profile-posts',kwargs={'user':user.username})
+            return redirect('profile-posts', user= request.user.username)
     
     else:
         u_form = UserUpdateForm(instance=request.user)

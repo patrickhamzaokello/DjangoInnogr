@@ -1,4 +1,5 @@
 from django.contrib.auth import admin
+from django.conf.urls import url
 from django.urls import path
 from .views import (
     PostListView,
@@ -7,7 +8,8 @@ from .views import (
     PostUpdateView,
     PostDeleteView,
     UserPostListView,
-    UserProfileListView
+    UserProfileListView,
+    postpreference,
 )
 
 from . import views
@@ -21,14 +23,16 @@ urlpatterns = [
     path('post/<int:pk>/delete/', PostDeleteView.as_view(), name='post-delete'),
     path('user/<str:username>', UserPostListView.as_view(), name='user-posts'),
     path('profile/<str:user>', UserProfileListView.as_view(), name='profile-posts'),
-
+    # url(r'^(?P<postid>\d+)/preference/(?P<userpreference>\d+)/$', postpreference, name='postpreference'),
+    path('posts/<int:postid>/preference/<int:userpreference>', views.postpreference, name='postpreference'),
+    
 
 
 
 
     path('myDevices', views.mydevices, name='MyDevices'),
     path('newsFeed', views.newsFeed, name='MynewsFeed'),
-    path('Profile/Overview', views.profilepage, name='profilepage'),
+    # path('Profile/Overview', views.profilepage, name='profilepage'),
     path('Profile/Settings', views.Accountsettings, name='Accountsettings'),
     path('Resources/Support', views.Resources, name='Resources'),
 
