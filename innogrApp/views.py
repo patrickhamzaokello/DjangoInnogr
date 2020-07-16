@@ -193,7 +193,7 @@ def postpreference(request, postid, userpreference):
                                 context= {'eachpost': eachpost,
                                   'postid': postid}
 
-                                return render (request, 'innogrApp/post_detail.html', context)
+                                return render (request, 'innogrApp/index.html', context)
 
                         elif valueobj == userpreference:
                                 obj.delete()
@@ -208,7 +208,7 @@ def postpreference(request, postid, userpreference):
                                 context= {'eachpost': eachpost,
                                   'postid': postid}
 
-                                return render (request, 'innogrApp/post_detail.html', context)
+                                return render (request, 'innogrApp/index.html', context)
                                 
                         
         
@@ -237,7 +237,7 @@ def postpreference(request, postid, userpreference):
                         context= {'eachpost': eachpost,
                           'postid': postid}
 
-                        return render (request, 'innogrApp/post_detail.html', context)
+                        return render (request, 'innogrApp/index.html', context)
 
 
         else:
@@ -245,7 +245,7 @@ def postpreference(request, postid, userpreference):
                 context= {'eachpost': eachpost,
                           'postid': postid}
 
-                return render (request, 'innogrApp/post_detail.html', context)
+                return render (request, 'innogrApp/index.html', context)
             
             
             
