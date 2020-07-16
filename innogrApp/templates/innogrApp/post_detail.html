@@ -47,12 +47,12 @@
                         This Post</a> {{object.dislikes}}
 
 
-                    <form id="likebutton" method="POST" action="/posts/{{object.id}}/preference/1/">
+                    <form id="likebutton" method="POST" action="{% url 'postpreference' object.id 1 %}">
                         {% csrf_token %}
                         <input type="hidden">
                     </form>
 
-                    <form id="dislikebutton" method="POST" action="/posts/{{object.id}}/preference/2/">
+                    <form id="dislikebutton" method="POST" action="/posts/{{object.id}}/preference/2">
                         {% csrf_token %}
                         <input type="hidden">
                     </form>
