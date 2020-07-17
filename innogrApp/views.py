@@ -147,6 +147,8 @@ class PostDeleteView(LoginRequiredMixin,UserPassesTestMixin,DeleteView):
     
 @login_required
 def postpreference(request, postid, userpreference):
+
+    
         
         if request.method == "POST":
                 eachpost= get_object_or_404(Post, id=postid)
@@ -193,7 +195,7 @@ def postpreference(request, postid, userpreference):
                                 context= {'eachpost': eachpost,
                                   'postid': postid}
 
-                                return render (request, 'innogrApp/index.html', context)
+                                return redirect('post-detail',pk=postid)
 
                         elif valueobj == userpreference:
                                 obj.delete()
@@ -208,7 +210,7 @@ def postpreference(request, postid, userpreference):
                                 context= {'eachpost': eachpost,
                                   'postid': postid}
 
-                                return render (request, 'innogrApp/index.html', context)
+                                return redirect('post-detail',pk=postid)
                                 
                         
         
@@ -237,7 +239,7 @@ def postpreference(request, postid, userpreference):
                         context= {'eachpost': eachpost,
                           'postid': postid}
 
-                        return render (request, 'innogrApp/index.html', context)
+                        return redirect('post-detail',pk=postid)
 
 
         else:
@@ -245,7 +247,7 @@ def postpreference(request, postid, userpreference):
                 context= {'eachpost': eachpost,
                           'postid': postid}
 
-                return render (request, 'innogrApp/index.html', context)
+                return redirect('post-detail',pk=postid)
             
             
             
