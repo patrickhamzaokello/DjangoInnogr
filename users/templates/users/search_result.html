@@ -3,23 +3,28 @@
 {% block pagebody %}
 
 {% if results %}
-<div class="py-4">
-    <div class="card">
-        <div class="card-body">
-            <h4 class="card-title">Users Found</h4>
-            {% for user in results %}
-            <div class="wrapper d-flex align-items-center py-2 border-bottom">
-                <img class="img-sm rounded-circle" src="{{ user.profile.image.url }}" alt="profile">
-                <div class="wrapper ml-3">
-                    <h6 class="mb-1"><a href="{% url 'user-posts' user.username %}">{{user.username}}</a></h6>
-                    <small class="text-muted mb-0"><i class="fas fa-map-marker-alt mr-1"></i>
-                        {{user.email}}</small>
-                </div>
-                <div class="badge badge-pill badge-info ml-auto px-1 py-1"><i class="fas fa-plus font-weight-bold"></i>
+<div class="row">
+    <div class="col-md-8 h-100">
+        <div class="py-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Users Found</h4>
+                    {% for user in results %}
+                    <div class="wrapper d-flex align-items-center py-2 border-bottom">
+                        <img class="img-sm rounded-circle" src="{{ user.profile.image.url }}" alt="profile">
+                        <div class="wrapper ml-3">
+                            <h6 class="mb-1"><a href="{% url 'user-posts' user.username %}">{{user.username}}</a></h6>
+                            <small class="text-muted mb-0"><i class="fas fa-map-marker-alt mr-1"></i>
+                                {{user.email}}</small>
+                        </div>
+                        <div class="badge badge-pill badge-info ml-auto px-1 py-1"><i
+                                class="fas fa-plus font-weight-bold"></i>
+                        </div>
+                    </div>
+
+                    {% endfor %}
                 </div>
             </div>
-
-            {% endfor %}
         </div>
     </div>
 </div>
@@ -35,7 +40,7 @@
 <div class="row">
     <div class="col-md-8 h-100">
         <h6 class="card-title">
-            Current Trends In Agriculture
+            User Posts
         </h6>
         <div id="profile-list-left" class="py-2">
             {% for post in posts %}
@@ -51,10 +56,10 @@
                             <p>{{post.date_posted|date:"F d, Y"}}</p>
                         </div>
                     </div>
-                   <a class="d-block h4 mb-0"href="{% url 'post-detail' post.id %}">{{post.title}}</a>
+                    <a class="d-block h4 mb-0" href="{% url 'post-detail' post.id %}">{{post.title}}</a>
 
                     <p class="mb-0 text-muted">
-                        {{post.content}}
+                        {{post.summary}}
                     </p>
                     <div class="post-button">
                         <p class="small text-muted mt-2 mb-0">

@@ -18497,6 +18497,10 @@ input:focus {
   -webkit-transition-property: color;
 }
 
+.django-ckeditor-widget{
+  width: 100%;
+}
+
 .sidebar .nav .nav-item .nav-link i {
   color: inherit;
 }
@@ -27002,7 +27006,7 @@ body.avgrund-active {
   content: "";
   width: 23px;
   height: 23px;
-  background: #392C70;
+  background: #f44336;
   border-radius: 4px;
   display: block;
   margin: auto;

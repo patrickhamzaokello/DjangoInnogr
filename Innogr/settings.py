@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'crispy_forms',
     'ckeditor',
+    'ckeditor_uploader',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -133,6 +134,15 @@ django_heroku.settings(locals())
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+CKEDITOR_UPLOAD_PATH = '/uploads/'
+
+CKEDITOR_CONFIGS = {
+    'default':{
+        'width':'100%',
+        'height': 500
+    }
+}
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 

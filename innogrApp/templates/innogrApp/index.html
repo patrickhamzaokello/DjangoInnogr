@@ -200,50 +200,44 @@
 
 <div class="row">
   <div class="col-md-8 h-100">
-    <h6 class="card-title">
-      <i class="fa fa-signal"></i>
-      Most Liked Posts
-    </h6>
-    <div id="profile-list-left" class="py-2">
-      {% for post in posts %}
+    {% for post in posts %}
 
-      <div class="card rounded mb-2">
-        <div class="card-body p-3">
-          <div class="media">
-            <img src="{{ post.author.profile.image.url }}" alt="image" class="img-pk mr-3 mb-3 rounded-circle">
-            <div class="media-body">
-              <h6 class="mb-1"><a href="{% url 'user-posts' post.author.username %}">{{post.author}}</a></h6>
-              <p>{{post.date_posted|date:"F d, Y"}}</p>
-            </div>
+    <div class="card rounded mb-2">
+      <div class="card-body p-3">
+        <div class="media">
+          <img src="{{ post.author.profile.image.url }}" alt="image" class="img-pk mr-3 mb-3 rounded-circle">
+          <div class="media-body">
+            <h6 class="mb-1"><a href="{% url 'user-posts' post.author.username %}">{{post.author}}</a></h6>
+            <p>{{post.date_posted|date:"F d, Y"}}</p>
           </div>
-          <a class="d-block h5 mb-1" href="{% url 'post-detail' post.id %}">{{post.title}}</a>
-
-          <p class="mb-0 text-muted">
-            {{post.summary}}
-          </p>
-          <div class="post-button">
-            <p class="small text-muted mt-2 mb-0">
-              <span class="likecss">
-                <i onClick="document.getElementById('likebutton').submit()" class="fa fa-heart mr-1"></i>{{post.likes}}
-              </span>
-              <span class="ml-2 dislikecss">
-                <i onClick="document.getElementById('dislikebutton').submit()"
-                  class="fa fa-thumbs-down mr-1"></i>{{post.dislikes}}
-              </span>
-              <span class="ml-2 postmore">
-                <a href="{% url 'post-detail' post.id %}" class="fa fa-ellipsis-h"></a>
-              </span>
-            </p>
-          </div>
-
-
         </div>
+        <a class="d-block h5 mb-1" href="{% url 'post-detail' post.id %}">{{post.title}}</a>
+
+        <p class="mb-0 text-muted">
+          {{post.summary}}
+        </p>
+        <div class="post-button">
+          <p class="small text-muted mt-2 mb-0">
+            <span class="">
+              <i onClick="document.getElementById('likebutton').submit()" class="fa fa-heart mr-1"></i>{{post.likes}}
+            </span>
+            <span class="ml-2 ">
+              <i onClick="document.getElementById('dislikebutton').submit()"
+                class="fa fa-thumbs-down mr-1"></i>{{post.dislikes}}
+            </span>
+            <span class="ml-2 postmore">
+              <a href="{% url 'post-detail' post.id %}" class="fa fa-ellipsis-h"></a>
+            </span>
+          </p>
+        </div>
+
 
       </div>
 
-      {% endfor %}
-
     </div>
+
+    {% endfor %}
+
 
     {% if is_paginated %}
     <nav>
@@ -276,113 +270,13 @@
 
   </div>
   <div class="col-md-4 h-100">
-    <h6 class="card-title">
-      <i class="fa fa-bell"></i>
-      Recent Posts</h6>
-    <div id="profile-list-right" class="py-2">
-      <div class="card rounded mb-2">
-        <div class="card-body p-3">
-          <div class="media">
-            <img src="{% static 'innogrApp/images/faces/face5.jpg' %}" alt="image" class="img-sm mr-3 rounded-circle">
-            <div class="media-body">
-              <h6 class="mb-1">Keto Philip</h6>
-              <p class="mb-0 text-muted">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum maiores, sint quos
-                perferendis itaque libero doloribus alias minus vero laudantium ea excepturi nam, magnam animi
-                possimus reiciendis dolor incidunt atque.
-              </p>
-              <p class="small text-muted mt-2 mb-0">
-                <span>
-                  <i class="fa fa-star mr-1"></i>4
-                </span>
-                <span class="ml-2">
-                  <i class="fa fa-comment mr-1"></i>11
-                </span>
-                <span class="ml-2">
-                  <i class="fa fa-mail-reply"></i>
-                </span>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card rounded mb-2">
-        <div class="card-body p-3">
-          <div class="media">
-            <img src="{% static 'innogrApp/images/faces/face6.jpg' %}" alt="image" class="img-sm mr-3 rounded-circle">
-            <div class="media-body">
-              <h6 class="mb-1">Jacob Stephen</h6>
-              <p class="mb-0 text-muted">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur modi error fugit fuga,
-                consequatur, similique unde porro id esse magnam quas natus tempore. Amet repellendus optio
-                harum delectus nam modi?
-              </p>
-              <p class="small text-muted mt-2 mb-0">
-                <span>
-                  <i class="fa fa-star mr-1"></i>4
-                </span>
-                <span class="ml-2">
-                  <i class="fa fa-comment mr-1"></i>11
-                </span>
-                <span class="ml-2">
-                  <i class="fa fa-mail-reply"></i>
-                </span>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card rounded mb-2">
-        <div class="card-body p-3">
-          <div class="media">
-            <img src="{% static 'innogrApp/images/faces/face7.jpg' %}" alt="image" class="img-sm mr-3 rounded-circle">
-            <div class="media-body">
-              <h6 class="mb-1">March Creg</h6>
-              <p class="mb-0 text-muted">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, veniam rem facilis repellat
-                accusamus dicta modi dolores id nam magnam atque odio mollitia et minus, quibusdam, quod
-                delectus dolorum quaerat!
-              </p>
-              <p class="small text-muted mt-2 mb-0">
-                <span>
-                  <i class="fa fa-star mr-1"></i>4
-                </span>
-                <span class="ml-2">
-                  <i class="fa fa-comment mr-1"></i>11
-                </span>
-                <span class="ml-2">
-                  <i class="fa fa-mail-reply"></i>
-                </span>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card rounded mb-2">
-        <div class="card-body p-3">
-          <div class="media">
-            <img src="{% static 'innogrApp/images/faces/face8.jpg' %}" alt="image" class="img-sm mr-3 rounded-circle">
-            <div class="media-body">
-              <h6 class="mb-1">Peter Beckham</h6>
-              <p class="mb-0 text-muted">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque quis quidem amet beatae
-                adipisci cumque quisquam, rerum unde nostrum asperiores consequuntur ex? Exercitationem totam
-                dicta culpa libero quisquam eveniet. Fugiat.
-              </p>
-              <p class="small text-muted mt-2 mb-0">
-                <span>
-                  <i class="fa fa-star mr-1"></i>4
-                </span>
-                <span class="ml-2">
-                  <i class="fa fa-comment mr-1"></i>11
-                </span>
-                <span class="ml-2">
-                  <i class="fa fa-mail-reply"></i>
-                </span>
-              </p>
-            </div>
-          </div>
-        </div>
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">
+          <i class="fas fa-calendar-alt"></i>
+          Calendar
+        </h4>
+        <div id="inline-datepicker-example" class="datepicker"></div>
       </div>
     </div>
   </div>

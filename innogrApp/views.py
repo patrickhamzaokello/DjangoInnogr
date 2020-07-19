@@ -23,7 +23,7 @@ class PostListView(LoginRequiredMixin, ListView):
     template_name = 'innogrApp/index.html' #<app>/<model>_<viewtype>.html
     context_object_name = 'posts'
     ordering = ['-likes']
-    paginate_by = 5
+    paginate_by = 6
 
     def get_context_data(self, **kwargs):
         data = super().get_context_data(**kwargs)
@@ -111,6 +111,7 @@ class UserProfileListView(LoginRequiredMixin, ListView):
 
 class PostDetailView(LoginRequiredMixin, DetailView):
     model = Post
+    template_name = 'innogrApp/pages/post_detail.html'
 
 
 class PostCreateView(LoginRequiredMixin, CreateView):
@@ -256,19 +257,34 @@ def postpreference(request, postid, userpreference):
 def mydevices(request):
     return render(request,'innogrApp/pages/mydevices.html')
 
-@login_required
-def newsFeed(request):
-    context = {
-        'posts': Post.objects.all().order_by('-date_posted'),
-    }
-    return render(request,'innogrApp/pages/newsfeed.html', context)
+class NewsFeedPostListView(LoginRequiredMixin, ListView):
+    model = Post
+    template_name = 'innogrApp/pages/newsfeed.html' #<app>/<model>_<viewtype>.html
+    context_object_name = 'posts'
+    ordering = ['-date_posted']
+    paginate_by = 5
+    
+    def get_context_data(self, **kwargs):
+        data = super().get_context_data(**kwargs)
 
-# @login_required
-# def profilepage(request):
-#     mypost = {
-#         'posts': Post.objects.all().order_by('-date_posted')
-#     }
-#     return render(request, 'innogrApp/pages/profile/overview.html',mypost)
+        all_users = []
+        data_counter = Post.objects.exclude(author=self.request.user).values('author')\
+            .annotate(author_count=Count('author'))\
+            .order_by('-author_count')
+
+        for aux in data_counter:
+            all_users.append(User.objects.filter(pk=aux['author']).first())
+        # if Preference.objects.get(user = self.request.user):
+        #     data['preference'] = True
+        # else:
+        #     data['preference'] = False
+        data['preference'] = Preference.objects.all()
+        # print(Preference.objects.get(user= self.request.user))
+        data['all_users'] = all_users
+        print(all_users, file=sys.stderr)
+        return data
+
+
 
 @login_required
 def Accountsettings(request):
