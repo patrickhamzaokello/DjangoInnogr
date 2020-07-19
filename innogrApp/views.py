@@ -171,7 +171,35 @@ class PostDeleteView(LoginRequiredMixin,UserPassesTestMixin,DeleteView):
         if self.request.user == post.author:
             return True
         return False
+
+class NewsFeedPostListView(LoginRequiredMixin, ListView):
+    model = Post
+    template_name = 'innogrApp/pages/newsfeed.html' #<app>/<model>_<viewtype>.html
+    context_object_name = 'posts'
+    ordering = ['-date_posted']
+    paginate_by = 5
     
+    def get_context_data(self, **kwargs):
+        data = super().get_context_data(**kwargs)
+
+        all_users = []
+        data_counter = Post.objects.exclude(author=self.request.user).values('author')\
+            .annotate(author_count=Count('author'))\
+            .order_by('-author_count')
+
+        for aux in data_counter:
+            all_users.append(User.objects.filter(pk=aux['author']).first())
+        # if Preference.objects.get(user = self.request.user):
+        #     data['preference'] = True
+        # else:
+        #     data['preference'] = False
+        data['preference'] = Preference.objects.all()
+        # print(Preference.objects.get(user= self.request.user))
+        data['all_users'] = all_users
+        print(all_users, file=sys.stderr)
+        return data
+
+
 @login_required
 def postpreference(request, postid, userpreference):
 
@@ -280,34 +308,6 @@ def postpreference(request, postid, userpreference):
 @login_required
 def mydevices(request):
     return render(request,'innogrApp/pages/mydevices.html')
-
-class NewsFeedPostListView(LoginRequiredMixin, ListView):
-    model = Post
-    template_name = 'innogrApp/pages/newsfeed.html' #<app>/<model>_<viewtype>.html
-    context_object_name = 'posts'
-    ordering = ['-date_posted']
-    paginate_by = 5
-    
-    def get_context_data(self, **kwargs):
-        data = super().get_context_data(**kwargs)
-
-        all_users = []
-        data_counter = Post.objects.exclude(author=self.request.user).values('author')\
-            .annotate(author_count=Count('author'))\
-            .order_by('-author_count')
-
-        for aux in data_counter:
-            all_users.append(User.objects.filter(pk=aux['author']).first())
-        # if Preference.objects.get(user = self.request.user):
-        #     data['preference'] = True
-        # else:
-        #     data['preference'] = False
-        data['preference'] = Preference.objects.all()
-        # print(Preference.objects.get(user= self.request.user))
-        data['all_users'] = all_users
-        print(all_users, file=sys.stderr)
-        return data
-
 
 
 @login_required
