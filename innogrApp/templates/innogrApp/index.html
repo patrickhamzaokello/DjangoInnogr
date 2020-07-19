@@ -201,8 +201,8 @@
 <div class="row">
   <div class="col-md-8 h-100">
     <h6 class="card-title">
-      <i class="far fa-futbol"></i>
-      Current Trends In Agriculture
+      <i class="fa fa-signal"></i>
+      Most Liked Posts
     </h6>
     <div id="profile-list-left" class="py-2">
       {% for post in posts %}
@@ -223,21 +223,20 @@
           </p>
           <div class="post-button">
             <p class="small text-muted mt-2 mb-0">
-              <span>
-                <i class="fa fa-star mr-1"></i>{{post.likes}}
+              <span class="likecss">
+                <i onClick="document.getElementById('likebutton').submit()" class="fa fa-heart mr-1"></i>{{post.likes}}
               </span>
-              <span class="ml-2">
-                <i class="fa fa-comment mr-1"></i>{{post.dislikes}}
+              <span class="ml-2 dislikecss">
+                <i onClick="document.getElementById('dislikebutton').submit()"
+                  class="fa fa-thumbs-down mr-1"></i>{{post.dislikes}}
               </span>
-
-              <span class="ml-2">
-                <i class="fa  fa-ellipsis-h mr-1"></i>
+              <span class="ml-2 postmore">
+                <a href="{% url 'post-detail' post.id %}" class="fa fa-ellipsis-h"></a>
               </span>
             </p>
-
           </div>
 
-        
+
         </div>
 
       </div>
@@ -278,7 +277,7 @@
   </div>
   <div class="col-md-4 h-100">
     <h6 class="card-title">
-      <i class="far fa-futbol"></i>
+      <i class="fa fa-bell"></i>
       Recent Posts</h6>
     <div id="profile-list-right" class="py-2">
       <div class="card rounded mb-2">

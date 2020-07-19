@@ -21,7 +21,8 @@
                         <div class="media-body">
                             <h6 class="mb-1"><a href="{% url 'user-posts' post.author.username %}">
                                     {{object.author}}</a></h6>
-                            <p>{{object.date_posted|date:"F d, Y"}}</p>
+                            <p>Date Posted:{{object.date_posted|date:"F d, Y"}}</p>
+
 
                         </div>
                         <div class="post-button">
@@ -38,14 +39,27 @@
                         </div>
                     </div>
                     <a class="d-block h4 mb-1">{{object.title}}</a>
+                    <p>Last Edit:{{object.last_edited}}</p>
+                    <div class="post-button">
+                        <p class="small text-muted mt-2 mb-0">
+                            <span class="likecss">
+                                <i onClick="document.getElementById('likebutton').submit()" class="fa fa-heart mr-1"></i>{{object.likes}}
+                            </span>
+                            <span class="ml-2 dislikecss">
+                                <i onClick="document.getElementById('dislikebutton').submit()" class="fa fa-thumbs-down mr-1"></i>{{object.dislikes}}
+                            </span>
+                            <span class="ml-2">
+                                <i class="fa fa-mail-reply"></i>
+                            </span>
+                        </p>
+                    </div>
+
                     <h5 class="mb-2 mt-4">Abstract</h5>
                     <p class="mb-5 text-muted">
                         {{object.summary}}
                     </p>
 
-                    <a href="#" onClick="document.getElementById('likebutton').submit()">Like This Post</a>
-                    {{object.likes}} | <a href="#" onClick="document.getElementById('dislikebutton').submit()">Dislike
-                        This Post</a> {{object.dislikes}}
+                   
 
 
                     <form id="likebutton" method="POST" action="{% url 'postpreference' object.id 1 %}">
@@ -62,22 +76,11 @@
 
                     <h5 class="mb-2 mt-4">Content</h5>
                     <p class="mb-0 text-muted">
-                        {{object.content}}
+                        
+                        {{object.content|safe}}
+
                     </p>
-                    <div class="post-button">
-                        <p class="small text-muted mt-2 mb-0">
-                            <span>
-                                <i class="fa fa-star mr-1"></i>4
-                            </span>
-                            <span class="ml-2">
-                                <i class="fa fa-comment mr-1"></i>11
-                            </span>
-                            <span class="ml-2">
-                                <i class="fa fa-mail-reply"></i>
-                            </span>
-                        </p>
-                        <button type="button" class="btn btn-info btn-fw btn-sm">More</button>
-                    </div>
+                   
                 </div>
 
             </div>

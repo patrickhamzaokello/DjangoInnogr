@@ -29417,4 +29417,19 @@ div.tagsinput span.tag a {
   margin-right: 0;
 }
 
+
+.likecss{
+  color: red;
+  font-size: medium;
+}
+
+.dislikecss{
+  font-size: medium;
+  color: #ff9800;
+}
+
+.postmore {
+  font-size: medium;
+}
+
 /*# sourceMappingURL=maps/style.css.map */

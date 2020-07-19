@@ -19,7 +19,9 @@
                 <form class="forms-sample" method="POST">
                     {% csrf_token %}
                     <div class="form-group">
+                        {{form.media}}
                         {{form|crispy}}
+                        
                     </div>
                     <button type="submit" class="btn btn-primary mr-2">Post</button>
                     <button class="btn btn-light">Cancel</button>

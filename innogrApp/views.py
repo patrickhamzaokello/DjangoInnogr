@@ -22,7 +22,7 @@ class PostListView(LoginRequiredMixin, ListView):
     model = Post
     template_name = 'innogrApp/index.html' #<app>/<model>_<viewtype>.html
     context_object_name = 'posts'
-    ordering = ['-date_posted']
+    ordering = ['-likes']
     paginate_by = 5
 
     def get_context_data(self, **kwargs):

@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'innogrApp.apps.InnograppConfig',
     'users.apps.UsersConfig',
     'crispy_forms',
+    'ckeditor',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
