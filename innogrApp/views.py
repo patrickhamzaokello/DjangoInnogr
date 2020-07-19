@@ -130,6 +130,14 @@ class UserProfileListView(LoginRequiredMixin, ListView):
 class PostDetailView(LoginRequiredMixin, DetailView):
     model = Post
     template_name = 'innogrApp/pages/post_detail.html'
+   
+    
+    def get_context_data(self, **kwargs):
+        data = super().get_context_data(**kwargs)
+        posts = Post.objects.exclude(author=self.request.user).order_by('-likes')
+        data['posts'] = posts
+        paginate_by = 4
+        return data
 
 
 class PostCreateView(LoginRequiredMixin, CreateView):
