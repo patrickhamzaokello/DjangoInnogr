@@ -24,6 +24,14 @@ class Post(models.Model):
     def get_absolute_url(self):
         return reverse('post-detail', kwargs={'pk':self.pk})
 
+class NewsArticle(models.Model):
+    title = models.CharField(max_length=300)
+    link = models.CharField(max_length=300)
+    newsdate = models.CharField(max_length=300)
+    def __str__(self):
+        return self.title
+    
+
 class Comment(models.Model):
     content = models.TextField(max_length=150)
     date_posted = models.DateTimeField(default=timezone.now)
