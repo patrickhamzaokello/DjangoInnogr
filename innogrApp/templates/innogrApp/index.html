@@ -239,7 +239,7 @@
     {% endfor %}
 
 
-    {% if is_paginated %}
+    {% if page_obj.has_other_pages %}
     <nav>
       <ul class="pagination separated pagination-danger">
         {% if page_obj.has_previous %}
@@ -278,6 +278,16 @@
         </h4>
         <div id="inline-datepicker-example" class="datepicker"></div>
       </div>
+    </div>
+    <div class="fc-external-events">
+      {% for news in allnews_list %}
+      <div class='fc-event' href=" {{ news.1}}">
+        <p> {{ news.0}}</p>
+        <p class="small-text"></p>
+        <p class="text-muted mb-0"> {{ news.2}}</p>
+      </div>
+      {% endfor %}
+      
     </div>
   </div>
 </div>
