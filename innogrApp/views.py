@@ -24,6 +24,7 @@ news_url = "https://news.google.com/rss?hl=en-UG&gl=UG&ceid=UG:en"
 
 
 # Create your views here.
+@login_required
 def dashboard(request):
     posts = Post.objects.order_by('-likes')[0:6]
     news = NewsArticle.objects.all()[0:15]

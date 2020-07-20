@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<!-- Mirrored from www.urbanui.com/melody/template/pages/layout/horizontal-menu.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 15 Sep 2018 06:05:55 GMT -->
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Innogr App</title>
+    <link rel="icon" href="{% static 'innogrApp/images/logo-mini-fav.svg' %}" type="image/svg">
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="{% static 'innogrApp/vendors/iconfonts/font-awesome/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'innogrApp/vendors/css/vendor.bundle.base.css' %}">
+    <link rel="stylesheet" href="{% static 'innogrApp/vendors/css/vendor.bundle.addons.css' %}">
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="{% static 'innogrApp/css/style.css' %}">
+    <!-- endinject -->
+</head>
+
+<body class="horizontal-menu">
+    <div class="container-scroller">
+        <nav class="navbar horizontal-layout-navbar fixed-top navbar-expand-lg">
+            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
+                <a class="navbar-brand brand-logo" href="{% url 'innogrhome' %}"><img
+                        src="{% static 'innogrApp/images/logo.svg' %}" alt="logo" /></a>
+                <a class="navbar-brand brand-logo-mini" href="{% url 'innogrhome' %}"><img
+                        src="{% static 'innogrApp/images/logo-mini.svg' %}" alt="logo" /></a>
+            </div>
+            <div class="navbar-menu-wrapper d-flex flex-grow">
+                <ul class="navbar-nav navbar-nav-left collapse navbar-collapse" id="horizontal-top-example">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="projects-dropdown"
+                            data-toggle="dropdown" aria-expanded="false">
+                            Services
+                        </a>
+                        <div class="dropdown-menu navbar-dropdown" aria-labelledby="projects-dropdown">
+                            <a class="dropdown-item" href="#">
+                                <i class="mdi mdi-laptop-mac mr-2 text-primary"></i>
+                                Agro Business
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">
+                                <i class="mdi mdi-database mr-2 text-primary"></i>
+                                Agriculture IOT
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">
+                                <i class="mdi mdi-cellphone-android mr-2 text-primary"></i>
+                                Farming
+                            </a>
+                        </div>
+                    </li>
+                   
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Documentation
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Tutorials
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Contact Us
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav navbar-nav-right">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'register' %}">
+                                Create Account
+
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">
+                                Sign In
+
+                        </a>
+                    </li>
+                    <li class="nav-item nav-search">
+                        <div class="nav-link">
+                            <div class="search-field d-none d-md-block">
+                                <form class="d-flex align-items-stretch h-100" action="#">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="fas fa-search"></i>
+                                            </span>
+                                        </div>
+                                        <input type="text" class="form-control" placeholder="Search your projects ...">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}">
+                            <i class="fas fa-power-off font-weight-bold icon-sm"></i>
+                        </a>
+                    </li>
+                </ul>
+                <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center ml-auto" type="button"
+                    data-toggle="collapse" data-target="#horizontal-top-example">
+                    <span class="fa fa-bars"></span>
+                </button>
+            </div>
+        </nav>
+        <div class="container-fluid page-body-wrapper">
+            <div class="main-panel">
+                <div class="innogrcontent-wrapper">
+                    <div class="page-header">
+                        <h3 class="page-title">
+                            Innogr Products
+                        </h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 grid-margin stretch-card">
+                            <div class="card text-center">
+                                <img class="card-img-top" src="/static/innogrApp/images/government/farmer.jpg"
+                                    alt="Card image cap">
+                                <div class="card-body">
+                                    <h4 class="card-title">FARMING</h4>
+                                    <p class="card-text">Tools built for Farmers to help in project management
+                                        and collaboration of farmers. we also provide farmers with information
+                                        about general agricultural products and services they may need such as suppliers
+                                        of farmer
+                                        equipments and products, prices of commodities and the list is endless</p>
+                                    <a href="#" class="followbtn btn btn-sm mt-3 mb-4">Start Service</a>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 grid-margin stretch-card">
+                            <div class="card text-center">
+                                <img class="card-img-top" src="/static/innogrApp/images/government/tractor.jpg"
+                                    alt="Card image cap">
+                                <div class="card-body">
+                                    <h4 class="card-title">Agriculture IOT</h4>
+                                    <p class="card-text">Offering state of the art sensors and communication devices
+                                        that can easily be planted in gardens or projects that
+                                        connects to a rich dashboard with easy access and offers
+                                        more analytics and visualizations of data from the garden. farmers will view
+                                        predictions and more</p>
+                                    <a href="{% url 'blog-home' %}" class="followbtn btn btn-sm mt-3 mb-4">Start Service</a>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 grid-margin stretch-card">
+
+                            <div class="card text-center">
+                                <img class="card-img-top" src="/static/innogrApp/images/government/farmer.jpg"
+                                    alt="Card image cap">
+                                <div class="card-body">
+                                    <h4 class="card-title">Agro Business</h4>
+                                    <p class="card-text">The MOBIP project
+                                        Uganda Vision 20140 is a key strategy document for the government of Uganda
+                                        (GOU)
+                                        and
+                                        aims to make Uganda a middle-income country by 2040. The National Development
+                                        Plan
+                                        II
+                                        (NDP2) mentions the development of the livestock sector as one of these
+                                    </p>
+                                    <a href="#" class="followbtn btn btn-sm mt-3 mb-4">Start Service</a>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 grid-margin stretch-card">
+
+                            <div class="card text-center">
+                                <img class="card-img-top" src="/static/innogrApp/images/government/tractor.jpg"
+                                    alt="Card image cap">
+                                <div class="card-body">
+                                    <h4 class="card-title">Classroom</h4>
+                                    <p class="card-text">The MOBIP project
+                                        Uganda Vision 20140 is a key strategy document for the government of Uganda
+                                        (GOU)
+                                        and
+                                        aims to make Uganda a middle-income country by 2040. The National Development
+                                        Plan
+                                        II
+                                        (NDP2) mentions the development of the livestock sector as one of these
+                                    </p>
+                                    <a href="#" class="followbtn btn btn-sm mt-3 mb-4">Start Service</a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="row grid-margin">
+                        <div class="col-12">
+                            <div class="card card-statistics">
+                                <div class="card-body">
+                                    <div
+                                        class="d-flex flex-column flex-md-row align-items-center justify-content-between">
+                                        <div class="statistics-item">
+                                            <p>
+                                                <i class="icon-sm fa fa-user mr-2"></i>
+                                                New users
+                                            </p>
+                                            <h2>54000</h2>
+                                            <label class="badge badge-outline-success badge-pill">2.7% increase</label>
+                                        </div>
+                                        <div class="statistics-item">
+                                            <p>
+                                                <i class="icon-sm fas fa-hourglass-half mr-2"></i>
+                                                Avg Time
+                                            </p>
+                                            <h2>123.50</h2>
+                                            <label class="badge badge-outline-danger badge-pill">30% decrease</label>
+                                        </div>
+                                        <div class="statistics-item">
+                                            <p>
+                                                <i class="icon-sm fas fa-cloud-download-alt mr-2"></i>
+                                                Downloads
+                                            </p>
+                                            <h2>3500</h2>
+                                            <label class="badge badge-outline-success badge-pill">12% increase</label>
+                                        </div>
+                                        <div class="statistics-item">
+                                            <p>
+                                                <i class="icon-sm fas fa-check-circle mr-2"></i>
+                                                Update
+                                            </p>
+                                            <h2>7500</h2>
+                                            <label class="badge badge-outline-success badge-pill">57% increase</label>
+                                        </div>
+                                        <div class="statistics-item">
+                                            <p>
+                                                <i class="icon-sm fas fa-chart-line mr-2"></i>
+                                                Sales
+                                            </p>
+                                            <h2>9000</h2>
+                                            <label class="badge badge-outline-success badge-pill">10% increase</label>
+                                        </div>
+                                        <div class="statistics-item">
+                                            <p>
+                                                <i class="icon-sm fas fa-circle-notch mr-2"></i>
+                                                Pending
+                                            </p>
+                                            <h2>7500</h2>
+                                            <label class="badge badge-outline-danger badge-pill">16% decrease</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-lg-8 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Hoverable Table</h4>
+                                    <p class="card-description">
+                                        Add class <code>.table-hover</code>
+                                    </p>
+                                    <div class="table-responsive">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>User</th>
+                                                    <th>Product</th>
+                                                    <th>Sale</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Jacob</td>
+                                                    <td>Photoshop</td>
+                                                    <td class="text-danger"> 28.76% <i class="fa fa-arrow-down"></i>
+                                                    </td>
+                                                    <td><label class="badge badge-danger badge-pill">Pending</label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Messsy</td>
+                                                    <td>Flash</td>
+                                                    <td class="text-danger"> 21.06% <i class="fa fa-arrow-down"></i>
+                                                    </td>
+                                                    <td><label class="badge badge-warning badge-pill">In
+                                                            progress</label></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>John</td>
+                                                    <td>Premier</td>
+                                                    <td class="text-danger"> 35.00% <i class="fa fa-arrow-down"></i>
+                                                    </td>
+                                                    <td><label class="badge badge-info badge-pill">Fixed</label></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Peter</td>
+                                                    <td>After effects</td>
+                                                    <td class="text-success"> 82.00% <i class="fa fa-arrow-up"></i></td>
+                                                    <td><label class="badge badge-success badge-pill">Completed</label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Dave</td>
+                                                    <td>53275535</td>
+                                                    <td class="text-success"> 98.05% <i class="fa fa-arrow-up"></i></td>
+                                                    <td><label class="badge badge-warning badge-pill">In
+                                                            progress</label></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <i class="fas fa-calendar-alt"></i>
+                                        Calendar
+                                    </h4>
+                                    <div id="inline-datepicker-example" class="datepicker"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <!-- content-wrapper ends -->
+                <!-- partial:{% static 'innogrApp/partials/_footer.html -->
+                <footer class="footer">
+                    <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2018 <a
+                                href="https://www.urbanui.com/" target="_blank">Urbanui</a>. All rights reserved.</span>
+                        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made
+                            with <i class="far fa-heart text-danger"></i></span>
+                    </div>
+                </footer>
+                <!-- partial -->
+            </div>
+            <!-- main-panel ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+
+    <!-- plugins:js -->
+    <script src="{% static 'innogrApp/vendors/js/vendor.bundle.base.js' %}"></script>
+    <script src="{% static 'innogrApp/vendors/js/vendor.bundle.addons.js' %}"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page-->
+
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+
+    <!-- End plugin js for this page-->
+    <!-- inject:js -->
+    <script src="{% static 'innogrApp/js/off-canvas.js' %}"></script>
+    <script src="{% static 'innogrApp/js/hoverable-collapse.js' %}"></script>
+    <script src="{% static 'innogrApp/js/misc.js' %}"></script>
+    <script src="{% static 'innogrApp/js/settings.js' %}"></script>
+    <script src="{% static 'innogrApp/js/todolist.js' %}"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page-->
+    <script src="{% static 'innogrApp/js/dashboard.js' %}"></script>
+    <script src="{% static 'innogrApp/js/owl-carousel.js' %}"></script>
+
+    <!-- End custom js for this page-->
+    <script src="{% static 'innogrApp/js/c3.js' %}"></script>
+</body>
+
+
+<!-- Mirrored from www.urbanui.com/melody/template/pages/layout/horizontal-menu.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 15 Sep 2018 06:05:55 GMT -->
+
+</html>

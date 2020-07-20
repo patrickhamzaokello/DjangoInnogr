@@ -19476,7 +19476,9 @@ input:focus {
   -webkit-align-items: stretch;
   align-items: stretch;
   padding: 0 2rem;
-  background: linear-gradient(85deg, #392c70, #6a005b);
+  /* background: linear-gradient(85deg, #392c70, #6a005b); */
+  background: #125852;
+
 }
 
 .navbar.horizontal-layout-navbar .navbar-brand-wrapper .navbar-brand img {
@@ -19499,7 +19501,7 @@ input:focus {
 }
 
 .navbar.horizontal-layout-navbar .navbar-menu-wrapper .navbar-nav .nav-item .nav-link {
-  color: #abacad;
+  color: #fff;
   font-weight: 300;
 }
 
@@ -19615,7 +19617,7 @@ input:focus {
     z-index: 1;
     position: absolute;
     right: 0;
-    background: #ffffff;
+    background: #3fb549;
     top: 60px;
     width: 50%;
   }
@@ -19873,12 +19875,24 @@ html {
   flex-direction: column;
 }
 
+.innogrcontent-wrapper {
+  background: #f2f2f2;
+  padding: 1.5rem 5.7rem;
+  width: 100%;
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+}
+
 @media (max-width: 991px) {
   .main-panel {
     margin-left: 0;
     width: 100%;
   }
-}
+
+  .innogrcontent-wrapper{
+  padding: 1.5rem 0.7rem;
+  }
+}     
 
 .content-wrapper {
   background: #f2f2f2;
@@ -19887,6 +19901,8 @@ html {
   -webkit-flex-grow: 1;
   flex-grow: 1;
 }
+
+
 
 .userform-wrapper {
   /* background: #144436; */
@@ -29231,6 +29247,8 @@ div.tagsinput span.tag a {
 
 .auth .brand-logo {
   margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
 }
 
 .auth .brand-logo img {
