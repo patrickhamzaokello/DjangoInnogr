@@ -132,7 +132,7 @@
                                         <a class="d-block h5 mb-0"
                                             href="{% url 'post-detail' post.id %}">{{post.title}}</a>
                                         <p>
-                                            {{post.summary}}
+                                            {{post.summary|safe}}
                                         </p>
 
                                         <div class="post-button">

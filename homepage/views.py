@@ -24,7 +24,7 @@ def innogrhomepage(request):
     
     
     all_users = []
-    data_counter = Post.objects.exclude(author=request.user).values('author')\
+    data_counter = Post.objects.values('author')\
         .annotate(author_count=Count('author'))\
         .order_by('-author_count')\
         .first()

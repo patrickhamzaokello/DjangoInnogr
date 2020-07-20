@@ -123,7 +123,7 @@
                                     </h6>
                                     <h5 class="mb-2"><a href="{% url 'post-detail' post.id %}">{{post.title}}</a></h5>
                                     <p>
-                                        {{post.summary}}
+                                        {{post.summary|safe}}
                                     </p>
                                     
                                 </div>

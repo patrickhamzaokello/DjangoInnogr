@@ -214,7 +214,7 @@
         <a class="d-block h5 mb-1" href="{% url 'post-detail' post.id %}">{{post.title}}</a>
 
         <p class="mb-0 text-muted">
-          {{post.summary}}
+          {{post.summary|safe}}
         </p>
         <div class="post-button">
           <p class="small text-muted mt-2 mb-0">

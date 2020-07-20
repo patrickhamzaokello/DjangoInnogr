@@ -11139,9 +11139,22 @@ fieldset:disabled a {
 }
 
 .followbtn:hover{
-    background-color: #FF5722;
+  background-color: #FF5722;
   border-color: #FF5722;
   color: #fff;
+
+}
+
+.productmore {
+  background-color: #11b711;
+  border-color: #4CAF50;
+  color: #fff;
+}
+
+.productmore:hover{
+  background-color: yellow;
+  border-color:yellow;
+  color: black;
 
 }
 
