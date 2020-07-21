@@ -20413,6 +20413,10 @@ code {
   width: 40px;
 }
 
+.documentimage {
+  height: 200px;
+}
+
 .img-xs {
   width: 37px;
   height: 37px;

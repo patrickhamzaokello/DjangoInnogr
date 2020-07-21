@@ -59,4 +59,8 @@ def innogrhomepage(request):
     }
     
     return render(request,'homepage/home.html',context)
-  
+
+
+def innogrlearn(request):
+    
+    return render(request, 'homepage/learning.html')
