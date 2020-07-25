@@ -64,3 +64,12 @@ def innogrhomepage(request):
 def innogrlearn(request):
     
     return render(request, 'homepage/learning.html')
+
+def landingpage(request):
+    posts = Post.objects.order_by('-likes')[0:6]
+    
+    context = {
+        'posts':posts,
+    }
+     
+    return render(request, 'homepage/landing.html',context)

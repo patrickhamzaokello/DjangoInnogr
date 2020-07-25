@@ -33,37 +33,15 @@
             </div>
             <div class="navbar-menu-wrapper d-flex flex-grow">
                 <ul class="navbar-nav navbar-nav-left collapse navbar-collapse" id="horizontal-top-example">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" id="projects-dropdown"
-                            data-toggle="dropdown" aria-expanded="false">
-                            Services
+                    <li class="nav-item ">
+                        <a class="nav-link {% block home %}{% endblock home %} " href="{% url 'innogrhome' %}">
+                            Home
                         </a>
-                        <div class="dropdown-menu navbar-dropdown" aria-labelledby="projects-dropdown">
-                            <a class="dropdown-item" href="#">
-                                <i class="mdi mdi-laptop-mac mr-2 text-primary"></i>
-                                Agro Business
-                            </a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">
-                                <i class="mdi mdi-database mr-2 text-primary"></i>
-                                Agriculture IOT
-                            </a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">
-                                <i class="mdi mdi-cellphone-android mr-2 text-primary"></i>
-                                Farming
-                            </a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{% url 'innogrlearn' %}">
-                                <i class="mdi mdi-cellphone-android mr-2 text-primary"></i>
-                                Learn
-                            </a>
-                            
-                        </div>
+                        
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link {% block doc%}{% endblock doc%}" href="{% url 'innogrlearn' %}">
                             Documentation
                         </a>
                     </li>

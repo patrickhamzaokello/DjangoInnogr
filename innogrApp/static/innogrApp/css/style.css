@@ -19519,7 +19519,7 @@ input:focus {
 }
 
 .navbar.horizontal-layout-navbar .navbar-menu-wrapper .navbar-nav .nav-item .nav-link.active {
-  background: rgba(0, 0, 0, 0.1);
+  border-bottom: 5px solid #89ff00;
 }
 
 .navbar.horizontal-layout-navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .dropdown-toggle {
@@ -20856,7 +20856,7 @@ code {
 }
 
 .accordion.accordion-filled .card .card-header a[aria-expanded="true"] {
-  background: #0B94F7;
+  background: #E91E63;
   color: #ffffff;
 }
 
@@ -20866,7 +20866,7 @@ code {
 
 .accordion.accordion-filled .card .card-body {
   padding: 0 2rem 2rem 2rem;
-  background: #0B94F7;
+  background: #E91E63;
   color: #ffffff;
 }
 
