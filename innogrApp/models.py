@@ -23,6 +23,7 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return reverse('post-detail', kwargs={'pk':self.pk})
+    
 
 class NewsArticle(models.Model):
     title = models.CharField(max_length=300)
@@ -53,3 +54,14 @@ class Preference(models.Model):
 
     class Meta:
        unique_together = ("user", "post", "value")
+       
+class Sensor(models.Model):
+    sensorname = models.CharField(max_length=100)
+    devicename = models.CharField(max_length=100)
+    sensorvalue = models.CharField(max_length=100)
+    date_recieved = models.DateTimeField(default=timezone.now)
+    timestamp = models.DateTimeField(default=timezone.now)
+
+
+    def __str__(self):
+        return self.sensorname

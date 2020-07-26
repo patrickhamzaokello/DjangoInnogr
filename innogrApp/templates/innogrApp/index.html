@@ -84,14 +84,32 @@
       <div class="card-body">
         <h4 class="card-title">
           <i class="fas fa-chart-line"></i>
-          Temperature and Humidity Variations
+          Temperature and Light Variations
         </h4>
-        <h2 class="mb-5">42<span class="text-muted h4 font-weight-normal">&#x2103; High</span></h2>
         <canvas id="sales-chart"></canvas>
       </div>
     </div>
   </div>
 </div>
+
+
+<script>
+ 
+
+  var data = "{%for i in sensordata %}{{i.sensorvalue|escapejs}}{% if not forloop.last %},{% endif %}{% endfor %}"
+  var dataTC = "{%for i in sensordataTc %}{{i.sensorvalue|escapejs}}{% if not forloop.last %},{% endif %}{% endfor %}"
+
+ 
+  ligtsensorvalues = data.split`,`.map(x=>+x)
+  tempsensorvalues = dataTC.split`,`.map(x=>+x)
+
+  console.log("light");
+  console.log(ligtsensorvalues)
+  console.log("temp");
+  console.log(tempsensorvalues)
+ 
+</script>
+
 <div class="row">
   <div class="col-md-4 grid-margin stretch-card">
     <div class="card">

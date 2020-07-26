@@ -84,7 +84,7 @@
         datasets: [
           {
             label: 'Support',
-            data: [1500, 7030, 1050, 2300, 3510, 6800, 4500],
+            data: ligtsensorvalues,
             borderColor: [
               'red'
             ],
@@ -93,9 +93,9 @@
           },
           {
             label: 'Product',
-            data: [5500, 4080, 3050, 5600, 4510, 5300, 2400],
+            data: tempsensorvalues,
             borderColor: [
-              'orange'
+              'green'
             ],
             borderWidth: 3,
             fill: false
@@ -109,7 +109,7 @@
               drawBorder: false
             },
             ticks: {
-              stepSize: 2000,
+              stepSize: 20,
               fontColor: "#686868"
             }
           }],

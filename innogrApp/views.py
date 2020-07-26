@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from .models import Post,NewsArticle, Comment, Preference
+from .models import Post,NewsArticle, Comment, Preference,Sensor
 from django.contrib.auth.models import User
 from django.views.generic import (
     ListView, 
@@ -19,6 +19,9 @@ from urllib.request import urlopen, Request
 from bs4 import BeautifulSoup
 import requests
 
+import json
+
+
 news_url = "https://news.google.com/rss?hl=en-UG&gl=UG&ceid=UG:en"
 # news_url = "file:///home/pkasemer/Desktop/offlinedata/googlenewsress"
 
@@ -29,7 +32,11 @@ def dashboard(request):
     posts = Post.objects.order_by('-likes')[0:6]
     news = NewsArticle.objects.all()[0:15]
     
-    
+    #sensor value from database    
+    sensordataLI = Sensor.objects.all().filter(sensorname='InnogrLI').values('sensorvalue')[:8]
+    sensordataTC = Sensor.objects.all().filter(sensorname='InnogrTC').values('sensorvalue')[:8]  
+
+    #user
     all_users = []
     data_counter = Post.objects.exclude(author=request.user).values('author')\
         .annotate(author_count=Count('author'))\
@@ -55,13 +62,36 @@ def dashboard(request):
         
     #     savenews = NewsArticle(title=newstitle, link=newslink, newsdate=newspubDate)
     #     savenews.save()
+    
+    # SENSOR TO DATABASE
+    
+    # with open('sensor.json') as f:
+    #     data = json.load(f)
+        
+    # contentsensor = requests.get('https://api.waziup.io/api/v2/sensors_data?sort=dsc&calibrated=true&limit=100&device_id=INNOGRDEVICEPK&sensor_id=InnogrTC')
+    # data = contentsensor.json()
+
+    # x = len(data)
+    # for i in range(x):
+    #     snid = data[i]['sensor_id']
+    #     dvid = data[i]['device_id']
+    #     dateR = data[i]['date_received']
+    #     timeS = data[i]['timestamp']
+    #     snval = data[i]['value']
+        
+    #     sensorsave = Sensor(sensorname=snid,devicename=dvid,sensorvalue=snval,date_recieved=dateR,timestamp=timeS)
+    #     sensorsave.save()
+        
    
     context = {
         
         'all_users':all_users,
         'posts':posts,
         # 'allnews_list':allnews_list
-        'allnews_list':news
+        'allnews_list':news,
+        'sensordata':sensordataLI,
+        'sensordataTc':sensordataTC
+        
         
     }
     
@@ -308,7 +338,19 @@ def postpreference(request, postid, userpreference):
 
 @login_required
 def mydevices(request):
-    return render(request,'innogrApp/pages/mydevices.html')
+    
+    sensordataLI = Sensor.objects.all().filter(sensorname='InnogrLI').values('sensorvalue')[:8]
+    sensordataTC = Sensor.objects.all().filter(sensorname='InnogrTC').values('sensorvalue')[:8]
+
+    context = {
+        
+        'sensordata':sensordataLI,
+        'sensordataTc':sensordataTC
+        
+    }
+    
+    
+    return render(request,'innogrApp/pages/mydevices.html',context)
 
 
 @login_required
