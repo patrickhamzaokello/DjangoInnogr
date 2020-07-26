@@ -5,7 +5,22 @@
 {% block pagebody %}
 <div class="page-header">
   <h3 class="page-title">
-    Dashboard
+    Dashboard,
+    {{sensorCurrent.0.name}}
+    {{sensorCurrent.0.sensorval}},
+
+    {{sensorCurrent.1.name}}
+    {{sensorCurrent.1.sensorval}},
+
+    {{sensorCurrent.2.name}}
+    {{sensorCurrent.2.sensorval}},
+
+    {{sensorCurrent.3.name}}
+    {{sensorCurrent.3.sensorval}},
+
+    {{sensorCurrent.4.name}}
+    {{sensorCurrent.4.sensorval}},
+
   </h3>
 </div>
 <div class="row grid-margin">
@@ -20,6 +35,9 @@
             </p>
             <h2> {{sensorCurrent.2.sensorval}}&#x2103;</h2>
             <label class="badge badge-outline-success badge-pill">2.7% increase</label>
+            <p>
+              {{sensorCurrent.2.date_recieved}}
+            </p>
           </div>
           <div class="statistics-item">
             <p>
@@ -27,41 +45,46 @@
               {{sensorCurrent.4.name}}
               
             </p>
-              <h2>{{sensorCurrent.0.sensorval}}%</h2>
+              <h2>{{sensorCurrent.4.sensorval}}%</h2>
             <label class="badge badge-outline-danger badge-pill">30% decrease</label>
+            <p>
+              {{sensorCurrent.4.date_recieved}}
+            </p>
           </div>
           <div class="statistics-item">
             <p>
               <i class="icon-sm fas fa-cloud-download-alt mr-2"></i>
               {{sensorCurrent.3.name}}
             </p>
-            <h2>35%</h2>
+            <h2>{{sensorCurrent.3.sensorval}}%</h2>
             <label class="badge badge-outline-success badge-pill">12% increase</label>
+            <p>
+              {{sensorCurrent.3.date_recieved}}
+            </p>
           </div>
           <div class="statistics-item">
             <p>
               <i class="icon-sm fas fa-check-circle mr-2"></i>
-              AV PH
+              {{sensorCurrent.0.name}}
             </p>
-            <h2>3.4pH</h2>
+            <h2>{{sensorCurrent.0.sensorval}} %</h2>
             <label class="badge badge-outline-success badge-pill">57% increase</label>
+            <p>
+              {{sensorCurrent.0.date_recieved}}
+            </p>
           </div>
           <div class="statistics-item">
             <p>
               <i class="icon-sm fas fa-chart-line mr-2"></i>
-              Light Int
+              {{sensorCurrent.1.name}}
             </p>
-            <h2>200Lux</h2>
+            <h2>{{sensorCurrent.1.sensorval}} Lux</h2>
             <label class="badge badge-outline-success badge-pill">10% increase</label>
-          </div>
-          <div class="statistics-item">
             <p>
-              <i class="icon-sm fas fa-circle-notch mr-2"></i>
-              Soil
+              {{sensorCurrent.1.date_recieved}}
             </p>
-            <h2>45%</h2>
-            <label class="badge badge-outline-danger badge-pill">16% decrease</label>
           </div>
+          
         </div>
       </div>
     </div>
@@ -138,30 +161,16 @@
           Sensor Updates
         </h4>
         <ul class="solid-bullet-list">
+          {% for sensor in sensorCurrent%}
           <li>
-            <h6>Temperature Sensor</h6>
-            <p>Lorem Ipsum is simply dummy text of the printing </p>
+            <h6>{{sensor.name}}</h6>
+            <p>Value: {{sensor.sensorval}}</p>
             <p class="text-muted">
               <i class="far fa-clock"></i>
-              2 mins ago.
+              {{sensor.date_recieved}}
             </p>
           </li>
-          <li>
-            <h6>Water Level</h6>
-            <p>Lorem Ipsum is simply dummy text of the printing </p>
-            <p class="text-muted">
-              <i class="far fa-clock"></i>
-              20 mins ago.
-            </p>
-          </li>
-          <li>
-            <h6>Humidity Sensor</h6>
-            <p>Lorem Ipsum is simply dummy text of the printing </p>
-            <p class="text-muted">
-              <i class="far fa-clock"></i>
-              30 mins ago.
-            </p>
-          </li>
+          {% endfor %}
         </ul>
       </div>
     </div>
