@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from .models import Post,NewsArticle, Comment, Preference,Sensor
+from .models import Post,NewsArticle, Comment, Preference,Sensor,Currentreading
 from django.contrib.auth.models import User
 from django.views.generic import (
     ListView, 
@@ -33,8 +33,10 @@ def dashboard(request):
     news = NewsArticle.objects.all()[0:15]
     
     #sensor value from database    
-    sensordataLI = Sensor.objects.all().filter(sensorname='InnogrLI').values('sensorvalue')[:8]
-    sensordataTC = Sensor.objects.all().filter(sensorname='InnogrTC').values('sensorvalue')[:8]  
+    sensordataLI = Sensor.objects.all().filter(sensorname='InnogrLI').values('sensorvalue')[4:12]
+    sensordataTC = Sensor.objects.all().filter(sensorname='InnogrTC').values('sensorvalue')[4:12]
+    sensorCurrent = Currentreading.objects.all()
+      
 
     #user
     all_users = []
@@ -46,6 +48,10 @@ def dashboard(request):
     print(data_counter)
     usergot = User.objects.filter(pk=data_counter['author']).first()
     all_users.append(usergot)
+    
+    # ----------------------------------------
+    # NEWS  TO DATABASE
+    # ---------------------------------------
     
     # res = requests.get(news_url)
     # xml_page = res.content
@@ -63,10 +69,9 @@ def dashboard(request):
     #     savenews = NewsArticle(title=newstitle, link=newslink, newsdate=newspubDate)
     #     savenews.save()
     
+    # ----------------------------------------
     # SENSOR TO DATABASE
-    
-    # with open('sensor.json') as f:
-    #     data = json.load(f)
+    # ---------------------------------------
         
     # contentsensor = requests.get('https://api.waziup.io/api/v2/sensors_data?sort=dsc&calibrated=true&limit=100&device_id=INNOGRDEVICEPK&sensor_id=InnogrTC')
     # data = contentsensor.json()
@@ -81,7 +86,26 @@ def dashboard(request):
         
     #     sensorsave = Sensor(sensorname=snid,devicename=dvid,sensorvalue=snval,date_recieved=dateR,timestamp=timeS)
     #     sensorsave.save()
+    
+    # ----------------------------------------
+    # Currentreading TO DATABASE
+    # ---------------------------------------
+    
+    # currentreading =  requests.get('https://api.waziup.io/api/v2/devices/INNOGRDEVICEPK/sensors')
+    # data = currentreading.json()
+    
+    # x = len(data)
+    # for i in range(x):
+    #     name = data[i]['name']
+    #     val = data[i]['value']['value']
+    #     daterecieved = data[i]['value']['date_received']
         
+    #     # print(name, val, daterecieved)
+
+    #     sensorsave = Currentreading(name=name,sensorval=val,date_recieved=daterecieved)
+    #     sensorsave.save()
+    
+   
    
     context = {
         
@@ -90,8 +114,8 @@ def dashboard(request):
         # 'allnews_list':allnews_list
         'allnews_list':news,
         'sensordata':sensordataLI,
-        'sensordataTc':sensordataTC
-        
+        'sensordataTc':sensordataTC,
+        'sensorCurrent':sensorCurrent        
         
     }
     
@@ -339,8 +363,8 @@ def postpreference(request, postid, userpreference):
 @login_required
 def mydevices(request):
     
-    sensordataLI = Sensor.objects.all().filter(sensorname='InnogrLI').values('sensorvalue')[:8]
-    sensordataTC = Sensor.objects.all().filter(sensorname='InnogrTC').values('sensorvalue')[:8]
+    sensordataLI = Sensor.objects.all().filter(sensorname='InnogrLI').values('sensorvalue')[4:12]
+    sensordataTC = Sensor.objects.all().filter(sensorname='InnogrTC').values('sensorvalue')[4:12]
 
     context = {
         

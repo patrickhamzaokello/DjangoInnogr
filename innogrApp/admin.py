@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post,NewsArticle,Comment,Sensor,Preference
+from .models import Post,NewsArticle,Comment,Sensor,Preference,Currentreading
 # Register your models here.
 
 
@@ -22,10 +22,21 @@ class SensorAdmin(admin.ModelAdmin):
     list_display = ('sensorname','devicename','sensorvalue','date_recieved','timestamp')
 
 
+class CurrentsensorAdmin(admin.ModelAdmin):
+    list_filter = ['name','date_recieved']
+    search_fields = ['name']
+    list_display = ('name','sensorval','date_recieved','last_update')
+   
+    
+
 admin.site.register(Comment)
 admin.site.register(Preference)    
 admin.site.register(Post,PostAdmin)
 admin.site.register(NewsArticle,NewsAdmin)
 admin.site.register(Sensor,SensorAdmin)
+admin.site.register(Currentreading,CurrentsensorAdmin)
+
+
+
 
 

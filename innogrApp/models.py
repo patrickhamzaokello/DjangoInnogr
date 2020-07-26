@@ -61,7 +61,19 @@ class Sensor(models.Model):
     sensorvalue = models.CharField(max_length=100)
     date_recieved = models.DateTimeField(default=timezone.now)
     timestamp = models.DateTimeField(default=timezone.now)
+    pub_date = models.DateTimeField(default=timezone.now)
 
 
     def __str__(self):
         return self.sensorname
+    
+class Currentreading(models.Model):
+    name = models.CharField(max_length=100)
+    sensorval = models.CharField(max_length=100)
+    date_recieved = models.DateTimeField(default=timezone.now)
+    last_update= models.DateTimeField(auto_now= True)
+    
+    def __str__(self):
+        return self.name
+    
+    

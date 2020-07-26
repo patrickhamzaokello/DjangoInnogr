@@ -95,7 +95,7 @@
             label: 'Product',
             data: tempsensorvalues,
             borderColor: [
-              'green'
+              'orange'
             ],
             borderWidth: 3,
             fill: false
@@ -109,7 +109,7 @@
               drawBorder: false
             },
             ticks: {
-              stepSize: 20,
+              stepSize: 5,
               fontColor: "#686868"
             }
           }],
@@ -131,7 +131,7 @@
         stepsize: 1
       };
       var lineChart = new Chart(lineChartCanvas, {
-        type: 'line',
+        type: 'radar',
         data: data,
         options: options
       });

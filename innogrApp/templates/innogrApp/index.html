@@ -16,23 +16,24 @@
           <div class="statistics-item">
             <p>
               <i class="icon-sm fa fa-user mr-2"></i>
-              Temp
+              {{sensorCurrent.2.name}}
             </p>
-            <h2>37&#x2103;</h2>
+            <h2> {{sensorCurrent.2.sensorval}}&#x2103;</h2>
             <label class="badge badge-outline-success badge-pill">2.7% increase</label>
           </div>
           <div class="statistics-item">
             <p>
               <i class="icon-sm fas fa-hourglass-half mr-2"></i>
-              Humidity
+              {{sensorCurrent.4.name}}
+              
             </p>
-            <h2>87%</h2>
+              <h2>{{sensorCurrent.0.sensorval}}%</h2>
             <label class="badge badge-outline-danger badge-pill">30% decrease</label>
           </div>
           <div class="statistics-item">
             <p>
               <i class="icon-sm fas fa-cloud-download-alt mr-2"></i>
-              Water Level
+              {{sensorCurrent.3.name}}
             </p>
             <h2>35%</h2>
             <label class="badge badge-outline-success badge-pill">12% increase</label>
