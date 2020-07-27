@@ -7808,6 +7808,7 @@ body.landing-page {
   color: #676a6c;
   font-family: 'Open Sans', helvetica, arial, sans-serif;
   background-color: #fff;
+  
 }
 .landing-page {
   /* CUSTOMIZE THE NAVBAR
@@ -7834,7 +7835,7 @@ body.landing-page {
   overflow: hidden;
 }
 .landing-page span.navy {
-  color: #1ab394;
+  color: #00192f;
 }
 .landing-page p.text-color {
   color: #676a6c;
@@ -7847,8 +7848,8 @@ body.landing-page {
   color: #179d82;
 }
 .landing-page section p {
-  color: #aeaeae;
-  font-size: 13px;
+  color: #445d6e;
+  font-size: 14px;
 }
 .landing-page address {
   font-size: 13px;
@@ -7937,7 +7938,7 @@ body.landing-page {
   height: auto;
   display: block;
   font-size: 14px;
-  background: #1ab394;
+  background-color: #09ab10;
   padding: 15px 20px 15px 20px;
   border-radius: 0 0 5px 5px;
   font-weight: 700;
@@ -7991,10 +7992,14 @@ body.landing-page {
   width: 100%;
 }
 .landing-page .header-back.one {
-  background: url('../img/landing/header_one.jpg') 50% 0 no-repeat;
+  /* background: url('../img/landing/header_one.jpg') 50% 0 no-repeat; */
+  /* background: #36176f; */
+  background: linear-gradient(-90deg,#02203c,#001528);
 }
 .landing-page .header-back.two {
-  background: url('../img/landing/header_two.jpg') 50% 0 no-repeat;
+  /* background: url('../img/landing/header_two.jpg') 50% 0 no-repeat; */
+  background: linear-gradient(-90deg,#02203c,#001528);
+
 }
 .landing-page .carousel {
   height: 470px;
@@ -8104,6 +8109,7 @@ body.landing-page {
   font-size: 20px;
   letter-spacing: -1px;
   font-weight: 600;
+  color: #02203c;
   text-transform: uppercase;
 }
 .landing-page .features-block {
@@ -8126,7 +8132,7 @@ body.landing-page {
   font-weight: 200;
 }
 .landing-page .features-icon {
-  color: #1ab394;
+  color: #4CAF50;
   font-size: 40px;
 }
 .landing-page .navy-section {
@@ -8146,7 +8152,7 @@ body.landing-page {
   margin: auto;
 }
 .landing-page .social-icon a {
-  background: #1ab394;
+  background: #4CAF50;
   color: #fff;
   padding: 4px 8px;
   height: 28px;
@@ -8155,7 +8161,7 @@ body.landing-page {
   border-radius: 50px;
 }
 .landing-page .social-icon a:hover {
-  background: #179d82;
+  background: #E91E63;
 }
 .landing-page .img-small {
   height: 88px;
@@ -8262,8 +8268,8 @@ body.landing-page {
   color: #fff;
 }
 .landing-page .btn-primary {
-  background-color: #1ab394;
-  border-color: #1ab394;
+  background-color: #F44336;
+  border-color: #F44336;
   color: #FFFFFF;
   font-size: 14px;
   padding: 10px 20px;
@@ -8274,8 +8280,8 @@ body.landing-page {
 .landing-page .btn-primary:active,
 .landing-page .btn-primary.active,
 .landing-page .open .dropdown-toggle.btn-primary {
-  background-color: #179d82;
-  border-color: #179d82;
+  background-color: #535dc5;
+  border-color: #535dc5;
   color: #FFFFFF;
 }
 .landing-page .btn-primary:active,
