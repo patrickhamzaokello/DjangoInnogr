@@ -345,34 +345,20 @@
               <div class="card-body">
                 <h4 class="card-title">
                   <i class="icon-sm fas fa-cloud-download-alt mr-2"></i>
-
-                  News Updates
+        
+                  Sensor Updates
                 </h4>
                 <ul class="solid-bullet-list">
+                  {% for sensor in sensorCurrent%}
                   <li>
-                    <h6>Temperature Sensor</h6>
-                    <p>Lorem Ipsum is simply dummy text of the printing </p>
+                    <h6>{{sensor.name}}</h6>
+                    <p>Value: {{sensor.sensorval}}</p>
                     <p class="text-muted">
                       <i class="far fa-clock"></i>
-                      2 mins ago.
+                      {{sensor.date_recieved}}
                     </p>
                   </li>
-                  <li>
-                    <h6>Water Level</h6>
-                    <p>Lorem Ipsum is simply dummy text of the printing </p>
-                    <p class="text-muted">
-                      <i class="far fa-clock"></i>
-                      20 mins ago.
-                    </p>
-                  </li>
-                  <li>
-                    <h6>Humidity Sensor</h6>
-                    <p>Lorem Ipsum is simply dummy text of the printing </p>
-                    <p class="text-muted">
-                      <i class="far fa-clock"></i>
-                      30 mins ago.
-                    </p>
-                  </li>
+                  {% endfor %}
                 </ul>
               </div>
             </div>
