@@ -73,7 +73,7 @@ def dashboard(request):
     # SENSOR TO DATABASE
     # ---------------------------------------
         
-    # contentsensor = requests.get('https://api.waziup.io/api/v2/sensors_data?sort=dsc&calibrated=true&limit=100&device_id=INNOGRDEVICEPK&sensor_id=InnogrTC')
+    # contentsensor = requests.get('https://api.waziup.io/api/v2/sensors_data?sort=dsc&calibrated=true&limit=100&device_id=INNOGRDEVICEPK&sensor_id=InnogrWM')
     # data = contentsensor.json()
 
     # x = len(data)
@@ -81,10 +81,10 @@ def dashboard(request):
     #     snid = data[i]['sensor_id']
     #     dvid = data[i]['device_id']
     #     dateR = data[i]['date_received']
-    #     timeS = data[i]['timestamp']
+    #     # timeS = data[i]['timestamp']
     #     snval = data[i]['value']
         
-    #     sensorsave = Sensor(sensorname=snid,devicename=dvid,sensorvalue=snval,date_recieved=dateR,timestamp=timeS)
+    #     sensorsave = Sensor(sensorname=snid,devicename=dvid,sensorvalue=snval,date_recieved=dateR)
     #     sensorsave.save()
     
     # ----------------------------------------

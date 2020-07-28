@@ -131,7 +131,7 @@
         stepsize: 1
       };
       var lineChart = new Chart(lineChartCanvas, {
-        type: 'radar',
+        type: 'line',
         data: data,
         options: options
       });
