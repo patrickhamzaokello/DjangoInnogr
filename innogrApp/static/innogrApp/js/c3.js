@@ -4,60 +4,48 @@
     bindto: '#c3-line-chart',
     data: {
       columns: [
-        ['data1', 30, 200, 100, 400, 150, 250],
-        ['data2', 50, 20, 10, 40, 15, 25]
-      ]
-    },
-    color: {
-      pattern: ['rgba(88,216,163,1)', 'rgba(237,28,36,0.6)', 'rgba(4,189,254,0.6)']
-    },
-    padding: {
-      top: 0,
-      right: 0,
-      bottom: 30,
-      left: 0,
-    }
+        watermoisture
+      ],
+      types: {
+        WaterM: 'area-spline'
+      }
+  }
+  
   });
 
-  setTimeout(function() {
-    c3LineChart.load({
-      columns: [
-        ['data1', 230, 190, 300, 500, 300, 400]
-      ]
-    });
-  }, 1000);
-
-  setTimeout(function() {
-    c3LineChart.load({
-      columns: [
-        ['data3', 130, 150, 200, 300, 200, 100]
-      ]
-    });
-  }, 1500);
-
-  setTimeout(function() {
-    c3LineChart.unload({
-      ids: 'data1'
-    });
-  }, 2000);
+ 
 
   var c3SplineChart = c3.generate({
     bindto: '#c3-spline-chart',
     data: {
       columns: [
-        ['data1', 30, 200, 100, 400, 150, 250],
-        ['data2', 130, 100, 140, 200, 150, 50]
+        humidity,
+        ligtsensorvalues
       ],
-      type: 'spline'
+      axes: {
+        Light: 'y2'
+      },
+      types: {
+        Light: 'bar'
+      }
     },
-    color: {
-      pattern: ['rgba(88,216,163,1)', 'rgba(237,28,36,0.6)', 'rgba(4,189,254,0.6)']
-    },
-    padding: {
-      top: 0,
-      right: 0,
-      bottom: 30,
-      left: 0,
+    axis: {
+      y: {
+        label: {
+          text: 'Relative Humidity(%)',
+          position: 'outer-middle'
+        },
+        tick: {
+          format: d3.format("$,") // ADD
+        }
+      },
+      y2: {
+        show: true,
+        label: {
+          text: 'Luminous (LUX)',
+          position: 'outer-middle'
+        }
+      }
     }
   });
   var c3BarChart = c3.generate({

@@ -93,7 +93,7 @@
           },
           {
             label: 'Product',
-            data: tempsensorvalues,
+            data: temperature,
             borderColor: [
               'orange'
             ],

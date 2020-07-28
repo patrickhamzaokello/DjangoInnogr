@@ -106,11 +106,8 @@
   <div class="col-md-6 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
-        <h4 class="card-title">
-          <i class="fas fa-chart-line"></i>
-          Temperature and Light Variations
-        </h4>
-        <canvas id="sales-chart"></canvas>
+        <h4 class="card-title">Line chart</h4>
+        <div id="c3-line-chart"></div>
       </div>
     </div>
   </div>
@@ -122,15 +119,37 @@
 
   var data = "{%for i in sensordata %}{{i.sensorvalue|escapejs}}{% if not forloop.last %},{% endif %}{% endfor %}"
   var dataTC = "{%for i in sensordataTc %}{{i.sensorvalue|escapejs}}{% if not forloop.last %},{% endif %}{% endfor %}"
+  var dataHUM = "{%for i in sensordataHUM %}{{i.sensorvalue|escapejs}}{% if not forloop.last %},{% endif %}{% endfor %}"
+  var dataWM = "{%for i in sensordataWM %}{{i.sensorvalue|escapejs}}{% if not forloop.last %},{% endif %}{% endfor %}"
+
+
 
  
-  ligtsensorvalues = data.split`,`.map(x=>+x)
-  tempsensorvalues = dataTC.split`,`.map(x=>+x)
+  var ligtsensorvalues = data.split`,`.map(x=>+x);
+  var temperature = dataTC.split`,`.map(x=>+x);
+  var humidity = dataHUM.split`,`.map(x=>+x);
+  var watermoisture = dataWM.split`,`.map(x=>+x);
+
+
+
 
   console.log("light");
   console.log(ligtsensorvalues)
   console.log("temp");
-  console.log(tempsensorvalues)
+  console.log(temperature)
+  console.log(watermoisture)
+
+
+  temperature.unshift('Temperature');
+  humidity.unshift('Humidity');
+  watermoisture.unshift('WaterM');
+  ligtsensorvalues.unshift('Light');
+
+
+
+  console.log(humidity);
+
+
  
 </script>
 
@@ -172,7 +191,7 @@
   <div class="col-md-6 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
-        <h4 class="card-title">Spline chart</h4>
+        <h4 class="card-title">Temperature & Humidity Variations</h4>
         <div id="c3-spline-chart"></div>
       </div>
     </div>    

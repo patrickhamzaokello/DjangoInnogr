@@ -29,12 +29,16 @@ news_url = "https://news.google.com/rss?hl=en-UG&gl=UG&ceid=UG:en"
 # Create your views here.
 @login_required
 def dashboard(request):
-    posts = Post.objects.order_by('-likes')[0:6]
+    posts = Post.objects.order_by('-likes')[0:8]
     news = NewsArticle.objects.all()[0:15]
     
     #sensor value from database    
     sensordataLI = Sensor.objects.all().filter(sensorname='InnogrLI').values('sensorvalue')[4:12]
     sensordataTC = Sensor.objects.all().filter(sensorname='InnogrTC').values('sensorvalue')[4:12]
+    sensordataWM = Sensor.objects.all().filter(sensorname='InnogrWM').values('sensorvalue')[4:12]
+    sensordataHUM = Sensor.objects.all().filter(sensorname='InnogrHUM').values('sensorvalue')[4:12]
+    sensordataWL = Sensor.objects.all().filter(sensorname='InnogrWL').values('sensorvalue')[4:12]
+    
     sensorCurrent = Currentreading.objects.all()
       
 
@@ -81,10 +85,10 @@ def dashboard(request):
     #     snid = data[i]['sensor_id']
     #     dvid = data[i]['device_id']
     #     dateR = data[i]['date_received']
-    #     # timeS = data[i]['timestamp']
+    #     timeS = data[i]['timestamp']
     #     snval = data[i]['value']
         
-    #     sensorsave = Sensor(sensorname=snid,devicename=dvid,sensorvalue=snval,date_recieved=dateR)
+    #     sensorsave = Sensor(sensorname=snid,devicename=dvid,sensorvalue=snval,date_recieved=dateR, timestamp=timeS)
     #     sensorsave.save()
     
     # ----------------------------------------
@@ -115,6 +119,8 @@ def dashboard(request):
         'allnews_list':news,
         'sensordata':sensordataLI,
         'sensordataTc':sensordataTC,
+        'sensordataHUM':sensordataHUM,
+        'sensordataWM':sensordataWM,
         'sensorCurrent':sensorCurrent        
         
     }
