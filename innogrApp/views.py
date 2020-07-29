@@ -30,7 +30,7 @@ news_url = "https://news.google.com/rss?hl=en-UG&gl=UG&ceid=UG:en"
 @login_required
 def dashboard(request):
     posts = Post.objects.order_by('-likes')[0:8]
-    news = NewsArticle.objects.all()[0:15]
+    news = NewsArticle.objects.order_by('-newsdate')[0:15]
     
     #sensor value from database    
     sensordataLI = Sensor.objects.all().filter(sensorname='InnogrLI').values('sensorvalue')[4:12]
@@ -95,8 +95,8 @@ def dashboard(request):
     # Currentreading TO DATABASE
     # ---------------------------------------
     
-    # currentreading =  requests.get('https://api.waziup.io/api/v2/devices/INNOGRDEVICEPK/sensors')
-    # data = currentreading.json()
+    # currentreadingget =  requests.get('https://api.waziup.io/api/v2/devices/INNOGRDEVICEPK/sensors')
+    # data = currentreadingget.json()
     
     # x = len(data)
     # for i in range(x):
@@ -105,11 +105,14 @@ def dashboard(request):
     #     daterecieved = data[i]['value']['date_received']
         
     #     # print(name, val, daterecieved)
+    #     # Currentreading.objects.filter(name__contains=name).values('sensorval','date_recieved').update(sensorval=val,date_recieved=daterecieved)
 
     #     sensorsave = Currentreading(name=name,sensorval=val,date_recieved=daterecieved)
     #     sensorsave.save()
     
-   
+    
+    # # Currentreading.objects.filter(name__contains='innogrWL').values('sensorval').update(sensorval="30")
+
    
     context = {
         

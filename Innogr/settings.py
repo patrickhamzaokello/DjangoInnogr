@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'crispy_forms',
     'ckeditor',
+    'cronjobs',
+    'django_celery_beat',
     'ckeditor_uploader',
     'django.contrib.admin',
     'django.contrib.auth',
