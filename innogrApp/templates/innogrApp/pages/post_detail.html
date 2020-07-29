@@ -112,13 +112,11 @@
                             <img src="{{comment.author.profile.image.url}}" alt="profile" class="img-sm rounded-circle">
                             <div class="ml-4">
                               <h6>
-                                {{comment.author}}-
-                                <small class="ml-4 text-muted"><i class="far fa-clock mr-1"></i>{{comment.date_posted}}</small>
+                                {{comment.author}}
+                                <small class="ml-4 text-muted"><i class="far fa-clock mr-1"></i>{{comment.date_posted|timesince}} ago</small>
                               </h6>
-                              <p>
-                            {{comment.content}}
-                                
-                              </p>
+                              <p>{{comment.content}}</p>
+                              <small class="text-muted">{{comment.date_posted}}</small>
                               
                             </div>
                           </div>
