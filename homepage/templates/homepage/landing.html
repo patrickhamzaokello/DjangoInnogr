@@ -352,7 +352,7 @@
 
                     <h2>{{post.title}}</h2>
                     <img class="big-icon float-left" width="50px" src="{{ post.author.profile.image.url }}" alt="image"
-                        style="margin-right: 10px;border-radius:50px">
+                        style="margin-right: 10px;border-radius:50px; object-fit:cover">
                     <p>{{post.summary|slice:":400"|safe}}</p>
                     <p><a class="navy-link" href="{% url 'post-detail' post.id %}" role="button">more &raquo;</a></p>
 
