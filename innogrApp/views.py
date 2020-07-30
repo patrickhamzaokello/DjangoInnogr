@@ -124,6 +124,7 @@ def dashboard(request):
         'sensordataTc':sensordataTC,
         'sensordataHUM':sensordataHUM,
         'sensordataWM':sensordataWM,
+        'sensordataWL':sensordataWL,
         'sensorCurrent':sensorCurrent        
         
     }

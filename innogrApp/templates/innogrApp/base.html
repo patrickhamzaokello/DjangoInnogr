@@ -472,6 +472,9 @@
             var dataTC = "{%for i in sensordataTc %}{{i.sensorvalue|escapejs}}{% if not forloop.last %},{% endif %}{% endfor %}"
             var dataHUM = "{%for i in sensordataHUM %}{{i.sensorvalue|escapejs}}{% if not forloop.last %},{% endif %}{% endfor %}"
             var dataWM = "{%for i in sensordataWM %}{{i.sensorvalue|escapejs}}{% if not forloop.last %},{% endif %}{% endfor %}"
+            var dataWL = "{%for i in sensordataWL %}{{i.sensorvalue|escapejs}}{% if not forloop.last %},{% endif %}{% endfor %}"
+
+
 
 
 
@@ -480,6 +483,8 @@
             var temperature = dataTC.split`,`.map(x => +x);
             var humidity = dataHUM.split`,`.map(x => +x);
             var watermoisture = dataWM.split`,`.map(x => +x);
+            var waterLevel = dataWL.split`,`.map(x => +x);
+
 
 
 
@@ -493,12 +498,16 @@
 
             temperature.unshift('Temperature');
             humidity.unshift('Humidity');
-            watermoisture.unshift('WaterM');
+            watermoisture.unshift('Soil_Moisture');
             ligtsensorvalues.unshift('Light');
+            waterLevel.unshift('Water_Level');
+
 
 
             console.log("humidity");
             console.log(humidity);
+            console.log("Water Level");
+            console.log(waterLevel);
 
 
 

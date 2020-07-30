@@ -1,4 +1,4 @@
-(function($) {
+(function ($) {
   'use strict';
   var c3LineChart = c3.generate({
     bindto: '#c3-line-chart',
@@ -7,30 +7,60 @@
         watermoisture
       ],
       types: {
-        WaterM: 'area-spline'
+        Soil_Moisture: 'area-spline'
       }
-  }
-  
+    }
+
   });
 
- 
+  var c3LineChart = c3.generate({
+    bindto: '#WL-line-chart',
+    data: {
+      columns: [
+        waterLevel
+      ],
+      types: {
+        Water_Level: 'area-spline'
+      },
+    },
+    color: {
+      pattern: ['blue']
+    }
+
+  });
+
+
 
   var c3SplineChart = c3.generate({
     bindto: '#DHT-spline-chart',
     data: {
       columns: [
-        temperature,
-        humidity
+        humidity,
+        temperature
       ],
-      type: 'bar'
+      axes: {
+        Temperature: 'y2'
+      },
+      types: {
+        Temperature: 'spline'
+      }
     },
-    color: {
-      pattern: ['rgba(88,216,163,1)', 'rgba(4,189,254,0.6)', 'rgba(237,28,36,0.6)']
-    },
-    
-    bar: {
-      width: {
-        ratio: 0.7 // this makes bar width 50% of length between ticks
+    axis: {
+      y: {
+        label: {
+          text: 'Relative Humidity(%)',
+          position: 'outer-middle'
+        },
+        tick: {
+          format: d3.format("$,") // ADD
+        }
+      },
+      y2: {
+        show: true,
+        label: {
+          text: 'Celcius (degree)',
+          position: 'outer-middle'
+        }
       }
     }
   });
@@ -92,7 +122,7 @@
     }
   });
 
-  setTimeout(function() {
+  setTimeout(function () {
     c3BarChart.load({
       columns: [
         ['data3', 130, -150, 200, 300, -200, 100]
@@ -131,13 +161,13 @@
         ['data2', 120],
       ],
       type: 'pie',
-      onclick: function(d, i) {
+      onclick: function (d, i) {
         console.log("onclick", d, i);
       },
-      onmouseover: function(d, i) {
+      onmouseover: function (d, i) {
         console.log("onmouseover", d, i);
       },
-      onmouseout: function(d, i) {
+      onmouseout: function (d, i) {
         console.log("onmouseout", d, i);
       }
     },
@@ -152,7 +182,7 @@
     }
   });
 
-  setTimeout(function() {
+  setTimeout(function () {
     c3PieChart.load({
       columns: [
         ["Income", 0.2, 0.2, 0.2, 0.2, 0.2, 0.4, 0.3, 0.2, 0.2, 0.1, 0.2, 0.2, 0.1, 0.1, 0.2, 0.4, 0.4, 0.3, 0.3, 0.3, 0.2, 0.4, 0.2, 0.5, 0.2, 0.2, 0.4, 0.2, 0.2, 0.2, 0.2, 0.4, 0.1, 0.2, 0.2, 0.2, 0.2, 0.1, 0.2, 0.2, 0.3, 0.3, 0.2, 0.6, 0.4, 0.3, 0.2, 0.2, 0.2, 0.2],
@@ -162,7 +192,7 @@
     });
   }, 1500);
 
-  setTimeout(function() {
+  setTimeout(function () {
     c3PieChart.unload({
       ids: 'data1'
     });
@@ -178,13 +208,13 @@
         ['data2', 120],
       ],
       type: 'donut',
-      onclick: function(d, i) {
+      onclick: function (d, i) {
         console.log("onclick", d, i);
       },
-      onmouseover: function(d, i) {
+      onmouseover: function (d, i) {
         console.log("onmouseover", d, i);
       },
-      onmouseout: function(d, i) {
+      onmouseout: function (d, i) {
         console.log("onmouseout", d, i);
       }
     },
@@ -202,7 +232,7 @@
     }
   });
 
-  setTimeout(function() {
+  setTimeout(function () {
     c3DonutChart.load({
       columns: [
         ["setosa", 0.2, 0.2, 0.2, 0.2, 0.2, 0.4, 0.3, 0.2, 0.2, 0.1, 0.2, 0.2, 0.1, 0.1, 0.2, 0.4, 0.4, 0.3, 0.3, 0.3, 0.2, 0.4, 0.2, 0.5, 0.2, 0.2, 0.4, 0.2, 0.2, 0.2, 0.2, 0.4, 0.1, 0.2, 0.2, 0.2, 0.2, 0.1, 0.2, 0.2, 0.3, 0.3, 0.2, 0.6, 0.4, 0.3, 0.2, 0.2, 0.2, 0.2],
@@ -212,7 +242,7 @@
     });
   }, 1500);
 
-  setTimeout(function() {
+  setTimeout(function () {
     c3DonutChart.unload({
       ids: 'data1'
     });
