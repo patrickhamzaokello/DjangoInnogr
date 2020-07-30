@@ -114,45 +114,6 @@
 </div>
 
 
-<script>
- 
-
-  var data = "{%for i in sensordata %}{{i.sensorvalue|escapejs}}{% if not forloop.last %},{% endif %}{% endfor %}"
-  var dataTC = "{%for i in sensordataTc %}{{i.sensorvalue|escapejs}}{% if not forloop.last %},{% endif %}{% endfor %}"
-  var dataHUM = "{%for i in sensordataHUM %}{{i.sensorvalue|escapejs}}{% if not forloop.last %},{% endif %}{% endfor %}"
-  var dataWM = "{%for i in sensordataWM %}{{i.sensorvalue|escapejs}}{% if not forloop.last %},{% endif %}{% endfor %}"
-
-
-
- 
-  var ligtsensorvalues = data.split`,`.map(x=>+x);
-  var temperature = dataTC.split`,`.map(x=>+x);
-  var humidity = dataHUM.split`,`.map(x=>+x);
-  var watermoisture = dataWM.split`,`.map(x=>+x);
-
-
-
-
-  console.log("light");
-  console.log(ligtsensorvalues)
-  console.log("temp");
-  console.log(temperature)
-  console.log(watermoisture)
-
-
-  temperature.unshift('Temperature');
-  humidity.unshift('Humidity');
-  watermoisture.unshift('WaterM');
-  ligtsensorvalues.unshift('Light');
-
-
-
-  console.log(humidity);
-
-
- 
-</script>
-
 <div class="row">
   <div class="col-md-3 grid-margin stretch-card">
     <div class="card">

@@ -16,6 +16,25 @@
  
 
   var c3SplineChart = c3.generate({
+    bindto: '#DHT-spline-chart',
+    data: {
+      columns: [
+        temperature,
+        humidity
+      ],
+      type: 'bar'
+    },
+    color: {
+      pattern: ['rgba(88,216,163,1)', 'rgba(4,189,254,0.6)', 'rgba(237,28,36,0.6)']
+    },
+    
+    bar: {
+      width: {
+        ratio: 0.7 // this makes bar width 50% of length between ticks
+      }
+    }
+  });
+  var c3SplineChart = c3.generate({
     bindto: '#c3-spline-chart',
     data: {
       columns: [

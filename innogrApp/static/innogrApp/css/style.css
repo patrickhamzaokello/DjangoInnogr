@@ -19890,7 +19890,8 @@ html {
 
 .innogrcontent-wrapper {
   background: #f2f2f2;
-  padding: 1.5rem 5.7rem;
+  /* padding: 1.5rem 5.7rem; */
+  padding:0.5rem 0.7rem;
   width: 100%;
   -webkit-flex-grow: 1;
   flex-grow: 1;

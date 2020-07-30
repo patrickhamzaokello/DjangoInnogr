@@ -374,11 +374,17 @@ def mydevices(request):
     
     sensordataLI = Sensor.objects.all().filter(sensorname='InnogrLI').values('sensorvalue')[4:12]
     sensordataTC = Sensor.objects.all().filter(sensorname='InnogrTC').values('sensorvalue')[4:12]
+    sensordataWM = Sensor.objects.all().filter(sensorname='InnogrWM').values('sensorvalue')[4:12]
+    sensordataHUM = Sensor.objects.all().filter(sensorname='InnogrHUM').values('sensorvalue')[4:12]
+    sensordataWL = Sensor.objects.all().filter(sensorname='InnogrWL').values('sensorvalue')[4:12]
 
     context = {
         
         'sensordata':sensordataLI,
-        'sensordataTc':sensordataTC
+        'sensordataTc':sensordataTC,
+        'sensordataHUM':sensordataHUM,
+        'sensordataWM':sensordataWM,
+        'sensordataWL':sensordataWL  
         
     }
     

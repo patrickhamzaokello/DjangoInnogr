@@ -34,21 +34,10 @@
           <div class="tab-pane fade active show" id="home-1" role="tabpanel" aria-labelledby="home-tab">
             <div class="card">
               <div class="card-body">
-                <div class="chartjs-size-monitor"
-                  style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
-                  <div class="chartjs-size-monitor-expand"
-                    style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
-                    <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div>
-                  </div>
-                  <div class="chartjs-size-monitor-shrink"
-                    style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
-                    <div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
-                  </div>
-                </div>
-                <canvas id="sales-chart" width="805" height="401" class="chartjs-render-monitor"
-                  style="display: block; width: 307px; height: 153px;"></canvas>
+                <h4 class="card-title">Temperature & Humidity Variations</h4>
+                <div id="DHT-spline-chart"></div>
               </div>
-            </div>
+            </div>  
           </div>
           <div class="tab-pane fade" id="profile-1" role="tabpanel" aria-labelledby="profile-tab">
             <div class="media">
@@ -110,24 +99,6 @@
     </div>
   </div>
 
-<script>
- 
-
-  var data = "{%for i in sensordata %}{{i.sensorvalue|escapejs}}{% if not forloop.last %},{% endif %}{% endfor %}"
-  var dataTC = "{%for i in sensordataTc %}{{i.sensorvalue|escapejs}}{% if not forloop.last %},{% endif %}{% endfor %}"
-
- 
-  ligtsensorvalues = data.split`,`.map(x=>+x)
-  tempsensorvalues = dataTC.split`,`.map(x=>+x)
-
-  console.log("light");
-  console.log(ligtsensorvalues)
-  console.log("temp");
-  console.log(tempsensorvalues)
-
-  
-  
- </script>
   <div class="col-md-6 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
