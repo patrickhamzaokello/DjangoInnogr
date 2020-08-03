@@ -17,14 +17,92 @@
     bindto: '#WL-line-chart',
     data: {
       columns: [
+        pastwaterLevel,
         waterLevel
+        
+      ],
+      axes: {
+        Past_Water_Level: 'y2'
+      },
+      types: {
+        Past_Water_Level: 'step',
+        Water_Level: 'area-step'
+
+      }
+    },
+    color: {
+      pattern: ['rgba(88,216,163,1)', 'rgba(4,189,254,0.6)']
+    },
+    axis: {
+      y: {
+        label: {
+          text: 'Litres',
+          position: 'outer-middle'
+        }
+        
+      },
+      y2: {
+        show: true,
+        label: {
+          text: 'Litres',
+          position: 'outer-middle'
+        }
+      }
+    }
+
+  });
+
+  var c3LightLineChart = c3.generate({
+    bindto: '#DLight-line-chart',
+    data: {
+      columns: [
+        ligtsensorvalues
       ],
       types: {
-        Water_Level: 'area-spline'
+        Light: 'spline'
       },
     },
     color: {
       pattern: ['blue']
+    }
+
+  });
+
+  var c3waterMoistureChart = c3.generate({
+    bindto: '#DWM-line-chart',
+    data: {
+      columns: [
+        pwatermoisture,
+        watermoisture
+        
+      ],
+      axes: {
+        Past_Soil_Moisture: 'y2'
+      },
+      types: {
+        Past_Soil_Moisture: 'bar',
+        Soil_Moisture: 'bar'
+
+      }
+    },
+    color: {
+      pattern: ['#4caf50','#009688']
+    },
+    axis: {
+      y: {
+        label: {
+          text: 'Litres',
+          position: 'outer-middle'
+        }
+        
+      },
+      y2: {
+        show: true,
+        label: {
+          text: 'Litres',
+          position: 'outer-middle'
+        }
+      }
     }
 
   });

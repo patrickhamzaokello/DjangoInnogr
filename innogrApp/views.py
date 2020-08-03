@@ -29,6 +29,8 @@ news_url = "https://news.google.com/rss?hl=en-UG&gl=UG&ceid=UG:en"
 # Create your views here.
 @login_required
 def dashboard(request):
+    messages.success(request, f'Welcome Back')
+    
     posts = Post.objects.order_by('-likes')[0:8]
     news = NewsArticle.objects.order_by('-newsdate')[0:15]
     
@@ -378,6 +380,11 @@ def mydevices(request):
     sensordataWM = Sensor.objects.all().filter(sensorname='InnogrWM').values('sensorvalue')[4:12]
     sensordataHUM = Sensor.objects.all().filter(sensorname='InnogrHUM').values('sensorvalue')[4:12]
     sensordataWL = Sensor.objects.all().filter(sensorname='InnogrWL').values('sensorvalue')[4:12]
+    
+    pastsensordataWL = Sensor.objects.all().filter(sensorname='InnogrWL').values('sensorvalue')[13:21]
+    pastsensordataWM = Sensor.objects.all().filter(sensorname='InnogrWM').values('sensorvalue')[13:21]
+    
+    
 
     context = {
         
@@ -385,7 +392,9 @@ def mydevices(request):
         'sensordataTc':sensordataTC,
         'sensordataHUM':sensordataHUM,
         'sensordataWM':sensordataWM,
-        'sensordataWL':sensordataWL  
+        'sensordataWL':sensordataWL,
+        'pastsensordataWL':pastsensordataWL,
+        'pastsensordataWM':pastsensordataWM
         
     }
     

@@ -3,9 +3,11 @@
 {% load static %}
 
 {% block pagebody %}
+
+
+{% comment %}
 <div class="page-header">
   <h3 class="page-title">
-    Dashboard,
     {{sensorCurrent.0.name}}
     {{sensorCurrent.0.sensorval}},
 
@@ -20,9 +22,12 @@
 
     {{sensorCurrent.4.name}}
     {{sensorCurrent.4.sensorval}},
-
   </h3>
 </div>
+
+{% endcomment %}
+
+
 <div class="row grid-margin">
   <div class="col-12">
     <div class="card card-statistics">
@@ -43,9 +48,9 @@
             <p>
               <i class="icon-sm fas fa-hourglass-half mr-2"></i>
               {{sensorCurrent.4.name}}
-              
+
             </p>
-              <h2>{{sensorCurrent.4.sensorval}}%</h2>
+            <h2>{{sensorCurrent.4.sensorval}}%</h2>
             <label class="badge badge-outline-danger badge-pill">30% decrease</label>
             <p>
               {{sensorCurrent.4.date_recieved}}
@@ -84,7 +89,7 @@
               {{sensorCurrent.1.date_recieved}}
             </p>
           </div>
-          
+
         </div>
       </div>
     </div>
@@ -155,9 +160,9 @@
         <h4 class="card-title">Temperature & Humidity Variations</h4>
         <div id="c3-spline-chart"></div>
       </div>
-    </div>    
+    </div>
   </div>
-  
+
 </div>
 
 <div class="row">
@@ -233,16 +238,16 @@
 
   </div>
   <div class="col-md-3 h-100">
-    
+
     <div class="fc-external-events">
       {% for news in allnews_list %}
       <div class='fc-event'>
-        <p> {{ news.title}} <a  href=" {{ news.link}}" target="_blank">more</a></p>
+        <p> {{ news.title}} <a href=" {{ news.link}}" target="_blank">more</a></p>
         <p class="small-text"></p>
         <p class="text-muted mb-0"> {{ news.newsdate}}</p>
       </div>
       {% endfor %}
-      
+
     </div>
   </div>
 
@@ -293,7 +298,7 @@
         {% endfor %}
       </div>
     </div>
-    
+
   </div>
 </div>
 

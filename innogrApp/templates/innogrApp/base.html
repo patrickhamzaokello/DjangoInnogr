@@ -475,6 +475,13 @@
             var dataWL = "{%for i in sensordataWL %}{{i.sensorvalue|escapejs}}{% if not forloop.last %},{% endif %}{% endfor %}"
 
 
+            //past values//
+            var pdataWL = "{%for i in pastsensordataWL %}{{i.sensorvalue|escapejs}}{% if not forloop.last %},{% endif %}{% endfor %}"
+            var pdataWM = "{%for i in pastsensordataWM %}{{i.sensorvalue|escapejs}}{% if not forloop.last %},{% endif %}{% endfor %}"
+
+
+
+
 
 
 
@@ -485,17 +492,6 @@
             var watermoisture = dataWM.split`,`.map(x => +x);
             var waterLevel = dataWL.split`,`.map(x => +x);
 
-
-
-
-
-            console.log("light");
-            console.log(ligtsensorvalues)
-            console.log("temp");
-            console.log(temperature)
-            console.log(watermoisture)
-
-
             temperature.unshift('Temperature');
             humidity.unshift('Humidity');
             watermoisture.unshift('Soil_Moisture');
@@ -503,11 +499,13 @@
             waterLevel.unshift('Water_Level');
 
 
+            //passval
+            var pastwaterLevel = pdataWL.split`,`.map(x => +x);
+            var pwatermoisture = pdataWM.split`,`.map(x => +x);
 
-            console.log("humidity");
-            console.log(humidity);
-            console.log("Water Level");
-            console.log(waterLevel);
+            pastwaterLevel.unshift('Past_Water_Level');
+            pwatermoisture.unshift('Past_Soil_Moisture');
+
 
 
 
