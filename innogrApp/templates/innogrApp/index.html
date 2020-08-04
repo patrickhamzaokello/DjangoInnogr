@@ -101,18 +101,39 @@
       <div class="card-body">
         <h4 class="card-title">
           <i class="fas fa-gift"></i>
-          Water Level and Soil Water Retention Variation
+          Soil Moisture Variation
         </h4>
-        <canvas id="orders-chart"></canvas>
-        <div id="orders-chart-legend" class="orders-chart-legend"></div>
+        <div id="c3-line-chart"></div>
       </div>
     </div>
   </div>
   <div class="col-md-6 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
-        <h4 class="card-title">Line chart</h4>
-        <div id="c3-line-chart"></div>
+        <h4 class="card-title">Temperature Variations</h4>
+        <div id="TM-line-chart"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">
+          <i class="fas fa-gift"></i>
+          Humidity Variations
+        </h4>
+        <div id="HUM-line-chart"></div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Water Level  Variations</h4>
+        <div id="watelevel-line-chart"></div>
       </div>
     </div>
   </div>
@@ -120,6 +141,15 @@
 
 
 <div class="row">
+  <div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Temperature & Humidity Variations</h4>
+        <div id="c3-spline-chart"></div>
+      </div>
+    </div>
+  </div>
+  
   <div class="col-md-3 grid-margin stretch-card">
     <div class="card">
       <div class="card-body d-flex flex-column">
@@ -149,16 +179,6 @@
           <canvas id="daily-sales-chart" class="mt-3 mb-3 mb-md-0"></canvas>
           <div id="daily-sales-chart-legend" class="daily-sales-chart-legend pt-4 border-top"></div>
         </div>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="col-md-6 grid-margin stretch-card">
-    <div class="card">
-      <div class="card-body">
-        <h4 class="card-title">Temperature & Humidity Variations</h4>
-        <div id="c3-spline-chart"></div>
       </div>
     </div>
   </div>

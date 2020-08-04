@@ -35,11 +35,11 @@ def dashboard(request):
     news = NewsArticle.objects.order_by('-newsdate')[0:15]
     
     #sensor value from database    
-    sensordataLI = Sensor.objects.all().filter(sensorname='InnogrLI').values('sensorvalue')[4:12]
-    sensordataTC = Sensor.objects.all().filter(sensorname='InnogrTC').values('sensorvalue')[4:12]
-    sensordataWM = Sensor.objects.all().filter(sensorname='InnogrWM').values('sensorvalue')[4:12]
-    sensordataHUM = Sensor.objects.all().filter(sensorname='InnogrHUM').values('sensorvalue')[4:12]
-    sensordataWL = Sensor.objects.all().filter(sensorname='InnogrWL').values('sensorvalue')[4:12]
+    sensordataLI = Sensor.objects.all().filter(sensorname='InnogrLI').values('sensorvalue')
+    sensordataTC = Sensor.objects.all().filter(sensorname='InnogrTC').values('sensorvalue')
+    sensordataWM = Sensor.objects.all().filter(sensorname='InnogrWM').values('sensorvalue')
+    sensordataHUM = Sensor.objects.all().filter(sensorname='InnogrHUM').values('sensorvalue')
+    sensordataWL = Sensor.objects.all().filter(sensorname='InnogrWL').values('sensorvalue')
     
     sensorCurrent = Currentreading.objects.all()
       

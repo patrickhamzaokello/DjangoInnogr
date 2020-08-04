@@ -13,6 +13,55 @@
 
   });
 
+  var TMLineChart = c3.generate({
+    bindto: '#TM-line-chart',
+    data: {
+      columns: [
+        temperature
+      ],
+      types: {
+        Temperature: 'spline'
+      }
+    },
+    color: {
+      pattern:["red"]
+    }
+
+  });
+
+  var HumallLineChart = c3.generate({
+    bindto: '#HUM-line-chart',
+    data: {
+      columns: [
+        humidity
+      ],
+      types: {
+        Humidity: 'area'
+      }
+    },
+    color: {
+      pattern:["orange"]
+    }
+
+  });
+
+
+  var WateallLineChart = c3.generate({
+    bindto: '#watelevel-line-chart',
+    data: {
+      columns: [
+        waterLevel
+      ],
+      types: {
+        Water_Level: 'spline'
+      }
+    },
+    color: {
+      pattern:['rgba(4,189,254,0.6)', 'rgba(237,28,36,0.6)']
+    }
+
+  });
+
   var c3LineChart = c3.generate({
     bindto: '#WL-line-chart',
     data: {
@@ -146,33 +195,25 @@
     bindto: '#c3-spline-chart',
     data: {
       columns: [
-        humidity,
         ligtsensorvalues
       ],
-      axes: {
-        Light: 'y2'
-      },
+    
       types: {
         Light: 'bar'
       }
     },
+    color:{
+      pattern:["rgba(88,216,163,1)"]
+    },
     axis: {
       y: {
         label: {
-          text: 'Relative Humidity(%)',
+          text: 'Luminousity (LUX)',
           position: 'outer-middle'
         },
-        tick: {
-          format: d3.format("$,") // ADD
-        }
+      
       },
-      y2: {
-        show: true,
-        label: {
-          text: 'Luminous (LUX)',
-          position: 'outer-middle'
-        }
-      }
+
     }
   });
   var c3BarChart = c3.generate({
