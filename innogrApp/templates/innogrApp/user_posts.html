@@ -134,21 +134,17 @@
                                         <p>
                                             {{post.summary|safe}}
                                         </p>
-
-                                        <div class="post-button">
-                                            <p class="small text-muted mt-2 mb-0">
-                                              <span class="">
-                                                <i onClick="document.getElementById('likebutton').submit()" class="fa fa-heart mr-1"></i>{{post.likes}}
-                                              </span>
-                                              <span class="ml-2">
+                                        <p class="small text-muted mt-2 mb-0">
+                                            <span class="">
+                                                <i onClick="document.getElementById('likebutton').submit()"
+                                                    class="fa fa-heart mr-1"></i>{{post.likes}}
+                                            </span>
+                                            <span class="ml-2  ">
                                                 <i onClick="document.getElementById('dislikebutton').submit()"
-                                                  class="fa fa-thumbs-down mr-1"></i>{{post.dislikes}}
-                                              </span>
-                                              <span class="ml-2 postmore">
-                                                <a href="{% url 'post-detail' post.id %}" class="fa fa-ellipsis-h"></a>
-                                              </span>
-                                            </p>
-                                          </div>
+                                                    class="fa fa-thumbs-down mr-1"></i>{{post.dislikes}}
+                                            </span>
+                                           
+                                        </p>
 
                                     </div>
                                 </div>
