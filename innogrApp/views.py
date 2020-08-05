@@ -249,7 +249,7 @@ class NewsFeedPostListView(LoginRequiredMixin, ListView):
     template_name = 'innogrApp/pages/newsfeed.html' #<app>/<model>_<viewtype>.html
     context_object_name = 'posts'
     ordering = ['-date_posted']
-    paginate_by = 5
+    paginate_by = 10
     
     def get_context_data(self, **kwargs):
         data = super().get_context_data(**kwargs)
@@ -265,9 +265,14 @@ class NewsFeedPostListView(LoginRequiredMixin, ListView):
         #     data['preference'] = True
         # else:
         #     data['preference'] = False
+        
+        news = NewsArticle.objects.order_by('-newsdate')[0:15]
+        
         data['preference'] = Preference.objects.all()
         # print(Preference.objects.get(user= self.request.user))
         data['all_users'] = all_users
+        data['allnews_list'] = news
+        
         print(all_users, file=sys.stderr)
         return data
 

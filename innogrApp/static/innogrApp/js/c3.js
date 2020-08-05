@@ -24,7 +24,7 @@
       }
     },
     color: {
-      pattern:["red"]
+      pattern: ["red"]
     }
 
   });
@@ -40,7 +40,7 @@
       }
     },
     color: {
-      pattern:["orange"]
+      pattern: ["orange"]
     }
 
   });
@@ -57,7 +57,7 @@
       }
     },
     color: {
-      pattern:['rgba(4,189,254,0.6)', 'rgba(237,28,36,0.6)']
+      pattern: ['rgba(4,189,254,0.6)', 'rgba(237,28,36,0.6)']
     }
 
   });
@@ -68,7 +68,7 @@
       columns: [
         pastwaterLevel,
         waterLevel
-        
+
       ],
       axes: {
         Past_Water_Level: 'y2'
@@ -88,7 +88,7 @@
           text: 'Litres',
           position: 'outer-middle'
         }
-        
+
       },
       y2: {
         show: true,
@@ -123,7 +123,7 @@
       columns: [
         pwatermoisture,
         watermoisture
-        
+
       ],
       axes: {
         Past_Soil_Moisture: 'y2'
@@ -135,7 +135,7 @@
       }
     },
     color: {
-      pattern: ['#4caf50','#009688']
+      pattern: ['#c5ea9a', '#0cab12']
     },
     axis: {
       y: {
@@ -143,7 +143,7 @@
           text: 'Litres',
           position: 'outer-middle'
         }
-        
+
       },
       y2: {
         show: true,
@@ -169,7 +169,8 @@
         Temperature: 'y2'
       },
       types: {
-        Temperature: 'spline'
+        Temperature: 'spline',
+        Humidity: 'spline'
       }
     },
     axis: {
@@ -179,7 +180,7 @@
           position: 'outer-middle'
         },
         tick: {
-          format: d3.format("$,") // ADD
+          // format: d3.format("%,") // ADD
         }
       },
       y2: {
@@ -197,13 +198,13 @@
       columns: [
         ligtsensorvalues
       ],
-    
+
       types: {
         Light: 'bar'
       }
     },
-    color:{
-      pattern:["rgba(88,216,163,1)"]
+    color: {
+      pattern: ["rgba(88,216,163,1)"]
     },
     axis: {
       y: {
@@ -211,7 +212,7 @@
           text: 'Luminousity (LUX)',
           position: 'outer-middle'
         },
-      
+
       },
 
     }

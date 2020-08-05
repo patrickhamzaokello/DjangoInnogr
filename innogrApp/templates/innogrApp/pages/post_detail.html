@@ -43,10 +43,25 @@
                             </div>
                         </div>
 
-                        <p class="text-muted"style="text-align: center;">Last Edit:{{object.last_edited}}</p>
+                        <p class="text-muted" style="text-align: center;">Last Edit:{{object.last_edited}}</p>
 
 
-                        <h1 class="d-block mb-5" style="text-align:center;font-size: 45px;font-weight: 700; color: #2f4050;">{{object.title}}</h1>
+                        <h1 class="d-block mb-5"
+                            style="text-align:center;font-size: 45px;font-weight: 700; color: #2f4050;">{{object.title}}
+                        </h1>
+
+
+                        <p class="mb-5" style="font-size: 24px;">
+                            {{object.summary|safe}}
+                        </p>
+
+
+                        <div class="postformat mb-0" style="font-size: 24px;">
+
+                            {{object.content|safe}}
+
+                        </div>
+
                         <div class="post-button">
                             <p class="small text-muted mt-2 mb-0">
                                 <span class="likecss">
@@ -63,18 +78,7 @@
                             </p>
                         </div>
 
-                        <p class="mb-5" style="font-size: 24px;">
-                            {{object.summary|safe}}
-                        </p>
 
-
-                        <div class="postformat mb-0 text-muted" style="font-size: 24px;">
-
-                            {{object.content|safe}}
-
-                        </div>
-
-                        
 
 
                         <form id="likebutton" method="POST" action="{% url 'postpreference' object.id 1 %}">
@@ -97,38 +101,41 @@
 
                 <div class="card">
                     <div class="card-body">
-                      <h4 class="card-title">
-                        <i class="fas fa-comments"></i>
-                        Comments...
-                      </h4>
-                      <div class="profile-feed">
-                        {%if not object.comments.all %}
-                        No comments yet .. <a href="#">Add One</a>
-    
-                        {% else %}
-    
-                            {% for comment in object.comments.all %}
-                        <div class="d-flex align-items-start">
-                            <img src="{{comment.author.profile.image.url}}" alt="profile" class="img-sm rounded-circle">
-                            <div class="ml-4">
-                              <h6>
-                                {{comment.author}}
-                                <small class="ml-4 text-muted"><i class="far fa-clock mr-1"></i>{{comment.date_posted|timesince}} ago</small>
-                              </h6>
-                              <p>{{comment.content}}</p>
-                              <small class="text-muted">{{comment.date_posted}}</small>
-                              
-                            </div>
-                          </div>
-    
-                          {% endfor %}
-                          {% endif %}
-                    </div>
-                    </div>
-                  </div>
-               
+                        <h4 class="card-title">
+                            <i class="fas fa-comments"></i>
+                            Comments...
+                        </h4>
+                        <div class="profile-feed">
+                            {%if not object.comments.all %}
+                            No comments yet .. <a href="#">Add One</a>
 
-                
+                            {% else %}
+
+                            {% for comment in object.comments.all %}
+                            <div class="d-flex align-items-start">
+                                <img src="{{comment.author.profile.image.url}}" alt="profile"
+                                    class="img-sm rounded-circle">
+                                <div class="ml-4">
+                                    <h6>
+                                        {{comment.author}}
+                                        <small class="ml-4 text-muted"><i
+                                                class="far fa-clock mr-1"></i>{{comment.date_posted|timesince}}
+                                            ago</small>
+                                    </h6>
+                                    <p>{{comment.content}}</p>
+                                    <small class="text-muted">{{comment.date_posted}}</small>
+
+                                </div>
+                            </div>
+
+                            {% endfor %}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+
+
 
             </div>
 

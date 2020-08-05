@@ -29483,4 +29483,14 @@ div.tagsinput span.tag a {
   font-size: 20px;
 }
 
+.news a:hover{
+  text-decoration: none;
+  color:green;    
+}
+
+.news:hover{
+  background: #fff;
+  box-shadow: 0 0 35px -2px rgba(29, 250, 0, 0.2)0.2)
+}
+
 /*# sourceMappingURL=maps/style.css.map */
