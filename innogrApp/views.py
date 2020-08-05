@@ -34,12 +34,15 @@ def dashboard(request):
     posts = Post.objects.order_by('-likes')[0:8]
     news = NewsArticle.objects.order_by('-newsdate')[0:15]
     
-    #sensor value from database    
-    sensordataLI = Sensor.objects.all().filter(sensorname='InnogrLI').values('sensorvalue')
+    #sensor value from database        
+    sensordataLI = Sensor.objects.all().filter(sensorname='InnogrLI').values('sensorvalue')[4:12]
     sensordataTC = Sensor.objects.all().filter(sensorname='InnogrTC').values('sensorvalue')
-    sensordataWM = Sensor.objects.all().filter(sensorname='InnogrWM').values('sensorvalue')
+    sensordataWM = Sensor.objects.all().filter(sensorname='InnogrWM').values('sensorvalue')[4:12]
     sensordataHUM = Sensor.objects.all().filter(sensorname='InnogrHUM').values('sensorvalue')
-    sensordataWL = Sensor.objects.all().filter(sensorname='InnogrWL').values('sensorvalue')
+    sensordataWL = Sensor.objects.all().filter(sensorname='InnogrWL').values('sensorvalue')[4:12]
+    
+    pastsensordataWL = Sensor.objects.all().filter(sensorname='InnogrWL').values('sensorvalue')[13:21]
+    pastsensordataWM = Sensor.objects.all().filter(sensorname='InnogrWM').values('sensorvalue')[13:21]
     
     sensorCurrent = Currentreading.objects.all()
       
@@ -127,6 +130,8 @@ def dashboard(request):
         'sensordataHUM':sensordataHUM,
         'sensordataWM':sensordataWM,
         'sensordataWL':sensordataWL,
+        'pastsensordataWL':pastsensordataWL,
+        'pastsensordataWM':pastsensordataWM,
         'sensorCurrent':sensorCurrent        
         
     }
@@ -375,14 +380,11 @@ def postpreference(request, postid, userpreference):
 @login_required
 def mydevices(request):
     
-    sensordataLI = Sensor.objects.all().filter(sensorname='InnogrLI').values('sensorvalue')[4:12]
-    sensordataTC = Sensor.objects.all().filter(sensorname='InnogrTC').values('sensorvalue')[4:12]
-    sensordataWM = Sensor.objects.all().filter(sensorname='InnogrWM').values('sensorvalue')[4:12]
-    sensordataHUM = Sensor.objects.all().filter(sensorname='InnogrHUM').values('sensorvalue')[4:12]
-    sensordataWL = Sensor.objects.all().filter(sensorname='InnogrWL').values('sensorvalue')[4:12]
-    
-    pastsensordataWL = Sensor.objects.all().filter(sensorname='InnogrWL').values('sensorvalue')[13:21]
-    pastsensordataWM = Sensor.objects.all().filter(sensorname='InnogrWM').values('sensorvalue')[13:21]
+    sensordataLI = Sensor.objects.all().filter(sensorname='InnogrLI').values('sensorvalue')
+    sensordataTC = Sensor.objects.all().filter(sensorname='InnogrTC').values('sensorvalue')
+    sensordataWM = Sensor.objects.all().filter(sensorname='InnogrWM').values('sensorvalue')
+    sensordataHUM = Sensor.objects.all().filter(sensorname='InnogrHUM').values('sensorvalue')
+    sensordataWL = Sensor.objects.all().filter(sensorname='InnogrWL').values('sensorvalue')
     
     
 
@@ -393,8 +395,7 @@ def mydevices(request):
         'sensordataHUM':sensordataHUM,
         'sensordataWM':sensordataWM,
         'sensordataWL':sensordataWL,
-        'pastsensordataWL':pastsensordataWL,
-        'pastsensordataWM':pastsensordataWM
+   
         
     }
     

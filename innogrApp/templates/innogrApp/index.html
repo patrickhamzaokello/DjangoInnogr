@@ -103,87 +103,41 @@
           <i class="fas fa-gift"></i>
           Soil Moisture Variation
         </h4>
-        <div id="c3-line-chart"></div>
+        <div id="DWM-line-chart"></div>
       </div>
     </div>
   </div>
-  <div class="col-md-6 grid-margin stretch-card">
-    <div class="card">
-      <div class="card-body">
-        <h4 class="card-title">Temperature Variations</h4>
-        <div id="TM-line-chart"></div>
-      </div>
-    </div>
-  </div>
-</div>
 
-<div class="row">
   <div class="col-md-6 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
-        <h4 class="card-title">
-          <i class="fas fa-gift"></i>
-          Humidity Variations
-        </h4>
-        <div id="HUM-line-chart"></div>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-6 grid-margin stretch-card">
-    <div class="card">
-      <div class="card-body">
-        <h4 class="card-title">Water Level  Variations</h4>
-        <div id="watelevel-line-chart"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<div class="row">
-  <div class="col-md-6 grid-margin stretch-card">
-    <div class="card">
-      <div class="card-body">
-        <h4 class="card-title">Temperature & Humidity Variations</h4>
-        <div id="c3-spline-chart"></div>
+        <h4 class="card-title">Water Level Variations</h4>
+        <div id="WL-line-chart"></div>
       </div>
     </div>
   </div>
   
-  <div class="col-md-3 grid-margin stretch-card">
-    <div class="card">
-      <div class="card-body d-flex flex-column">
-        <h4 class="card-title">
-          <i class="fas fa-chart-pie"></i>
-          Market Value
-        </h4>
-        <div class="flex-grow-1 d-flex flex-column justify-content-between">
-          <canvas id="sales-status-chart" class="mt-3"></canvas>
-          <div class="pt-4">
-            <div id="sales-status-chart-legend" class="sales-status-chart-legend"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-3 grid-margin stretch-card">
-    <div class="card">
-      <div class="card-body d-flex flex-column">
-        <h4 class="card-title">
-          <i class="fas fa-tachometer-alt"></i>
-          Daily Sales
-        </h4>
-        <p class="card-description">Daily sales for the past one month</p>
-        <div class="flex-grow-1 d-flex flex-column justify-content-between">
-          <canvas id="daily-sales-chart" class="mt-3 mb-3 mb-md-0"></canvas>
-          <div id="daily-sales-chart-legend" class="daily-sales-chart-legend pt-4 border-top"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
 </div>
+
+<div class="row">
+  <!-- <div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Temperature & Humidity Variations</h4>
+        <div id="DLight-line-chart"></div>
+      </div>
+    </div>
+  </div> -->
+  <div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Temperature & Humidity Variations</h4>
+        <div id="DHT-spline-chart"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <div class="row">
   <div class="col-md-6 h-100">
@@ -227,52 +181,35 @@
     {% endfor %}
 
 
-    {% if page_obj.has_other_pages %}
-    <nav>
-      <ul class="pagination separated pagination-danger">
-        {% if page_obj.has_previous %}
-        <li class="page-item"><a class="page-link" href="?page=1">First</a></li>
-        <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
-        {% endif %}
-
-        {% for num in page_obj.paginator.page_range %}
-        {% if page_obj.number == num %}
-        <li class="page-item active"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
-
-        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
-        <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
-        {% endif %}
-        {% endfor %}
-
-        {% if page_obj.has_next %}
-
-        <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a></li>
-        <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Last</a></li>
-        {% endif %}
-
-      </ul>
-    </nav>
-    {% endif %}
-
-
-
   </div>
-  <div class="col-md-3 h-100">
-
-    <div class="fc-external-events">
-      {% for news in allnews_list %}
-      <div class='fc-event'>
-        <p> {{ news.title}} <a href=" {{ news.link}}" target="_blank">more</a></p>
-        <p class="small-text"></p>
-        <p class="text-muted mb-0"> {{ news.newsdate}}</p>
+  <div class="col-md-3 grid-margin">
+    <div class="card">
+      <div class="card-body d-flex flex-column">
+        <h4 class="card-title">
+          <i class="fas fa-chart-pie"></i>
+          Market Value
+        </h4>
+        <div class="flex-grow-1 d-flex flex-column justify-content-between">
+          <canvas id="sales-status-chart" class="mt-3"></canvas>
+          <div class="pt-4">
+            <div id="sales-status-chart-legend" class="sales-status-chart-legend"></div>
+          </div>
+        </div>
       </div>
-      {% endfor %}
-
     </div>
-  </div>
-
-  <div class="col-md-3 h-100">
-
+    <div class="card">
+      <div class="card-body d-flex flex-column">
+        <h4 class="card-title">
+          <i class="fas fa-tachometer-alt"></i>
+          Daily Sales
+        </h4>
+        <div class="flex-grow-1 d-flex flex-column justify-content-between">
+          <canvas id="daily-sales-chart" class="mt-3 mb-3 mb-md-0"></canvas>
+          <br>
+          <div id="daily-sales-chart-legend" class="daily-sales-chart-legend pt-4 border-top"></div>
+        </div>
+      </div>
+    </div>
     <div class="card text-center">
 
       <div class="card-body">
@@ -318,8 +255,22 @@
         {% endfor %}
       </div>
     </div>
-
   </div>
+
+  <div class="col-md-3 grid-margin">
+  
+    <div class="fc-external-events">
+      {% for news in allnews_list %}
+      <div class='fc-event'>
+        <p> {{ news.title}} <a href=" {{ news.link}}" target="_blank">more</a></p>
+        <p class="small-text"></p>
+        <p class="text-muted mb-0"> {{ news.newsdate}}</p>
+      </div>
+      {% endfor %}
+
+    </div>
+  </div>
+
 </div>
 
 

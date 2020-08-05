@@ -35,9 +35,9 @@
             <div class="card">
               <div class="card-body">
                 <h4 class="card-title">Temperature & Humidity Variations</h4>
-                <div id="DHT-spline-chart"></div>
+                <div id="TM-line-chart"></div>
               </div>
-            </div>  
+            </div>
           </div>
           <div class="tab-pane fade" id="profile-1" role="tabpanel" aria-labelledby="profile-tab">
             <div class="media">
@@ -73,8 +73,7 @@
                     <div class="card">
                       <div class="card-header" role="tab" id="heading-4">
                         <h6 class="mb-0">
-                          <a data-toggle="collapse" href="#collapse-4" aria-expanded="false"
-                            aria-controls="collapse-4">
+                          <a data-toggle="collapse" href="#collapse-4" aria-expanded="false" aria-controls="collapse-4">
                             How can I pay for an order I placed?
                           </a>
                         </h6>
@@ -102,6 +101,68 @@
   <div class="col-md-6 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
+        <h4 class="card-title">Humidity Sensor</h4>
+        <p class="card-description">Humidity Level Measurement</p>
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active show" id="hum-tab" data-toggle="tab" href="#home-5" role="tab"
+              aria-controls="home-5" aria-selected="true">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile-5" role="tab"
+              aria-controls="profile-5" aria-selected="false">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact-5" role="tab"
+              aria-controls="contact-5" aria-selected="false">Help</a>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane fade active show" id="home-5" role="tabpanel" aria-labelledby="home-tab">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">A Chat Showing Humidity Level Variations</h4>
+                <div id="HUM-line-chart"></div>
+
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="profile-5" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="media">
+              <img class="mr-3 w-25 rounded" src="../images/sensors/watersensor.jpg" alt="sample image">
+              <div class="media-body">
+                <h4 class="mt-0">Water Sensor</h4>
+                <p>
+                  A water sensor is a device used in the detection of the water level for various
+                  applications. Water sensors can come in several variations that include ultrasonic sensors,
+                  pressure transducers, bubblers, and float sensors.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="contact-5" role="tabpanel" aria-labelledby="contact-tab">
+            <h4>Contact us </h4>
+            <p>
+              Feel free to contact us if you have any questions!
+            </p>
+            <p>
+              <i class="fa fa-phone text-info"></i>
+              +123456789
+            </p>
+            <p>
+              <i class="far fa-envelope-open text-success"></i>
+              contactus@example.com
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
         <h4 class="card-title">Water Sensor</h4>
         <p class="card-description">Water Level Measurement</p>
         <ul class="nav nav-tabs" role="tablist">
@@ -123,7 +184,9 @@
             <div class="card">
               <div class="card-body">
                 <h4 class="card-title">A Chat Show Past and Current Week Water Level Variations</h4>
-                <div id="WL-line-chart"></div>
+
+                <div id="watelevel-line-chart"></div>
+
               </div>
             </div>
           </div>
@@ -182,7 +245,8 @@
             <div class="card">
               <div class="card-body">
                 <h4 class="card-title">A bar Chart Comparing Last Week and This Week's Soil Moisture Data</h4>
-                <div id="DWM-line-chart"></div>
+                <div id="c3-line-chart"></div>
+
               </div>
             </div>
           </div>
@@ -245,7 +309,9 @@
             <div class="card">
               <div class="card-body">
                 <h4 class="card-title">A Line Chart Showing Light Sensor Data</h4>
-                <div id="DLight-line-chart"></div>
+
+                <div id="c3-spline-chart"></div>
+
               </div>
             </div>
           </div>
@@ -284,7 +350,7 @@
       </div>
     </div>
   </div>
- 
+
 
 </div>
 
